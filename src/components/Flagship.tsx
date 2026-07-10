@@ -1,4 +1,5 @@
 import { CONFIG } from "@/content/config";
+import Magnetic from "./Magnetic";
 import Reveal from "./Reveal";
 
 const STATS: [string, string][] = [
@@ -54,15 +55,16 @@ export default function Flagship() {
           </div>
           <div className="flex flex-wrap gap-2.5">
             {STORE_LINKS.map(([b, url]) => (
-              <a
+              <Magnetic
                 key={b}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
+                strength={0.2}
                 className="inline-block rounded-full border border-line px-5 py-[11px] text-[13px] font-medium text-text no-underline"
               >
                 {b}
-              </a>
+              </Magnetic>
             ))}
           </div>
         </div>

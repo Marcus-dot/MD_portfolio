@@ -1,6 +1,6 @@
 /* Single edit point for real-world values — mirrors CONFIG in the prototype. */
 export const CONFIG = {
-  email: "madalitso@gralix.co",
+  email: "madalitsomarcus@gmail.com",
   links: {
     // TODO: replace with the direct App Store listing URL once known
     appStore: "https://www.nexvenue.app/",

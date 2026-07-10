@@ -1,3 +1,6 @@
+import Magnetic from "./Magnetic";
+import PaletteTrigger from "./PaletteTrigger";
+
 const LINKS = ["Work", "Skills", "Method", "Contact"];
 
 export default function Nav() {
@@ -21,19 +24,14 @@ export default function Nav() {
             </a>
           ))}
         </span>
-        <button
-          type="button"
-          aria-label="Open command palette"
-          className="hidden cursor-pointer items-center gap-2 rounded-full border-none bg-transparent px-3.5 py-2 text-[13px] text-dim min-[681px]:flex"
-        >
-          <kbd>⌘K</kbd>
-        </button>
-        <a
+        <PaletteTrigger />
+        <Magnetic
           href="#contact"
+          strength={0.25}
           className="ml-1 inline-flex shrink-0 items-center rounded-full bg-text px-5 py-2.5 text-[13px] leading-none font-semibold whitespace-nowrap text-bg no-underline"
         >
           Let&apos;s&nbsp;talk
-        </a>
+        </Magnetic>
       </nav>
     </header>
   );

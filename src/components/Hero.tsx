@@ -1,5 +1,6 @@
 import HeroPortrait from "./HeroPortrait";
 import LusakaClock from "./LusakaClock";
+import Magnetic from "./Magnetic";
 
 export default function Hero() {
   return (
@@ -63,18 +64,19 @@ export default function Hero() {
             className="hero-fade flex flex-wrap gap-3"
             style={{ animationDelay: "0.65s" }}
           >
-            <a
+            <Magnetic
               href="#work"
+              data-cursor="GO"
               className="inline-block rounded-full bg-accent px-[30px] py-4 text-[15px] font-semibold text-bg no-underline"
             >
               View the work
-            </a>
-            <a
+            </Magnetic>
+            <Magnetic
               href="#method"
               className="inline-block rounded-full border border-line bg-[rgba(10,10,11,0.45)] px-[30px] py-4 text-[15px] font-medium text-text no-underline backdrop-blur-[6px]"
             >
               How I work
-            </a>
+            </Magnetic>
           </div>
         </div>
       </div>

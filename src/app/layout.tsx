@@ -45,7 +45,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: loaderSkipScript }} />
         <noscript>
-          <style>{`#loader{display:none}.line-in,.hero-fade{animation:none!important}main [style*="opacity"]{opacity:1!important;transform:none!important}`}</style>
+          <style>{`#loader{display:none}.line-in,.hero-fade{animation:none!important}main [style*="opacity"]{opacity:1!important;transform:none!important}p[aria-label] span{color:var(--text)!important}`}</style>
         </noscript>
       </head>
       <body>

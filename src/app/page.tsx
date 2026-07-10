@@ -1,5 +1,9 @@
 import Loader from "@/components/Loader";
 import ScrollUI from "@/components/ScrollUI";
+import Grain from "@/components/Grain";
+import ContextCursor from "@/components/ContextCursor";
+import Spotlight from "@/components/Spotlight";
+import CommandPalette from "@/components/CommandPalette";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
@@ -15,6 +19,10 @@ export default function Home() {
   return (
     <>
       <Loader />
+      <Grain />
+      <ContextCursor />
+      <Spotlight />
+      <CommandPalette />
       <ScrollUI />
       <Nav />
       <main>

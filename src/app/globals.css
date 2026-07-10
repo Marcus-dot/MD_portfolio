@@ -137,6 +137,18 @@ body {
   padding-inline: clamp(20px, 6vw, 100px);
 }
 
+.btn {
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s,
+    background 0.4s;
+  cursor: pointer;
+  will-change: transform;
+}
+.btn:hover {
+  box-shadow: 0 14px 36px -10px rgba(155, 201, 126, 0.35);
+}
+
 kbd {
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 10px;
