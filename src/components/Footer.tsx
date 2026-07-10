@@ -1,0 +1,54 @@
+import { CONFIG } from "@/content/config";
+import LusakaClock from "./LusakaClock";
+
+export default function Footer() {
+  return (
+    <footer
+      id="contact"
+      className="relative z-[3] -mt-10 overflow-hidden rounded-t-[40px] bg-musgo px-page pt-[clamp(100px,16vh,180px)] pb-10"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-[40%] left-1/2 h-[60vh] w-[80vw] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(40,53,38,0.9),transparent_65%)]"
+      />
+      <div className="relative text-center">
+        <div className="mb-7 flex items-center justify-center gap-2.5 font-mono text-[12px] tracking-[0.2em] text-dim">
+          <span
+            aria-hidden
+            className="inline-block h-[7px] w-[7px] rounded-full bg-accent"
+          />
+          OPEN FOR SELECT ENGAGEMENTS
+        </div>
+        <h2 className="m-0 text-[clamp(44px,9vw,120px)] font-semibold leading-[0.98] tracking-[-0.045em]">
+          Building something
+          <br />
+          that has to be{" "}
+          <em className="font-serif font-normal italic text-accent">right?</em>
+        </h2>
+        <a
+          href={`mailto:${CONFIG.email}`}
+          className="mt-12 inline-block rounded-full bg-text px-11 py-5 text-[16px] font-semibold text-bg no-underline"
+        >
+          {CONFIG.email} →
+        </a>
+        <div className="mt-[22px] font-mono text-[12px] text-faint">
+          or press <kbd>⌘K</kbd> anywhere
+        </div>
+      </div>
+      <div className="relative mt-[120px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-faint">
+        <span>© 2026 Madalitso Daka — Lusaka, Zambia</span>
+        <span className="font-mono text-[11px]">
+          NOW: building event tech · auditing pipelines
+        </span>
+        <LusakaClock />
+        <a
+          href="#hero"
+          aria-label="Back to top"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-[15px] text-dim no-underline"
+        >
+          ↑
+        </a>
+      </div>
+    </footer>
+  );
+}

@@ -1,22 +1,31 @@
+import Nav from "@/components/Nav";
+import Hero from "@/components/Hero";
+import Manifesto from "@/components/Manifesto";
+import Marquee from "@/components/Marquee";
+import Flagship from "@/components/Flagship";
+import WorkStack from "@/components/WorkStack";
+import Claims from "@/components/Claims";
+import Method from "@/components/Method";
+import OffTheClock from "@/components/OffTheClock";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-dvh flex-col justify-end p-[clamp(20px,6vw,100px)]">
-      <p className="font-mono text-[11px] tracking-[0.2em] text-faint">
-        MADALITSO DAKA — PORTFOLIO / PHASE 0
-      </p>
-      <h1 className="mt-6 text-[clamp(56px,11.5vw,164px)] font-bold uppercase leading-[0.92] tracking-[-0.045em]">
-        Madalitso
-        <br />
-        Daka
-        <em className="font-serif font-normal italic normal-case tracking-[-0.02em] text-accent">
-          .
-        </em>
-      </h1>
-      <p className="mt-9 max-w-[420px] text-[16.5px] leading-[1.7] text-dim">
-        Engineer in Lusaka. I build, audit and ship software that{" "}
-        <em className="font-serif italic text-text">holds up in production</em>{" "}
-        — for finance, telecoms and research.
-      </p>
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Manifesto />
+        <Marquee />
+        <section id="work" className="px-page py-[clamp(90px,14vh,160px)]">
+          <Flagship />
+          <WorkStack />
+        </section>
+        <Claims />
+        <Method />
+        <OffTheClock />
+      </main>
+      <Footer />
+    </>
   );
 }
