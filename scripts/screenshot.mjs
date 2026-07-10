@@ -6,7 +6,7 @@ import { writeFileSync } from "node:fs";
 
 const CHROME =
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const [url, out, selector, width = "1440", height = "1000"] =
+const [url, out, selector, width = "1440", height = "1000", delayMs = "2500"] =
   process.argv.slice(2);
 if (!url || !out) {
   console.error("usage: screenshot.mjs <url> <out.png> [selector] [w] [h]");
@@ -58,7 +58,7 @@ const send = (method, params = {}) =>
 
 await send("Page.enable");
 await send("Page.navigate", { url });
-await wait(2500);
+await wait(Number(delayMs));
 if (selector) {
   await send("Runtime.evaluate", {
     expression: `document.documentElement.style.scrollBehavior="auto";document.querySelector(${JSON.stringify(selector)})?.scrollIntoView()`,

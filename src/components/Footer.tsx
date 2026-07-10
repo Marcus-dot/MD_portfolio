@@ -1,5 +1,6 @@
 import { CONFIG } from "@/content/config";
 import LusakaClock from "./LusakaClock";
+import Reveal from "./Reveal";
 
 export default function Footer() {
   return (
@@ -11,6 +12,7 @@ export default function Footer() {
         aria-hidden
         className="pointer-events-none absolute -bottom-[40%] left-1/2 h-[60vh] w-[80vw] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(40,53,38,0.9),transparent_65%)]"
       />
+      <Reveal>
       <div className="relative text-center">
         <div className="mb-7 flex items-center justify-center gap-2.5 font-mono text-[12px] tracking-[0.2em] text-dim">
           <span
@@ -35,6 +37,7 @@ export default function Footer() {
           or press <kbd>⌘K</kbd> anywhere
         </div>
       </div>
+      </Reveal>
       <div className="relative mt-[120px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-faint">
         <span>© 2026 Madalitso Daka — Lusaka, Zambia</span>
         <span className="font-mono text-[11px]">

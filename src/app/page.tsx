@@ -1,3 +1,5 @@
+import Loader from "@/components/Loader";
+import ScrollUI from "@/components/ScrollUI";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
@@ -12,6 +14,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <Loader />
+      <ScrollUI />
       <Nav />
       <main>
         <Hero />

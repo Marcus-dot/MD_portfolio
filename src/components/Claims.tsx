@@ -1,4 +1,5 @@
 import { CLAIMS } from "@/content/claims";
+import Reveal from "./Reveal";
 
 export default function Claims() {
   return (
@@ -6,19 +7,22 @@ export default function Claims() {
       id="skills"
       className="relative z-[3] -mt-10 rounded-t-[40px] bg-surface px-page py-[clamp(90px,14vh,160px)]"
     >
-      <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-        Hover a claim.
-        <br />
-        <em className="font-serif font-normal italic text-accent">
-          See the evidence.
-        </em>
-      </h2>
-      <p className="mt-4 font-mono text-[14px] text-faint">
-        {"// every card flips — front is the claim, back is why you should believe it"}
-      </p>
+      <Reveal>
+        <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
+          Hover a claim.
+          <br />
+          <em className="font-serif font-normal italic text-accent">
+            See the evidence.
+          </em>
+        </h2>
+        <p className="mt-4 font-mono text-[14px] text-faint">
+          {"// every card flips — front is the claim, back is why you should believe it"}
+        </p>
+      </Reveal>
       <div className="mt-[50px] grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[18px]">
-        {CLAIMS.map((c) => (
-          <div key={c.t} className="flip h-[340px] cursor-pointer">
+        {CLAIMS.map((c, i) => (
+          <Reveal key={c.t} delay={i * 0.08}>
+          <div className="flip h-[340px] cursor-pointer">
             <div className="flip-inner">
               <div className="flip-face bg-bg">
                 <div className="mb-3.5 text-[12px] tracking-[0.12em] text-faint uppercase">
@@ -68,6 +72,7 @@ export default function Claims() {
               </div>
             </div>
           </div>
+          </Reveal>
         ))}
       </div>
     </section>

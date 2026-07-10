@@ -1,4 +1,5 @@
 import { CONFIG } from "@/content/config";
+import Reveal from "./Reveal";
 
 const STATS: [string, string][] = [
   ["215", "delegates"],
@@ -22,10 +23,13 @@ const STORE_LINKS: [string, string][] = [
 export default function Flagship() {
   return (
     <div>
-      <h2 className="mb-10 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-        One product is{" "}
-        <em className="font-serif font-normal italic text-accent">public.</em>
-      </h2>
+      <Reveal>
+        <h2 className="mb-10 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
+          One product is{" "}
+          <em className="font-serif font-normal italic text-accent">public.</em>
+        </h2>
+      </Reveal>
+      <Reveal delay={0.08}>
       <div className="flex flex-wrap overflow-hidden rounded-[28px] border border-line bg-[linear-gradient(140deg,var(--musgo),var(--bg)_75%)]">
         <div className="flex-[1_1_460px] p-[clamp(36px,5vw,64px)]">
           <h3 className="mb-5 text-[clamp(40px,6vw,76px)] font-semibold leading-none tracking-[-0.04em]">
@@ -69,7 +73,7 @@ export default function Flagship() {
                 <span className="text-[13px] font-bold">NexVenue</span>
                 <span
                   aria-hidden
-                  className="h-2 w-2 rounded-full bg-accent"
+                  className="h-2 w-2 rounded-full bg-accent [animation:ticker_2s_infinite]"
                 />
               </div>
               {MOCK_ROWS.map(([a, b]) => (
@@ -85,6 +89,7 @@ export default function Flagship() {
           </div>
         </div>
       </div>
+      </Reveal>
     </div>
   );
 }
