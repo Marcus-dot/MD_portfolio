@@ -1,10 +1,10 @@
 const PHRASES = [
   "Product delivery",
-  "Security audits",
-  "Data pipelines",
+  "Scalable systems",
+  "Full-stack engineering",
   "Mobile apps",
-  "ML forecasting",
-  "Analytics reporting",
+  "System design",
+  "API development",
 ];
 
 export default function Marquee() {

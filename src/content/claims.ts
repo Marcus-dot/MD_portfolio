@@ -41,13 +41,13 @@ export const CLAIMS: Claim[] = [
   },
   {
     t: "Full-stack breadth",
-    sub: "Web · Mobile · ML",
+    sub: "Web · Mobile · Product",
     front:
-      "Django, FastAPI, Next.js, TypeScript, React Native, Firebase, Postgres — plus honest ML forecasting.",
+      "React Native, Expo and Firebase on mobile; Flask, GraphQL, Vue and TypeScript on the web — product-focused engineering, end to end.",
     back: [
-      "Time-series CV, not naive splits",
-      "Extrapolation guards + explicit fallbacks",
-      "4 sectors in production",
+      "Software Engineer at Gralix Technologies",
+      "InsurTech systems shipped in Malaysia",
+      "BEng Software Engineering, Xiamen University",
     ],
   },
 ];

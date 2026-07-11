@@ -43,7 +43,7 @@ export default function Footer() {
       <div className="relative mt-[120px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-faint">
         <span>© 2026 Madalitso Daka — Lusaka, Zambia</span>
         <span className="font-mono text-[11px]">
-          NOW: building event tech · auditing pipelines
+          NOW: engineering at Gralix Technologies · shipping event tech
         </span>
         <LusakaClock />
         <a

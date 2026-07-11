@@ -12,7 +12,6 @@ import Flagship from "@/components/Flagship";
 import WorkStack from "@/components/WorkStack";
 import Claims from "@/components/Claims";
 import Method from "@/components/Method";
-import OffTheClock from "@/components/OffTheClock";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -35,7 +34,6 @@ export default function Home() {
         </section>
         <Claims />
         <Method />
-        <OffTheClock />
       </main>
       <Footer />
     </>

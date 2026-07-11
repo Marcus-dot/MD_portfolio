@@ -54,11 +54,11 @@ export default function Hero() {
             className="hero-fade m-0 max-w-[420px] text-[16.5px] leading-[1.7] text-dim"
             style={{ animationDelay: "0.5s" }}
           >
-            Engineer in Lusaka. I build, audit and ship software that{" "}
+            Engineer in Lusaka. I build and ship software that{" "}
             <em className="font-serif italic text-text">
               holds up in production
             </em>{" "}
-            — for finance, telecoms and research.
+            — for insurance, live events and product teams.
           </p>
           <div
             className="hero-fade flex flex-wrap gap-3"

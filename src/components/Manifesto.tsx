@@ -1,7 +1,7 @@
 import ScrollType from "./ScrollType";
 
 export const MANIFESTO_TEXT =
-  "Much of my work is under NDA, so I'll say it plainly: I find the bugs that pass code review, I report numbers that can be traced, and I ship products that survive contact with real users. One of them is public — scroll on.";
+  "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former. One product is public — scroll on.";
 
 export default function Manifesto() {
   return (

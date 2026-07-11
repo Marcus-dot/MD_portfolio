@@ -2,7 +2,7 @@ export type Story = {
   n: string;
   s: string;
   scale: string;
-  badge: "Under NDA" | "Shipped" | "Contract";
+  badge: "Under NDA" | "Shipped" | "Internship";
   d: string;
 };
 
@@ -23,9 +23,9 @@ export const STORIES: Story[] = [
   },
   {
     n: "03",
-    s: "Water research",
-    scale: "Two river basins",
-    badge: "Contract",
-    d: "Decision-support system with ML streamflow forecasting. Time-series cross-validation, extrapolation guards, explicit fallbacks.",
+    s: "InsurTech",
+    scale: "Malaysia · 15-week engagement",
+    badge: "Internship",
+    d: "Frontend and backend development inside a Malaysian insurtech — extended the company API with Flask and GraphQL, modularized existing systems, and shipped internal HR tools for personality testing and leave management.",
   },
 ];
