@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Madalitso Daka — Portfolio
 
-## Getting Started
+Personal portfolio site. Next.js 16 (App Router), TypeScript strict,
+Tailwind CSS v4, Framer Motion. Dark by design; the brand rule is
+**verified claims only** — every number and biography line on the site
+must be true and traceable.
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build (all routes prerender statically)
+npx eslint src     # lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deploys automatically via Vercel on push to `main`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing content — where everything lives
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All real-world values sit in typed data files under `src/content/`. Copy
+lives in the components. No CMS.
 
-## Learn More
+| What | File |
+| --- | --- |
+| Email, site URL, store links | `src/content/config.ts` — the single edit point |
+| Flip-card claims + evidence | `src/content/claims.ts` |
+| Work stories (NDA cards) | `src/content/stories.ts` |
+| Method principles | `src/content/principles.ts` |
+| Manifesto (scroll-typing text) | `MANIFESTO_TEXT` in `src/components/Manifesto.tsx` |
+| Marquee phrases | `PHRASES` in `src/components/Marquee.tsx` |
+| Hero intro line | `src/components/Hero.tsx` |
+| NexVenue stats (215 / 71 / 2) | `src/components/Flagship.tsx` |
+| Footer NOW line | `src/components/Footer.tsx` |
+| CV download | replace `public/cv.pdf` |
+| Portrait | replace `public/portrait.jpg` (source: `portrait-original.jpeg`) |
+| OG share image | regenerate: edit `scripts/og-template.html`, then `node scripts/screenshot.mjs "file://$PWD/scripts/og-template.html" public/og.png '' 1200 630 3000` |
 
-To learn more about Next.js, take a look at the following resources:
+**Content rules** (from PROJECT_PLAN.md): never invent numbers, ratings or
+client names; NDA work is described by sector and scale only; no emojis
+in code or UI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Before pointing a real domain
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Update `siteUrl` in `src/content/config.ts` — it drives the canonical URL,
+OpenGraph/Twitter tags, `sitemap.xml` and `robots.txt`.
 
-## Deploy on Vercel
+## Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/app/` — layout (fonts/metadata), page composition, global styles/tokens
+- `src/components/` — one component per section + interaction components
+  (Loader, ScrollType, FlipCard, CommandPalette, ContextCursor, Spotlight…)
+- `scripts/screenshot.mjs` — headless-Chrome QA helper (scroll-to-selector
+  screenshots; also renders the OG image)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Motion honours `prefers-reduced-motion` everywhere; the loader runs once
+per session. Lighthouse (last run): desktop 98/96→100/100/100, mobile
+89–93/100/100/100.
