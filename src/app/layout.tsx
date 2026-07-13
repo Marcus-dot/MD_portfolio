@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import MotionProvider from "@/components/MotionProvider";
+import { CONFIG } from "@/content/config";
 import "./globals.css";
 
 /* Runs before first paint: skip the loader on repeat visits this session
@@ -26,10 +27,34 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const TITLE = "Madalitso Daka — Software Engineer, Lusaka";
+const DESCRIPTION =
+  "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former.";
+
 export const metadata: Metadata = {
-  title: "Madalitso Daka — Software Engineer, Lusaka",
-  description:
-    "I find the bugs that pass code review, I report numbers that can be traced, and I ship products that survive contact with real users.",
+  metadataBase: new URL(CONFIG.siteUrl),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    siteName: "Madalitso Daka",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og.png"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0A0A0B",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -45,7 +70,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: loaderSkipScript }} />
         <noscript>
-          <style>{`#loader{display:none}.line-in,.hero-fade{animation:none!important}main [style*="opacity"]{opacity:1!important;transform:none!important}p[aria-label] span{color:var(--text)!important}`}</style>
+          <style>{`#loader{display:none}.line-in,.hero-fade{animation:none!important}main [style*="opacity"]{opacity:1!important;transform:none!important}.scroll-type span{color:var(--text)!important}`}</style>
         </noscript>
       </head>
       <body>

@@ -7,7 +7,9 @@
   --musgo: #283526;
   --text: #f2f4ec;
   --dim: #9aa394;
-  --faint: #5e665a;
+  /* Prototype value was #5e665a — lightened to pass WCAG AA (4.5:1) on the
+     black ground; hue and role preserved */
+  --faint: #767f6d;
   --accent: #9bc97e;
   --border: rgba(237, 240, 228, 0.09);
   --border-hover: rgba(155, 201, 126, 0.35);

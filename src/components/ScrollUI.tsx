@@ -29,13 +29,14 @@ export default function ScrollUI() {
         />
       </div>
 
-      {/* section dots */}
-      <div className="fixed top-1/2 right-[22px] z-30 flex -translate-y-1/2 flex-col gap-3.5">
+      {/* section dots — desktop affordance; 7px targets are useless on touch */}
+      <div className="fixed top-1/2 right-[22px] z-30 hidden -translate-y-1/2 flex-col gap-3.5 pointer-fine:flex">
         {SECTIONS.map((id) => (
           <a
             key={id}
             href={`#${id}`}
             title={id}
+            aria-label={`Go to ${id} section`}
             className="block h-[7px] rounded-full transition-all duration-400 ease-(--ease)"
             style={{
               width: active === id ? 22 : 7,

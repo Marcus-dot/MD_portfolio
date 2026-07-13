@@ -28,9 +28,10 @@ export default function ScrollType({ text }: { text: string }) {
   return (
     <p
       ref={ref}
-      aria-label={text}
-      className="m-0 max-w-[22em] text-[clamp(28px,4.6vw,58px)] font-semibold leading-[1.25] tracking-[-0.03em]"
+      className="scroll-type m-0 max-w-[22em] text-[clamp(28px,4.6vw,58px)] font-semibold leading-[1.25] tracking-[-0.03em]"
     >
+      {/* Screen readers get the full text; the per-char spans are presentation */}
+      <span className="sr-only">{text}</span>
       {text.split("").map((ch, i) => (
         <span
           key={i}

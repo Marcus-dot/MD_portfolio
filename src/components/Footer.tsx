@@ -35,12 +35,12 @@ export default function Footer() {
         >
           {CONFIG.email} →
         </Magnetic>
-        <div className="mt-[22px] font-mono text-[12px] text-faint">
+        <div className="mt-[22px] font-mono text-[12px] text-dim">
           or press <kbd>⌘K</kbd> anywhere
         </div>
       </div>
       </Reveal>
-      <div className="relative mt-[120px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-faint">
+      <div className="relative mt-[120px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
         <span>© 2026 Madalitso Daka — Lusaka, Zambia</span>
         <span className="font-mono text-[11px]">
           NOW: engineering at Gralix Technologies · shipping event tech

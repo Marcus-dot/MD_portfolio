@@ -57,6 +57,14 @@ const send = (method, params = {}) =>
   });
 
 await send("Page.enable");
+// Pin the viewport to the exact requested size — --window-size is outer
+// window bounds and can shave height off the viewport.
+await send("Emulation.setDeviceMetricsOverride", {
+  width: Number(width),
+  height: Number(height),
+  deviceScaleFactor: 1,
+  mobile: false,
+});
 await send("Page.navigate", { url });
 await wait(Number(delayMs));
 if (selector) {

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@600;700&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; background: #0A0A0B; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 60px 80px; position: relative;
+    font-family: 'Inter Tight', sans-serif; color: #F2F4EC;
+  }
+  .glow {
+    position: absolute; right: -200px; top: -250px; width: 900px; height: 900px;
+    background: radial-gradient(circle, rgba(40,53,38,0.95), transparent 65%);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(155,201,126,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(155,201,126,0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(500px at 85% 20%, black, transparent 70%);
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 20px; letter-spacing: 0.2em;
+    color: #9AA394; margin-bottom: 28px; position: relative;
+  }
+  .eyebrow .dot-lead { color: #9BC97E; }
+  h1 {
+    font-size: 128px; font-weight: 700; line-height: 0.92; letter-spacing: -0.045em;
+    text-transform: uppercase; position: relative;
+  }
+  h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #9BC97E; text-transform: none; }
+  .sub { margin-top: 28px; font-size: 30px; color: #9AA394; position: relative; }
+  .sub em { font-family: 'Instrument Serif', serif; font-style: italic; color: #F2F4EC; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid"></div>
+  <div class="eyebrow"><span class="dot-lead">●</span> SOFTWARE ENGINEER — LUSAKA, ZAMBIA</div>
+  <h1>Madalitso<br>Daka<em>.</em></h1>
+  <div class="sub">Software that <em>holds up in production.</em></div>
+</body>
+</html>
