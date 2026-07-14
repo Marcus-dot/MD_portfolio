@@ -21,11 +21,11 @@ export default function HeroPortrait() {
     <motion.div style={{ y }} className="relative h-[115%] w-full will-change-transform">
       <Image
         src="/portrait.jpg"
-        alt="Madalitso Daka"
+        alt="Fragmented bronze portrait of Marcus Aurelius"
         fill
         preload
         sizes="(max-width: 760px) 100vw, 46vw"
-        className="object-cover object-[50%_22%] grayscale-[0.3] contrast-[1.05]"
+        className="object-cover object-[50%_45%] grayscale-[0.3] contrast-[1.05]"
       />
     </motion.div>
   );
