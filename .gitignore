@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Private fact-source for site copy — contains names that must stay off the public record
+PORTFOLIO_SOURCE_OF_TRUTH.md
