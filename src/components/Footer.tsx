@@ -40,7 +40,25 @@ export default function Footer() {
         </div>
       </div>
       </Reveal>
-      <div className="relative mt-[120px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
+      <div className="relative mt-[60px] flex justify-center gap-6 font-mono text-[12px]">
+        <a
+          href={CONFIG.links.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-dim no-underline transition-colors hover:text-accent"
+        >
+          GitHub ↗
+        </a>
+        <a
+          href={CONFIG.links.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-dim no-underline transition-colors hover:text-accent"
+        >
+          LinkedIn ↗
+        </a>
+      </div>
+      <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
         <span>© 2026 Madalitso Daka — Lusaka, Zambia</span>
         <span className="font-mono text-[11px]">
           NOW: engineering at Gralix Technologies · shipping event tech

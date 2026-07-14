@@ -26,12 +26,15 @@ export default function ScrollType({ text }: { text: string }) {
   const shown = reduce ? text.length : head;
   const prog = shown / text.length;
   return (
+    /* role="img" + aria-label: assistive tech announces the sentence once;
+       the per-char spans are pure presentation, so text extraction (reader
+       mode, copy, search) doesn't see the sentence twice. */
     <p
       ref={ref}
+      role="img"
+      aria-label={text}
       className="scroll-type m-0 max-w-[22em] text-[clamp(28px,4.6vw,58px)] font-semibold leading-[1.25] tracking-[-0.03em]"
     >
-      {/* Screen readers get the full text; the per-char spans are presentation */}
-      <span className="sr-only">{text}</span>
       {text.split("").map((ch, i) => (
         <span
           key={i}

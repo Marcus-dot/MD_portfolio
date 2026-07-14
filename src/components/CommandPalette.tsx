@@ -9,7 +9,8 @@ type Command = {
   k: string;
   hint: string;
   href?: string;
-  action?: "email" | "cv";
+  external?: string;
+  action?: "email";
 };
 
 const COMMANDS: Command[] = [
@@ -17,7 +18,8 @@ const COMMANDS: Command[] = [
   { k: "Go to Skills", hint: "capability grid", href: "#skills" },
   { k: "Go to Method", hint: "operating principles", href: "#method" },
   { k: "Contact", hint: "open channel", href: "#contact" },
-  { k: "Download CV", hint: "pdf — placeholder", action: "cv" },
+  { k: "Open GitHub", hint: "github.com/Marcus-dot", external: CONFIG.links.github },
+  { k: "Open LinkedIn", hint: "profile", external: CONFIG.links.linkedin },
   { k: "Copy email", hint: CONFIG.email, action: "email" },
 ];
 
@@ -68,11 +70,8 @@ function Panel({ close }: { close: () => void }) {
   const run = (c: Command) => {
     if (c.action === "email") {
       navigator.clipboard?.writeText(CONFIG.email);
-    } else if (c.action === "cv") {
-      const a = document.createElement("a");
-      a.href = "/cv.pdf";
-      a.download = "";
-      a.click();
+    } else if (c.external) {
+      window.open(c.external, "_blank", "noopener,noreferrer");
     } else if (c.href) {
       document.querySelector(c.href)?.scrollIntoView({ behavior: "smooth" });
     }

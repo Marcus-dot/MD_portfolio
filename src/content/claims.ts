@@ -41,13 +41,13 @@ export const CLAIMS: Claim[] = [
   },
   {
     t: "Full-stack breadth",
-    sub: "Web · Mobile · Product",
+    sub: "Web · Mobile · Integrations",
     front:
-      "React Native, Expo and Firebase on mobile; Flask, GraphQL, Vue and TypeScript on the web — product-focused engineering, end to end.",
+      "Django and Node on the back end; React, Next.js and React Native up front; Postgres underneath — plus WhatsApp, USSD and Firebase integrations.",
     back: [
       "Software Engineer at Gralix Technologies",
-      "InsurTech systems shipped in Malaysia",
-      "BEng Software Engineering, Xiamen University",
+      "WhatsApp + USSD platform live in production, built solo",
+      "BEng Software Engineering (Hons), Xiamen University",
     ],
   },
 ];

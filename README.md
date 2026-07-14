@@ -32,7 +32,6 @@ lives in the components. No CMS.
 | Hero intro line | `src/components/Hero.tsx` |
 | NexVenue stats (215 / 71 / 2) | `src/components/Flagship.tsx` |
 | Footer NOW line | `src/components/Footer.tsx` |
-| CV download | replace `public/cv.pdf` |
 | Portrait | replace `public/portrait.jpg` (source: `portrait-original.jpeg`) |
 | OG share image | regenerate: edit `scripts/og-template.html`, then `node scripts/screenshot.mjs "file://$PWD/scripts/og-template.html" public/og.png '' 1200 630 3000` |
 

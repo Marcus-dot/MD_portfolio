@@ -1,9 +1,10 @@
-/* Single edit point for real-world values — mirrors CONFIG in the prototype. */
+/* Single edit point for real-world values — see PORTFOLIO_SOURCE_OF_TRUTH.md */
 export const CONFIG = {
   email: "madalitsomarcus@gmail.com",
-  // TODO: replace with the final production domain once the Vercel project exists
-  siteUrl: "https://md-portfolio.vercel.app",
+  siteUrl: "https://md-portfolio-cyan.vercel.app",
   links: {
+    github: "https://github.com/Marcus-dot",
+    linkedin: "https://www.linkedin.com/in/madalitso-daka-52912b248",
     // TODO: replace with the direct App Store listing URL once known
     appStore: "https://www.nexvenue.app/",
     googlePlay:
