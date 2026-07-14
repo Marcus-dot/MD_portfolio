@@ -10,7 +10,9 @@ import Manifesto from "@/components/Manifesto";
 import Marquee from "@/components/Marquee";
 import Flagship from "@/components/Flagship";
 import WorkStack from "@/components/WorkStack";
+import AlsoBuilt from "@/components/AlsoBuilt";
 import Claims from "@/components/Claims";
+import Background from "@/components/Background";
 import Method from "@/components/Method";
 import Footer from "@/components/Footer";
 
@@ -31,8 +33,10 @@ export default function Home() {
         <section id="work" className="px-page py-[clamp(90px,14vh,160px)]">
           <Flagship />
           <WorkStack />
+          <AlsoBuilt />
         </section>
         <Claims />
+        <Background />
         <Method />
       </main>
       <Footer />

@@ -27,6 +27,8 @@ lives in the components. No CMS.
 | Flip-card claims + evidence | `src/content/claims.ts` |
 | Work stories (NDA cards) | `src/content/stories.ts` |
 | Method principles | `src/content/principles.ts` |
+| "Also built" cards | `src/content/builds.ts` |
+| Education + tech stack | `src/content/stack.ts` |
 | Manifesto (scroll-typing text) | `MANIFESTO_TEXT` in `src/components/Manifesto.tsx` |
 | Marquee phrases | `PHRASES` in `src/components/Marquee.tsx` |
 | Hero intro line | `src/components/Hero.tsx` |
