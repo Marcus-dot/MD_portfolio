@@ -29,7 +29,7 @@ export default function ScrollUI() {
         />
       </div>
 
-      {/* section dots — desktop affordance; 7px targets are useless on touch */}
+      {/* section dots - desktop affordance; 7px targets are useless on touch */}
       <div className="fixed top-1/2 right-[22px] z-30 hidden -translate-y-1/2 flex-col gap-3.5 pointer-fine:flex">
         {SECTIONS.map((id) => (
           <a

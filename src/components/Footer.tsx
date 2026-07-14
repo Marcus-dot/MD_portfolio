@@ -38,7 +38,7 @@ export default function Footer() {
         <div className="mt-[22px] font-mono text-[12px] text-dim print:hidden">
           or press <kbd>⌘K</kbd> anywhere
         </div>
-        {/* print-only contact line — the CTA button above is interactive-only */}
+        {/* print-only contact line - the CTA button above is interactive-only */}
         <div className="hidden font-mono text-[13px] text-text print:block">
           {CONFIG.email} · github.com/Marcus-dot ·
           linkedin.com/in/madalitso-daka-52912b248
@@ -64,7 +64,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
-        <span>© 2026 Madalitso Daka — Lusaka, Zambia</span>
+        <span>© 2026 Madalitso Daka · Lusaka, Zambia</span>
         <span className="font-mono text-[11px]">
           NOW: engineering at Gralix Technologies · shipping event tech
         </span>

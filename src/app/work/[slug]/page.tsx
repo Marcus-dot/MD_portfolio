@@ -17,7 +17,7 @@ export async function generateMetadata({
   const story = STORIES.find((s) => s.slug === slug);
   if (!story) return {};
   return {
-    title: `${story.s} — Madalitso Daka`,
+    title: `${story.s} - Madalitso Daka`,
     description: story.d,
     alternates: { canonical: `/work/${story.slug}` },
   };
@@ -34,7 +34,7 @@ export default async function CaseOutline({
 
   return (
     <div className="min-h-dvh">
-      {/* slim header — anchors on the home page, not here */}
+      {/* slim header - anchors on the home page, not here */}
       <header className="flex items-center justify-between px-page pt-8">
         <Link
           href="/"
@@ -52,7 +52,7 @@ export default async function CaseOutline({
 
       <main className="mx-auto max-w-[820px] px-page pt-[clamp(60px,10vh,120px)] pb-[clamp(80px,12vh,140px)]">
         <div className="font-mono text-[11px] tracking-[0.2em] text-faint">
-          CASE OUTLINE — {story.n}
+          CASE OUTLINE · {story.n}
         </div>
         <h1 className="mt-5 mb-0 text-[clamp(40px,7vw,76px)] font-semibold leading-[1.02] tracking-[-0.035em]">
           {story.s}
@@ -76,7 +76,7 @@ export default async function CaseOutline({
         </p>
 
         <div className="mt-12 font-mono text-[11px] tracking-[0.2em] text-faint">
-          WHAT I DID —
+          WHAT I DID
         </div>
         <ul className="mt-6 flex list-none flex-col gap-4 p-0">
           {story.case.did.map((item) => (

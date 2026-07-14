@@ -48,7 +48,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const TITLE = "Madalitso Daka — Software Engineer, Lusaka";
+const TITLE = "Madalitso Daka · Software Engineer, Lusaka";
 const DESCRIPTION =
   "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former.";
 

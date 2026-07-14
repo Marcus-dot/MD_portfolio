@@ -19,7 +19,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* content layer — name overlaps the portrait edge */}
+      {/* content layer - name overlaps the portrait edge */}
       <div className="relative z-[2] flex min-h-dvh flex-col justify-end px-page pt-[140px] pb-[clamp(50px,8vh,90px)]">
         <div
           className="hero-fade mb-7 flex flex-wrap items-center gap-[18px]"
@@ -57,8 +57,8 @@ export default function Hero() {
             Engineer in Lusaka. I build, audit and ship software that{" "}
             <em className="font-serif italic text-text">
               holds up in production
-            </em>{" "}
-            — for insurance, live events and product teams.
+            </em>{", "}
+            for insurance, live events and product teams.
           </p>
           <div
             className="hero-fade flex flex-wrap gap-3"

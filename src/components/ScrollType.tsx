@@ -7,7 +7,7 @@ import {
   useScroll,
 } from "framer-motion";
 
-/* Characters reveal as you scroll down and un-reveal scrolling back up —
+/* Characters reveal as you scroll down and un-reveal scrolling back up -
    progress is bound to scroll position, so it's fully reversible, with a
    live caret at the write-head. */
 export default function ScrollType({ text }: { text: string }) {

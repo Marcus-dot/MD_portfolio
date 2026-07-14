@@ -3,7 +3,7 @@ export type Claim = {
   sub: string;
   front: string;
   back: string[];
-  /** Public receipts — where a claim can be independently verified */
+  /** Public receipts - where a claim can be independently verified */
   proof?: { label: string; url: string }[];
 };
 
@@ -30,7 +30,7 @@ export const CLAIMS: Claim[] = [
     t: "Security & correctness",
     sub: "Bugs that pass code review",
     front:
-      "Privilege-escalation vulns, race conditions, silent row-multiplication — found before they cost money.",
+      "Privilege-escalation vulns, race conditions, silent row-multiplication, found before they cost money.",
     back: [
       "Live Firestore privilege-escalation closed pre-launch",
       "Capacity race condition reproduced, then fixed",
@@ -52,7 +52,7 @@ export const CLAIMS: Claim[] = [
     t: "Full-stack breadth",
     sub: "Web · Mobile · Integrations",
     front:
-      "Django and Node on the back end; React, Next.js and React Native up front; Postgres underneath — plus WhatsApp, USSD and Firebase integrations.",
+      "Django and Node on the back end; React, Next.js and React Native up front; Postgres underneath, plus WhatsApp, USSD and Firebase integrations.",
     back: [
       "Software Engineer at Gralix Technologies",
       "WhatsApp + USSD platform live in production, built solo",

@@ -8,7 +8,7 @@ export default function Background() {
         {/* Education */}
         <Reveal className="min-w-[280px] flex-[1_1_320px]">
           <div className="mb-7 font-mono text-[11px] tracking-[0.2em] text-faint">
-            EDUCATION —
+            EDUCATION
           </div>
           {EDUCATION.map((e) => (
             <div key={e.degree} className="mb-7">
@@ -28,7 +28,7 @@ export default function Background() {
         {/* Stack */}
         <Reveal delay={0.1} className="flex-[2_1_460px]">
           <div className="mb-7 font-mono text-[11px] tracking-[0.2em] text-faint">
-            STACK —
+            STACK
           </div>
           <div className="flex flex-col gap-4">
             {STACK.map((g) => (

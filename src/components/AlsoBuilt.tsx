@@ -5,7 +5,7 @@ export default function AlsoBuilt() {
   return (
     <div className="mt-[100px]">
       <div className="mb-[30px] font-mono text-[11px] tracking-[0.2em] text-faint">
-        ALSO BUILT —
+        ALSO BUILT
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[18px]">
         {BUILDS.map((b, i) => (

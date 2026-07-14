@@ -17,7 +17,7 @@ export default function Claims() {
           </em>
         </h2>
         <p className="mt-4 font-mono text-[14px] text-faint">
-          {"// every card flips — front is the claim, back is why you should believe it"}
+          {"// every card flips: front is the claim, back is the evidence"}
         </p>
       </Reveal>
       <div className="mt-[50px] grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[18px]">

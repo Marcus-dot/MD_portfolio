@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* Design tokens — extracted verbatim from portfolio-prototype.jsx */
+/* Design tokens - extracted verbatim from portfolio-prototype.jsx */
 :root {
   --bg: #0a0a0b;
   --surface: #101210;
   --musgo: #283526;
   --text: #f2f4ec;
   --dim: #9aa394;
-  /* Prototype value was #5e665a — lightened to pass WCAG AA (4.5:1) on the
+  /* Prototype value was #5e665a - lightened to pass WCAG AA (4.5:1) on the
      black ground; hue and role preserved */
   --faint: #767f6d;
   --accent: #9bc97e;
@@ -134,7 +134,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Section gutter used across all bands — mirrors `pad` in the prototype */
+/* Section gutter used across all bands - mirrors `pad` in the prototype */
 @utility px-page {
   padding-inline: clamp(20px, 6vw, 100px);
 }
@@ -160,7 +160,7 @@ kbd {
   color: var(--dim);
 }
 
-/* Flip-to-verify cards — 3D structure; click/tap/keyboard flip lands in Phase 3 */
+/* Flip-to-verify cards - 3D structure; click/tap/keyboard flip lands in Phase 3 */
 .flip {
   perspective: 1400px;
 }
@@ -200,7 +200,7 @@ button:focus-visible,
 
 /* ─────────────────────────────────────────
    Print: the site reflows into a CV.
-   Cmd/Ctrl+P produces a clean document —
+   Cmd/Ctrl+P produces a clean document -
    no PDF to maintain, can never go stale.
 ───────────────────────────────────────── */
 @media print {

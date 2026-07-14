@@ -1,4 +1,4 @@
-/* Tech stack — §6 of PORTFOLIO_SOURCE_OF_TRUTH.md: only what's genuinely used. */
+/* Tech stack - §6 of PORTFOLIO_SOURCE_OF_TRUTH.md: only what's genuinely used. */
 export type StackGroup = { label: string; items: string[] };
 
 export const STACK: StackGroup[] = [

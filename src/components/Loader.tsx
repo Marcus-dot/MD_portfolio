@@ -25,7 +25,7 @@ export default function Loader() {
       return () => cancelAnimationFrame(raf);
     }
     const start = performance.now();
-    // Shorter ceremony on small screens — keeps mobile LCP inside budget
+    // Shorter ceremony on small screens - keeps mobile LCP inside budget
     const duration = window.matchMedia("(max-width: 760px)").matches ? 900 : 1600;
     const tick = (t: number) => {
       const p = Math.min(100, Math.round(((t - start) / duration) * 100));
@@ -56,7 +56,7 @@ export default function Loader() {
     >
       <div>
         <span className="block font-mono text-[12px] tracking-[0.15em] text-dim">
-          MADALITSO DAKA — PORTFOLIO
+          MADALITSO DAKA · PORTFOLIO
         </span>
         <span className="mt-2 block font-mono text-[11px] tracking-[0.15em] text-faint">
           VERIFYING CLAIMS<span className="text-accent">…</span>

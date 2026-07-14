@@ -37,7 +37,7 @@ export default function Flagship() {
             NexVenue<span className="text-accent">.</span>
           </h3>
           <p className="max-w-[520px] text-[16.5px] leading-[1.75] text-dim">
-            Event networking platform — live Q&A, session management, delegate
+            Event networking platform: live Q&A, session management, delegate
             networking. React Native + Expo + Firebase, shipped to both app
             stores. Delivered end-to-end for a national insurance conference.
           </p>

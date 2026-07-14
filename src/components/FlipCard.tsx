@@ -12,7 +12,7 @@ export default function FlipCard({ claim }: { claim: Claim }) {
       data-cursor="FLIP"
       role="button"
       tabIndex={0}
-      aria-label={`${claim.t} — press to flip and see evidence`}
+      aria-label={`${claim.t} - press to flip and see evidence`}
       onClick={toggle}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {

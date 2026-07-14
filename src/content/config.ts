@@ -1,4 +1,4 @@
-/* Single edit point for real-world values — see PORTFOLIO_SOURCE_OF_TRUTH.md */
+/* Single edit point for real-world values - see PORTFOLIO_SOURCE_OF_TRUTH.md */
 export const CONFIG = {
   email: "madalitsomarcus@gmail.com",
   siteUrl: "https://md-portfolio-cyan.vercel.app",

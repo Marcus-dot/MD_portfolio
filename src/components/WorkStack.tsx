@@ -50,7 +50,7 @@ export default function WorkStack() {
           </em>
         </h3>
         <span className="font-mono text-[11px] text-faint">
-          {"// scroll — cards stack"}
+          {"// scroll: cards stack"}
         </span>
       </div>
       {STORIES.map((s, i) => (

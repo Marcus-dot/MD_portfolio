@@ -10,7 +10,7 @@ const PHRASES = [
 export default function Marquee() {
   return (
     <div className="overflow-hidden border-y border-line bg-surface py-5">
-      {/* Two copies for the seamless loop — animation lands in Phase 2 */}
+      {/* Two copies for the seamless loop - animation lands in Phase 2 */}
       <div className="marquee-track flex w-max [animation:marquee_30s_linear_infinite]">
         {[false, true].map((dup) => (
           <div key={String(dup)} aria-hidden={dup} className="flex">

@@ -152,7 +152,7 @@ function Panel({ close }: { close: () => void }) {
           </button>
         ))}
         <div className="border-t border-line px-6 py-3 font-mono text-[11px] text-faint">
-          ↵ select · esc close — this site works like my software: navigable,
+          ↵ select · esc close · works like my software: navigable,
           instrumented, fast
         </div>
       </div>
