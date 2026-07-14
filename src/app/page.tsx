@@ -4,6 +4,7 @@ import Grain from "@/components/Grain";
 import ContextCursor from "@/components/ContextCursor";
 import Spotlight from "@/components/Spotlight";
 import CommandPalette from "@/components/CommandPalette";
+import Toast from "@/components/Toast";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
@@ -24,6 +25,7 @@ export default function Home() {
       <ContextCursor />
       <Spotlight />
       <CommandPalette />
+      <Toast />
       <ScrollUI />
       <Nav />
       <main>

@@ -87,6 +87,12 @@ export default function WorkStack() {
           >
             {s.badge}
           </span>
+          <a
+            href={`/work/${s.slug}`}
+            className="w-full pt-1 text-right font-mono text-[11px] tracking-[0.08em] text-accent no-underline"
+          >
+            CASE OUTLINE →
+          </a>
         </article>
       ))}
     </div>

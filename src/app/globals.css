@@ -197,3 +197,126 @@ button:focus-visible,
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* ─────────────────────────────────────────
+   Print: the site reflows into a CV.
+   Cmd/Ctrl+P produces a clean document —
+   no PDF to maintain, can never go stale.
+───────────────────────────────────────── */
+@media print {
+  html {
+    background: #fff !important;
+    color-scheme: light;
+  }
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --musgo: #f2f2ee;
+    --text: #111411;
+    --dim: #333833;
+    --faint: #5a615a;
+    --accent: #2e4e2a;
+    --border: rgba(0, 0, 0, 0.18);
+    --border-hover: rgba(0, 0, 0, 0.3);
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Overlays, chrome and theatrics off */
+  .fixed,
+  #loader,
+  nav,
+  .hero-portrait,
+  .marquee-track,
+  .line-wrap ~ * .btn {
+    display: none !important;
+  }
+  div:has(> .marquee-track) {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: var(--text);
+    font-size: 11px;
+  }
+
+  /* Reflow: no viewport-height staging, no sticky choreography */
+  section,
+  #hero,
+  footer {
+    min-height: 0 !important;
+    padding: 14px 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+  }
+  #hero > div {
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+  #work article {
+    position: static !important;
+    top: auto !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    break-inside: avoid;
+    padding: 12px 0 !important;
+    margin-bottom: 8px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+  }
+
+  /* Framer Motion inline transforms/opacity neutralised */
+  [style*="opacity"],
+  [style*="transform"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Scroll-typing shows as plain text, caret hidden */
+  .scroll-type span {
+    color: var(--text) !important;
+  }
+  .scroll-type span:last-child {
+    display: none !important;
+  }
+
+  /* Flip cards: both faces flat, claim then evidence */
+  .flip {
+    height: auto !important;
+    break-inside: avoid;
+  }
+  .flip-inner {
+    transform: none !important;
+  }
+  .flip-face {
+    position: static !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    border: none !important;
+    padding: 8px 0 !important;
+    background: #fff !important;
+  }
+
+  /* Interactive-only affordances off */
+  a.btn,
+  kbd,
+  [data-cursor="TOP"] {
+    display: none !important;
+  }
+
+  h1 {
+    font-size: 34pt !important;
+  }
+  h2 {
+    font-size: 16pt !important;
+  }
+}

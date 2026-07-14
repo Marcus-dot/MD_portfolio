@@ -3,6 +3,8 @@ export type Claim = {
   sub: string;
   front: string;
   back: string[];
+  /** Public receipts — where a claim can be independently verified */
+  proof?: { label: string; url: string }[];
 };
 
 export const CLAIMS: Claim[] = [
@@ -15,6 +17,13 @@ export const CLAIMS: Claim[] = [
       "Production app live in both stores",
       "Multi-day live events served",
       "Design system + release pipeline owned solo",
+    ],
+    proof: [
+      {
+        label: "Google Play ↗",
+        url: "https://play.google.com/store/apps/details?id=co.gralix.nexvenue",
+      },
+      { label: "nexvenue.app ↗", url: "https://www.nexvenue.app/" },
     ],
   },
   {
@@ -48,6 +57,13 @@ export const CLAIMS: Claim[] = [
       "Software Engineer at Gralix Technologies",
       "WhatsApp + USSD platform live in production, built solo",
       "BEng Software Engineering (Hons), Xiamen University",
+    ],
+    proof: [
+      { label: "GitHub ↗", url: "https://github.com/Marcus-dot" },
+      {
+        label: "LinkedIn ↗",
+        url: "https://www.linkedin.com/in/madalitso-daka-52912b248",
+      },
     ],
   },
 ];

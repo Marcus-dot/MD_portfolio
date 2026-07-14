@@ -68,7 +68,7 @@ export default function Flagship() {
             ))}
           </div>
         </div>
-        <div className="flex flex-[1_1_320px] items-center justify-center p-10">
+        <div className="flex flex-[1_1_320px] items-center justify-center p-10 print:hidden">
           <div className="w-[230px] rounded-[34px] border border-line-hover bg-bg p-3.5 shadow-[0_50px_100px_-30px_rgba(0,0,0,0.9)]">
             <div className="flex flex-col gap-2.5 rounded-3xl bg-surface p-4">
               <div className="flex items-center justify-between">

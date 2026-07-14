@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-dvh overflow-hidden">
       {/* full-bleed portrait column, right side */}
-      <div className="absolute top-0 right-0 bottom-0 w-[min(46vw,620px)] min-w-[280px] overflow-hidden max-[760px]:w-full max-[760px]:min-w-0 max-[760px]:opacity-40">
+      <div className="hero-portrait absolute top-0 right-0 bottom-0 w-[min(46vw,620px)] min-w-[280px] overflow-hidden max-[760px]:w-full max-[760px]:min-w-0 max-[760px]:opacity-40">
         <HeroPortrait />
         {/* moss duotone + fade into the black page */}
         <div

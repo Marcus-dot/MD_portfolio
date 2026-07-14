@@ -35,8 +35,13 @@ export default function Footer() {
         >
           {CONFIG.email} →
         </Magnetic>
-        <div className="mt-[22px] font-mono text-[12px] text-dim">
+        <div className="mt-[22px] font-mono text-[12px] text-dim print:hidden">
           or press <kbd>⌘K</kbd> anywhere
+        </div>
+        {/* print-only contact line — the CTA button above is interactive-only */}
+        <div className="hidden font-mono text-[13px] text-text print:block">
+          {CONFIG.email} · github.com/Marcus-dot ·
+          linkedin.com/in/madalitso-daka-52912b248
         </div>
       </div>
       </Reveal>

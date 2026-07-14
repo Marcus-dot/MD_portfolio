@@ -25,8 +25,10 @@ export default function Loader() {
       return () => cancelAnimationFrame(raf);
     }
     const start = performance.now();
+    // Shorter ceremony on small screens — keeps mobile LCP inside budget
+    const duration = window.matchMedia("(max-width: 760px)").matches ? 900 : 1600;
     const tick = (t: number) => {
-      const p = Math.min(100, Math.round(((t - start) / 1600) * 100));
+      const p = Math.min(100, Math.round(((t - start) / duration) * 100));
       setN(p);
       if (p < 100) {
         raf = requestAnimationFrame(tick);

@@ -65,6 +65,23 @@ export default function FlipCard({ claim }: { claim: Claim }) {
               <span className="text-[14px] leading-[1.55] text-text">{b}</span>
             </div>
           ))}
+          {claim.proof && (
+            <div className="absolute bottom-[24px] left-[30px] flex flex-wrap gap-2">
+              {claim.proof.map((p) => (
+                <a
+                  key={p.url}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  onKeyDown={(e) => e.stopPropagation()}
+                  className="rounded-full border border-line-hover px-3 py-1 font-mono text-[10px] tracking-[0.08em] text-accent no-underline"
+                >
+                  {p.label}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

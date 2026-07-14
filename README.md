@@ -34,6 +34,7 @@ lives in the components. No CMS.
 | Hero intro line | `src/components/Hero.tsx` |
 | NexVenue stats (215 / 71 / 2) | `src/components/Flagship.tsx` |
 | Footer NOW line | `src/components/Footer.tsx` |
+| Case-study pages (/work/…) | `case` blocks in `src/content/stories.ts` |
 | Portrait | replace `public/portrait.jpg` (source: `portrait-original.jpeg`) |
 | OG share image | regenerate: edit `scripts/og-template.html`, then `node scripts/screenshot.mjs "file://$PWD/scripts/og-template.html" public/og.png '' 1200 630 3000` |
 
@@ -55,5 +56,6 @@ OpenGraph/Twitter tags, `sitemap.xml` and `robots.txt`.
   screenshots; also renders the OG image)
 
 Motion honours `prefers-reduced-motion` everywhere; the loader runs once
-per session. Lighthouse (last run): desktop 98/96→100/100/100, mobile
+per session (shorter on mobile). Printing the homepage (Cmd/Ctrl+P)
+produces a clean CV-style document — there is deliberately no PDF download. Lighthouse (last run): desktop 98/96→100/100/100, mobile
 89–93/100/100/100.

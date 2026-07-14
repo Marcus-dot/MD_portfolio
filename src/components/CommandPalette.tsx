@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { CONFIG } from "@/content/config";
+import { toast } from "./Toast";
 
 export const PALETTE_EVENT = "md:palette-toggle";
 
@@ -51,6 +52,7 @@ export default function CommandPalette() {
    focus-restore lives in the effect cleanup. */
 function Panel({ close }: { close: () => void }) {
   const [q, setQ] = useState("");
+  const [sel, setSel] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -70,6 +72,7 @@ function Panel({ close }: { close: () => void }) {
   const run = (c: Command) => {
     if (c.action === "email") {
       navigator.clipboard?.writeText(CONFIG.email);
+      toast("EMAIL COPIED");
     } else if (c.external) {
       window.open(c.external, "_blank", "noopener,noreferrer");
     } else if (c.href) {
@@ -79,6 +82,20 @@ function Panel({ close }: { close: () => void }) {
   };
 
   const trapTab = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      setSel((s) => {
+        if (list.length === 0) return 0;
+        const next = e.key === "ArrowDown" ? s + 1 : s - 1;
+        return (next + list.length) % list.length;
+      });
+      return;
+    }
+    if (e.key === "Enter" && list[sel]) {
+      e.preventDefault();
+      run(list[sel]);
+      return;
+    }
     if (e.key !== "Tab" || !panelRef.current) return;
     const focusables = panelRef.current.querySelectorAll<HTMLElement>(
       "input, button, [href]",
@@ -112,16 +129,23 @@ function Panel({ close }: { close: () => void }) {
         <input
           ref={inputRef}
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => {
+            setQ(e.target.value);
+            setSel(0);
+          }}
           placeholder="Where to? Try 'work'…"
           className="w-full border-0 border-b border-solid border-b-line bg-transparent px-6 py-5 text-[17px] text-text outline-none"
         />
-        {list.map((c) => (
+        {list.map((c, i) => (
           <button
             key={c.k}
             type="button"
             onClick={() => run(c)}
-            className="flex w-full cursor-pointer items-center justify-between border-none bg-transparent px-6 py-[15px] text-[15px] text-text transition-colors hover:bg-[rgba(155,201,126,0.06)] focus-visible:bg-[rgba(155,201,126,0.06)]"
+            onMouseEnter={() => setSel(i)}
+            data-selected={i === sel || undefined}
+            className={`flex w-full cursor-pointer items-center justify-between border-none bg-transparent px-6 py-[15px] text-[15px] text-text transition-colors focus-visible:bg-[rgba(155,201,126,0.06)] ${
+              i === sel ? "bg-[rgba(155,201,126,0.06)]" : ""
+            }`}
           >
             <span>{c.k}</span>
             <span className="font-mono text-[12px] text-faint">{c.hint}</span>
