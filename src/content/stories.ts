@@ -117,6 +117,7 @@ export const STORIES: Story[] = [
         "Provisioned and deployed the full production stack solo: Node.js, PostgreSQL, Nginx, PM2, SSL, object storage, CDN/DNS",
       ],
       tech: "Node.js · PostgreSQL · Nginx · PM2 · DigitalOcean",
+      note: "Built for a national Zambia Sugar promotion, delivered via Blink Marketing Solutions.",
     },
   },
   {

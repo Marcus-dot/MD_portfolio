@@ -1,7 +1,7 @@
 import ScrollType from "./ScrollType";
 
 export const MANIFESTO_TEXT =
-  "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former. One product is public. Scroll on.";
+  "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former. Two products are public. Scroll on.";
 
 export default function Manifesto() {
   return (

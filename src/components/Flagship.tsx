@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONFIG } from "@/content/config";
 import Magnetic from "./Magnetic";
 import Reveal from "./Reveal";
@@ -26,7 +27,7 @@ export default function Flagship() {
     <div>
       <Reveal>
         <h2 className="mb-10 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-          One product is{" "}
+          Two products are{" "}
           <em className="font-serif font-normal italic text-accent">public.</em>
         </h2>
       </Reveal>
@@ -91,6 +92,42 @@ export default function Flagship() {
           </div>
         </div>
       </div>
+      </Reveal>
+
+      <Reveal delay={0.12}>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-[24px] border border-line bg-[rgba(237,240,228,0.02)] p-[clamp(24px,3.5vw,40px)]">
+          <div className="flex-[1_1_420px]">
+            <div className="mb-2.5 font-mono text-[11px] tracking-[0.12em] text-faint uppercase">
+              The other one · live · co-founded
+            </div>
+            <h3 className="mb-3 text-[clamp(28px,3.5vw,44px)] font-semibold leading-none tracking-[-0.035em]">
+              Dashly<span className="text-accent">.</span>
+            </h3>
+            <p className="max-w-[560px] text-[15.5px] leading-[1.7] text-dim">
+              Project-portfolio SaaS I co-founded and lead the build on: AI
+              health scoring, 26 industry calculators, multi-tenant teams with
+              MFA. Next.js 16 and Supabase, live in production. Full outline
+              below.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-3">
+            <Magnetic
+              href={CONFIG.links.dashly}
+              target="_blank"
+              rel="noopener noreferrer"
+              strength={0.2}
+              className="inline-block rounded-full border border-line px-5 py-[11px] text-[13px] font-medium text-text no-underline"
+            >
+              dashlyhq.com ↗
+            </Magnetic>
+            <Link
+              href="/work/dashly"
+              className="font-mono text-[11px] tracking-[0.08em] text-accent no-underline"
+            >
+              CASE OUTLINE →
+            </Link>
+          </div>
+        </div>
       </Reveal>
     </div>
   );
