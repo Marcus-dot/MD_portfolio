@@ -5,6 +5,7 @@ export const CONFIG = {
   links: {
     github: "https://github.com/Marcus-dot",
     linkedin: "https://www.linkedin.com/in/madalitso-daka-52912b248",
+    dashly: "https://www.dashlyhq.com",
     // TODO: replace with the direct App Store listing URL once known
     appStore: "https://www.nexvenue.app/",
     googlePlay:

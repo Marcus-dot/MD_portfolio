@@ -101,6 +101,16 @@ export default async function CaseOutline({
             {story.case.tech}
           </div>
         )}
+        {story.case.link && (
+          <a
+            href={story.case.link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block rounded-full border border-line px-5 py-2.5 font-mono text-[12px] tracking-[0.06em] text-accent no-underline transition-colors hover:border-line-hover"
+          >
+            {story.case.link.label}
+          </a>
+        )}
         {story.case.note && (
           <p className="mt-10 border-l-2 border-line pl-5 font-serif text-[16px] italic leading-[1.7] text-dim">
             {story.case.note}

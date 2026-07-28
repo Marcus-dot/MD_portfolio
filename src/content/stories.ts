@@ -1,4 +1,6 @@
 /* Facts sourced from PORTFOLIO_SOURCE_OF_TRUTH.md - verified claims only. */
+import { CONFIG } from "@/content/config";
+
 export type Story = {
   n: string;
   slug: string;
@@ -11,12 +13,34 @@ export type Story = {
     did: string[];
     tech?: string;
     note?: string;
+    link?: { label: string; href: string };
   };
 };
 
 export const STORIES: Story[] = [
   {
     n: "01",
+    slug: "dashly",
+    s: "Dashly",
+    scale: "Live SaaS · co-founded",
+    badge: "Live",
+    d: "A production project-portfolio SaaS I co-founded and lead the build on: AI health scoring, 26 industry-specific financial calculators, and multi-tenant teams with role-based access and MFA. Around 47,000 lines of TypeScript across 56 Postgres migrations, live at dashlyhq.com.",
+    case: {
+      intro:
+        "Dashly is a strategic project-portfolio management platform for emerging markets, live in production at dashlyhq.com. I co-founded it and lead the engineering: teams track project health, risk, budgets and milestones in one place, with AI-assisted insights and industry-grade financial tooling built in.",
+      did: [
+        "Architected the multi-tenant SaaS on Next.js 16 and Supabase: Postgres with row-level-security isolation, MFA, role-based teams and per-workspace data separation, backed by RLS-isolation tests",
+        "Built Dashly Sense, the AI health-scoring layer: Anthropic-powered structured insights with forced tool-use and schema validation, grading each project across schedule, budget, risk, progress and activity",
+        "Shipped 26 industry-specific financial calculators (NPV, DSCR, OEE, RevPAR, SROI and more) through a single factory pattern, each a validated input schema plus a pure compute function",
+        "Delivered the planning surface: portfolio dashboard, calendar and Gantt, board-ready PDF reports and multi-workspace switching",
+        "Hardened it for production: rate limiting, error tracking, a server-rendered data layer and PWA offline support, across roughly 47,000 lines of TypeScript and 56 database migrations",
+      ],
+      tech: "Next.js 16 · React 19 · TypeScript · Supabase · Tailwind v4 · Anthropic API · TanStack Query",
+      link: { label: "dashlyhq.com ↗", href: CONFIG.links.dashly },
+    },
+  },
+  {
+    n: "02",
     slug: "telecom-analytics-audit",
     s: "Telecommunications",
     scale: "National operator",
@@ -36,7 +60,7 @@ export const STORIES: Story[] = [
     },
   },
   {
-    n: "02",
+    n: "03",
     slug: "insurance-conference-platform",
     s: "Insurance",
     scale: "215-delegate conference",
@@ -56,7 +80,7 @@ export const STORIES: Story[] = [
     },
   },
   {
-    n: "03",
+    n: "04",
     slug: "health-insurance-mis",
     s: "Health insurance",
     scale: "ILO-commissioned · national authority",
@@ -76,7 +100,7 @@ export const STORIES: Story[] = [
     },
   },
   {
-    n: "04",
+    n: "05",
     slug: "whatsapp-ussd-platform",
     s: "Messaging platform",
     scale: "WhatsApp + USSD · solo build",
@@ -96,7 +120,7 @@ export const STORIES: Story[] = [
     },
   },
   {
-    n: "05",
+    n: "06",
     slug: "insurtech-internship",
     s: "InsurTech",
     scale: "Malaysia · 15-week engagement",
