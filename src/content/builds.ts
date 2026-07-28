@@ -18,6 +18,11 @@ export const BUILDS: Build[] = [
     d: "Monitoring & evaluation platform: assessment, finance, grievance, investigation and mapping modules, built for programme teams.",
   },
   {
+    t: "WhatsApp automation chatbot",
+    stack: "WhatsApp Cloud API · Google Sheets API · Node.js · Nginx · PM2",
+    d: "Promotion chatbot: guided conversational flows, proof-of-purchase image upload with media processing, automated confirmations and FAQ routing. WhatsApp Business Cloud API wired to Google Sheets for live structured capture, on a hardened cloud host. Sole developer; delivered to production, since decommissioned. Built via Big Mango Events Management for a national Bobtail promotion.",
+  },
+  {
     t: "This site",
     stack: "Next.js 16 · TypeScript · Tailwind v4",
     d: "Dark by design, audited like the systems it describes: reduced-motion paths, axe-clean accessibility, Lighthouse 95+ desktop. Verified claims only.",

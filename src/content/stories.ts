@@ -6,7 +6,7 @@ export type Story = {
   slug: string;
   s: string;
   scale: string;
-  badge: "Under NDA" | "Shipped" | "Live" | "Contract" | "Internship";
+  badge: "Confidential" | "Shipped" | "Live" | "Contract" | "Internship";
   d: string;
   case: {
     intro: string;
@@ -44,7 +44,7 @@ export const STORIES: Story[] = [
     slug: "telecom-analytics-audit",
     s: "Telecommunications",
     scale: "National operator",
-    badge: "Under NDA",
+    badge: "Confidential",
     d: "Audited a customer-analytics pipeline: a join silently multiplying rows, an inverted recency score, a collapsed monetary tier, mixed-unit revenue reconciliation. Each documented with reproduction, impact, correction.",
     case: {
       intro:
@@ -56,7 +56,7 @@ export const STORIES: Story[] = [
         "Reconciled mixed-unit revenue figures so reported totals traced cleanly to source",
         "Documented every issue with reproduction steps, business impact, and the correction applied",
       ],
-      note: "The operator stays unnamed under NDA. The findings pattern is the point: numbers that pass review can still be wrong, and the fix starts with reproduction.",
+      note: "The operator stays unnamed by choice: it is the employer's client and the findings are unflattering, so it is not a relationship to publicise. The pattern is the point: numbers that pass review can still be wrong, and the fix starts with reproduction.",
     },
   },
   {

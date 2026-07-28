@@ -64,7 +64,7 @@ export default async function CaseOutline({
           </span>
           <span
             className={`rounded-full border border-line px-3.5 py-1.5 font-mono text-[11px] ${
-              story.badge === "Under NDA" ? "text-dim" : "text-accent"
+              story.badge === "Confidential" ? "text-dim" : "text-accent"
             }`}
           >
             {story.badge}

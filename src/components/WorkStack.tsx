@@ -56,7 +56,7 @@ export default function WorkStack() {
       {STORIES.map((s, i) => (
         <article
           key={s.n}
-          data-cursor={s.badge === "Under NDA" ? "NDA" : "VIEW"}
+          data-cursor={s.badge === "Confidential" ? "PRIVATE" : "VIEW"}
           onMouseEnter={() => desktop() && setPreview(s)}
           onMouseLeave={() => setPreview(null)}
           onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
@@ -82,7 +82,7 @@ export default function WorkStack() {
           </p>
           <span
             className={`self-start rounded-full border border-line px-3.5 py-1.5 font-mono text-[11px] ${
-              s.badge === "Under NDA" ? "text-dim" : "text-accent"
+              s.badge === "Confidential" ? "text-dim" : "text-accent"
             }`}
           >
             {s.badge}
