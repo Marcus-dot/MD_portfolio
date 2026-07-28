@@ -122,6 +122,27 @@ export const STORIES: Story[] = [
   },
   {
     n: "06",
+    slug: "whatsapp-promotion-chatbot",
+    s: "WhatsApp chatbot",
+    scale: "Bobtail promotion · solo build",
+    badge: "Shipped",
+    d: "Promotion chatbot on the WhatsApp Business Cloud API: guided conversational flows, proof-of-purchase image upload with media processing, automated confirmations and FAQ routing, wired to Google Sheets for live structured capture. Sole developer, hardened deploy; delivered to production, since decommissioned.",
+    case: {
+      intro:
+        "A WhatsApp chatbot built for a national Bobtail promotion, delivered via Big Mango Events Management. It guided entrants through a conversational flow, captured proof-of-purchase images, and confirmed entries automatically, with structured data landing live in Google Sheets for the promotion team. Sole developer, full lifecycle.",
+      did: [
+        "Built guided conversational flows on the WhatsApp Business Cloud API: state-managed entry steps, input validation and automated confirmations",
+        "Handled proof-of-purchase image upload with media processing and validation before an entry was accepted",
+        "Added FAQ routing so common questions were answered without human intervention",
+        "Integrated the WhatsApp Cloud API with the Google Sheets API for live, structured data capture the promotion team could read in real time",
+        "Provisioned and ran the production stack solo on a hardened cloud host: Nginx reverse proxy, SSL, PM2, Node.js",
+      ],
+      tech: "Node.js · WhatsApp Business Cloud API · Google Sheets API · Nginx · PM2",
+      note: "Delivered to production for a national Bobtail promotion via Big Mango Events Management. The engagement has since ended and the bot is decommissioned.",
+    },
+  },
+  {
+    n: "07",
     slug: "insurtech-internship",
     s: "InsurTech",
     scale: "Malaysia · 15-week engagement",
