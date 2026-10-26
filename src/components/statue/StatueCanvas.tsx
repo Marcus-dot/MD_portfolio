@@ -139,7 +139,8 @@ export default function StatueCanvas({
       ctx.clearRect(0, 0, w, h);
       const A = atlas.canvas, S = atlas.size;
 
-      let f = frames[0];
+      // a turntable shown still faces front (middle frame)
+      let f = frames[Math.floor(frames.length / 2)];
       if (turn) {
         const target = idle
           ? (frames.length - 1) / 2 + (reduce ? 0 : Math.sin(now * 0.4) * 3)

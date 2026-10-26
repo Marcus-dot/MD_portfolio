@@ -20,6 +20,7 @@ const COMMANDS: Command[] = [
   { k: "Go to Method", hint: "operating principles", href: "#method" },
   { k: "Contact", hint: "open channel", href: "#contact" },
   { k: "Open CV", hint: "interactive CV · save as PDF", href: "/cv" },
+  { k: "Visit the Cast Room", hint: "every statue on the site", href: "/cast-room" },
   { k: "Open GitHub", hint: "github.com/Marcus-dot", external: CONFIG.links.github },
   { k: "Open LinkedIn", hint: "profile", external: CONFIG.links.linkedin },
   { k: "Copy email", hint: CONFIG.email, action: "email" },

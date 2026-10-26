@@ -6,6 +6,8 @@ import { CONFIG } from "@/content/config";
 import { CASE_STATUE, STATUES } from "@/content/statues";
 import SectionStatue from "@/components/statue/SectionStatue";
 import Grain from "@/components/Grain";
+import TypedLine from "@/components/TypedLine";
+import { MEDITATIONS } from "@/content/meditations";
 
 export function generateStaticParams() {
   return STORIES.map((s) => ({ slug: s.slug }));
@@ -43,7 +45,7 @@ export default async function CaseOutline({
       {/* beside the reading column on wide screens; dimmed behind the title on phones */}
       <SectionStatue
         statue={statue}
-        className="!absolute top-[140px] right-[clamp(20px,4vw,70px)] h-[clamp(300px,30vw,440px)] w-[clamp(220px,22vw,320px)] min-[640px]:max-[1259px]:!hidden max-[639px]:!top-[90px] max-[639px]:!bottom-auto max-[639px]:opacity-40"
+        className="!absolute top-[140px] right-[clamp(20px,4vw,70px)] h-[clamp(300px,30vw,440px)] w-[clamp(220px,22vw,320px)] min-[640px]:max-[1259px]:!hidden max-[639px]:!top-[250px] max-[639px]:!bottom-auto max-[639px]:opacity-30"
       />
       {/* slim header - anchors on the home page, not here */}
       <header className="flex items-center justify-between px-page pt-8">
@@ -62,6 +64,7 @@ export default async function CaseOutline({
       </header>
 
       <main className="mx-auto max-w-[820px] px-page pt-[clamp(60px,10vh,120px)] pb-[clamp(80px,12vh,140px)]">
+        <TypedLine line={MEDITATIONS.caseOutline} className="relative z-[1] mb-12 max-w-[460px]" />
         <div className="font-mono text-[11px] tracking-[0.2em] text-faint">
           CASE OUTLINE · {story.n}
         </div>

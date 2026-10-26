@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Grain from "@/components/Grain";
+import TypedLine from "@/components/TypedLine";
+import { MEDITATIONS } from "@/content/meditations";
 import StatueCanvas from "@/components/statue/StatueCanvas";
 import { STATUES } from "@/content/statues";
 
@@ -25,6 +27,7 @@ export default function NotFound() {
       </div>
 
       <div className="pointer-events-none relative z-[2] flex min-h-dvh flex-col justify-end px-page pb-[clamp(50px,9vh,100px)]">
+        <TypedLine line={MEDITATIONS.notFound} className="mb-10 max-w-[420px]" />
         <div className="mb-6 font-mono text-[11px] tracking-[0.2em] text-accent">ERROR 404</div>
         <h1 className="m-0 text-[clamp(48px,9vw,128px)] font-bold uppercase leading-[0.92] tracking-[-0.045em]">
           Lost

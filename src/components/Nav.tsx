@@ -30,6 +30,12 @@ export default function Nav() {
           >
             CV
           </Link>
+          <Link
+            href="/cast-room"
+            className="rounded-full px-3.5 py-2 text-[13px] font-medium whitespace-nowrap text-dim no-underline transition-colors duration-300 hover:bg-white/[0.06] hover:text-text"
+          >
+            Casts
+          </Link>
         </span>
         <PaletteTrigger />
         <Magnetic

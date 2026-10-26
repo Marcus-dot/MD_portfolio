@@ -5,7 +5,7 @@ import { STATUES } from "@/content/statues";
 
 export default function Background() {
   return (
-    <section className="border-t border-line px-page py-[clamp(80px,12vh,140px)]">
+    <section id="education" className="border-t border-line px-page py-[clamp(80px,12vh,140px)]">
       <div className="flex flex-wrap items-start gap-x-16 gap-y-12">
         {/* Education */}
         <Reveal className="relative min-w-[280px] flex-[1_1_320px]">

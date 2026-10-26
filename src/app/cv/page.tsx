@@ -10,6 +10,8 @@ import Grain from "@/components/Grain";
 import LusakaClock from "@/components/LusakaClock";
 import Reveal from "@/components/Reveal";
 import Toast from "@/components/Toast";
+import TypedLine from "@/components/TypedLine";
+import { MEDITATIONS } from "@/content/meditations";
 import SectionStatue from "@/components/statue/SectionStatue";
 import { STATUES } from "@/content/statues";
 
@@ -51,8 +53,9 @@ export default function CvPage() {
         <div className="relative">
         <SectionStatue
           statue={STATUES.homer}
-          className="!absolute right-0 bottom-[70px] h-[clamp(260px,28vw,400px)] w-[clamp(220px,24vw,340px)] max-[1023px]:opacity-40 max-[639px]:!top-[-30px] max-[639px]:!bottom-auto"
+          className="!absolute right-0 bottom-[70px] h-[clamp(260px,28vw,400px)] w-[clamp(220px,24vw,340px)] max-[1023px]:opacity-40 max-[639px]:!top-[110px] max-[639px]:!bottom-auto"
         />
+        <TypedLine line={MEDITATIONS.cv} className="relative z-[1] mb-12 max-w-[440px] print:hidden" />
         <Reveal>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] tracking-[0.2em] text-faint">
             <span>CURRICULUM VITAE · UPDATED {CV_UPDATED.toUpperCase()}</span>

@@ -72,6 +72,12 @@ export default function Footer() {
         >
           CV →
         </Link>
+        <Link
+          href="/cast-room"
+          className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
+        >
+          Cast Room →
+        </Link>
       </div>
       <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
         <span>© 2026 Madalitso Daka · Lusaka, Zambia</span>
