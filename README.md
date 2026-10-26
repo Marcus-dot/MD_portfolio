@@ -29,6 +29,7 @@ lives in the components. No CMS.
 | Method principles | `src/content/principles.ts` |
 | "Also built" cards | `src/content/builds.ts` |
 | Education + tech stack | `src/content/stack.ts` |
+| CV page (/cv): summary, figures, roles, projects | `src/content/cv.ts` (skills come from `stack.ts`; project stacks must use the same names) |
 | Manifesto (scroll-typing text) | `MANIFESTO_TEXT` in `src/components/Manifesto.tsx` |
 | Marquee phrases | `PHRASES` in `src/components/Marquee.tsx` |
 | Hero intro line | `src/components/Hero.tsx` |

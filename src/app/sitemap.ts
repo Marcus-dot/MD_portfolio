@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${CONFIG.siteUrl}/cv`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     ...STORIES.map((s) => ({
       url: `${CONFIG.siteUrl}/work/${s.slug}`,
       lastModified: new Date(),

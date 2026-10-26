@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONFIG } from "@/content/config";
 import LusakaClock from "./LusakaClock";
 import Magnetic from "./Magnetic";
@@ -62,6 +63,12 @@ export default function Footer() {
         >
           LinkedIn ↗
         </a>
+        <Link
+          href="/cv"
+          className="text-dim no-underline transition-colors hover:text-accent"
+        >
+          CV →
+        </Link>
       </div>
       <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
         <span>© 2026 Madalitso Daka · Lusaka, Zambia</span>

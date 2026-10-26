@@ -19,6 +19,7 @@ const COMMANDS: Command[] = [
   { k: "Go to Skills", hint: "capability grid", href: "#skills" },
   { k: "Go to Method", hint: "operating principles", href: "#method" },
   { k: "Contact", hint: "open channel", href: "#contact" },
+  { k: "Open CV", hint: "interactive CV · save as PDF", href: "/cv" },
   { k: "Open GitHub", hint: "github.com/Marcus-dot", external: CONFIG.links.github },
   { k: "Open LinkedIn", hint: "profile", external: CONFIG.links.linkedin },
   { k: "Copy email", hint: CONFIG.email, action: "email" },
@@ -75,6 +76,8 @@ function Panel({ close }: { close: () => void }) {
       toast("EMAIL COPIED");
     } else if (c.external) {
       window.open(c.external, "_blank", "noopener,noreferrer");
+    } else if (c.href?.startsWith("/")) {
+      window.location.assign(c.href);
     } else if (c.href) {
       document.querySelector(c.href)?.scrollIntoView({ behavior: "smooth" });
     }

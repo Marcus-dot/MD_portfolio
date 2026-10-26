@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Magnetic from "./Magnetic";
 import PaletteTrigger from "./PaletteTrigger";
 
@@ -23,6 +24,12 @@ export default function Nav() {
               {n}
             </a>
           ))}
+          <Link
+            href="/cv"
+            className="rounded-full px-3.5 py-2 text-[13px] font-medium whitespace-nowrap text-dim no-underline transition-colors duration-300 hover:bg-white/[0.06] hover:text-text"
+          >
+            CV
+          </Link>
         </span>
         <PaletteTrigger />
         <Magnetic
