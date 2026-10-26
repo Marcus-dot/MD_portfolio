@@ -13,7 +13,7 @@ export default function SectionStatue({
 }) {
   return (
     <figure
-      className={`relative m-0 shrink-0 print:hidden max-[639px]:pointer-events-none max-[639px]:!absolute max-[639px]:right-[-6px] max-[639px]:bottom-0 max-[639px]:z-0 max-[639px]:!mb-0 max-[639px]:!h-[230px] max-[639px]:!w-[170px] max-[639px]:opacity-55 ${className}`}
+      className={`relative m-0 shrink-0 print:hidden max-[639px]:pointer-events-none max-[639px]:!absolute max-[639px]:right-0 max-[639px]:bottom-0 max-[639px]:z-0 max-[639px]:!mb-0 max-[639px]:!h-[230px] max-[639px]:!w-[170px] max-[639px]:opacity-55 ${className}`}
     >
       <StatueCanvas src={statue.src} label={statue.label} targetCell={4} />
       <figcaption className="absolute right-0 -bottom-6 max-[639px]:hidden font-mono text-[9.5px] tracking-[0.16em] whitespace-nowrap text-faint">

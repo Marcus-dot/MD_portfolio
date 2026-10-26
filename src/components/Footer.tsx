@@ -3,6 +3,8 @@ import { CONFIG } from "@/content/config";
 import LusakaClock from "./LusakaClock";
 import Magnetic from "./Magnetic";
 import Reveal from "./Reveal";
+import SectionStatue from "./statue/SectionStatue";
+import { STATUES } from "@/content/statues";
 
 export default function Footer() {
   return (
@@ -14,14 +16,15 @@ export default function Footer() {
         aria-hidden
         className="pointer-events-none absolute -bottom-[40%] left-1/2 h-[60vh] w-[80vw] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(40,53,38,0.9),transparent_65%)]"
       />
+      {/* the athlete a breath before the throw, beside the ask */}
+      <SectionStatue
+        statue={STATUES.discobolus}
+        className="!absolute bottom-[150px] left-[clamp(20px,4vw,70px)] h-[clamp(220px,25vw,380px)] w-[clamp(180px,19vw,290px)] max-[1199px]:opacity-40 max-[639px]:!top-10 max-[639px]:!bottom-auto max-[639px]:!opacity-25 max-[639px]:!left-[-10px] max-[639px]:!right-auto"
+      />
       <Reveal>
       <div className="relative text-center">
-        <div className="mb-7 flex items-center justify-center gap-2.5 font-mono text-[12px] tracking-[0.2em] text-dim">
-          <span
-            aria-hidden
-            className="inline-block h-[7px] w-[7px] rounded-full bg-accent"
-          />
-          OPEN FOR SELECT ENGAGEMENTS
+        <div className="mb-7 font-mono text-[12px] tracking-[0.2em] text-dim">
+          OPEN TO SELECT ENGAGEMENTS
         </div>
         <h2 className="m-0 text-[clamp(44px,9vw,120px)] font-semibold leading-[0.98] tracking-[-0.045em]">
           Building something

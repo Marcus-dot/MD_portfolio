@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { STORIES } from "@/content/stories";
 import { CONFIG } from "@/content/config";
+import { CASE_STATUE, STATUES } from "@/content/statues";
+import SectionStatue from "@/components/statue/SectionStatue";
+import Grain from "@/components/Grain";
 
 export function generateStaticParams() {
   return STORIES.map((s) => ({ slug: s.slug }));
@@ -32,8 +35,16 @@ export default async function CaseOutline({
   const story = STORIES.find((s) => s.slug === slug);
   if (!story) notFound();
 
+  const statue = STATUES[CASE_STATUE[story.slug] ?? "marcus"];
+
   return (
-    <div className="min-h-dvh">
+    <div className="relative min-h-dvh">
+      <Grain />
+      {/* beside the reading column on wide screens; dimmed behind the title on phones */}
+      <SectionStatue
+        statue={statue}
+        className="!absolute top-[140px] right-[clamp(20px,4vw,70px)] h-[clamp(300px,30vw,440px)] w-[clamp(220px,22vw,320px)] min-[640px]:max-[1259px]:!hidden max-[639px]:!top-[90px] max-[639px]:!bottom-auto max-[639px]:opacity-40"
+      />
       {/* slim header - anchors on the home page, not here */}
       <header className="flex items-center justify-between px-page pt-8">
         <Link

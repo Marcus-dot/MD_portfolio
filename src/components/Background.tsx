@@ -1,12 +1,14 @@
 import { EDUCATION, STACK } from "@/content/stack";
 import Reveal from "./Reveal";
+import SectionStatue from "./statue/SectionStatue";
+import { STATUES } from "@/content/statues";
 
 export default function Background() {
   return (
     <section className="border-t border-line px-page py-[clamp(80px,12vh,140px)]">
       <div className="flex flex-wrap items-start gap-x-16 gap-y-12">
         {/* Education */}
-        <Reveal className="min-w-[280px] flex-[1_1_320px]">
+        <Reveal className="relative min-w-[280px] flex-[1_1_320px]">
           <div className="mb-7 font-mono text-[11px] tracking-[0.2em] text-faint">
             EDUCATION
           </div>
@@ -28,6 +30,11 @@ export default function Background() {
               )}
             </div>
           ))}
+          {/* Aristotle's student, under the education he'd recognise */}
+          <SectionStatue
+            statue={STATUES.alexander}
+            className="mt-4 h-[clamp(240px,24vw,340px)] w-[clamp(200px,20vw,290px)] max-[639px]:!top-0 max-[639px]:!bottom-auto max-[639px]:opacity-35"
+          />
         </Reveal>
 
         {/* Stack */}

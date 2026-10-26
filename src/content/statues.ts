@@ -41,4 +41,30 @@ export const STATUES = {
     caption: "HOMER · CAST, SMK",
     label: "A bust of Homer drawn in etched tiles",
   },
+  discobolus: {
+    src: "/statue/discobolus.png",
+    caption: "DISCOBOLUS · CAST, SMK",
+    label: "The Discobolus, an athlete about to throw, drawn in etched tiles",
+  },
+  alexander: {
+    src: "/statue/alexander.png",
+    caption: "ALEXANDER AS HELIOS · CAST, SMK",
+    label: "A head of Alexander the Great as the sun god Helios drawn in etched tiles",
+  },
+  zeus: {
+    src: "/statue/zeus.png",
+    caption: "ZEUS AMMON · CAST, SMK",
+    label: "A head of Zeus Ammon with ram's horns drawn in etched tiles",
+  },
 } satisfies Record<string, Statue>;
+
+/* One statue per case outline, chosen for what the work was. */
+export const CASE_STATUE: Record<string, keyof typeof STATUES> = {
+  dashly: "zeus", // the founder's own product
+  "telecom-analytics-audit": "apollo", // god of truth: numbers that pass review can still be wrong
+  "insurance-conference-platform": "homer", // a hall of 215 listeners
+  "health-insurance-mis": "athena", // strategy and process design
+  "whatsapp-ussd-platform": "hercules", // the whole stack, carried solo
+  "whatsapp-promotion-chatbot": "discobolus", // one clean throw, delivered and done
+  "insurtech-internship": "alexander", // the student years
+};

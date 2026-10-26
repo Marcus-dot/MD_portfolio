@@ -45,6 +45,9 @@ const STATUES = [
   { name: "apollo", file: "apollo.stl", yaw: 0, z: [0.02, 1] },
   { name: "torso", file: "torso.stl", yaw: 0, z: [0.08, 1] },
   { name: "homer", file: "homer.stl", yaw: 0, z: [0.25, 1] },
+  { name: "discobolus", file: "discobolus.stl", yaw: 0, z: [0.02, 1] },
+  { name: "alexander", file: "alexander.stl", yaw: 90, z: [0.25, 1] },
+  { name: "zeus", file: "zeus.stl", yaw: 0, z: [0.25, 1] },
 ];
 
 /* ---------- mesh ---------- */

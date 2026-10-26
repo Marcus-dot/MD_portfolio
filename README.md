@@ -36,7 +36,7 @@ lives in the components. No CMS.
 | NexVenue stats (215 / 71 / 2) | `src/components/Flagship.tsx` |
 | Footer NOW line | `src/components/Footer.tsx` |
 | Case-study pages (/work/…) | `case` blocks in `src/content/stories.ts` |
-| Statues (hero, Work, Claims, Method, /cv, 404) | `src/content/statues.ts` + baked maps in `public/statue/` (see below) |
+| Statues (hero, Work, Claims, Method, Education, footer, /cv, case pages, 404) | `src/content/statues.ts` + baked maps in `public/statue/` (see below) |
 | OG share image | regenerate: edit `scripts/og-template.html`, then `node scripts/screenshot.mjs "file://$PWD/scripts/og-template.html" public/og.png '' 1200 630 3000` |
 
 **Content rules** (from PROJECT_PLAN.md): never invent numbers, ratings or
@@ -77,4 +77,4 @@ Sources (keep the credit line for the Marcus scan, its licence requires it):
 | Statue | Source | Licence |
 | --- | --- | --- |
 | Marcus Aurelius (hero) | MAH Geneva inv. 19050, 3D scan by Rama, Wikimedia Commons | CC BY-SA 3.0 FR |
-| Farnese Hercules head, Hope Athena head, Apollo Belvedere, Belvedere Torso, Homer | SMK Royal Cast Collection, `api.smk.dk` (KAS701, KAS275, KAS353, KAS402, KAS210) | Public domain |
+| Farnese Hercules head, Hope Athena head, Apollo Belvedere, Belvedere Torso, Homer, Discobolus, Alexander as Helios, Zeus Ammon | SMK Royal Cast Collection, `api.smk.dk` (KAS701, KAS275, KAS353, KAS402, KAS210, KAS1549, KAS283, KAS1110) | Public domain |
