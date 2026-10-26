@@ -36,7 +36,7 @@ lives in the components. No CMS.
 | NexVenue stats (215 / 71 / 2) | `src/components/Flagship.tsx` |
 | Footer NOW line | `src/components/Footer.tsx` |
 | Case-study pages (/work/…) | `case` blocks in `src/content/stories.ts` |
-| Portrait | replace `public/portrait.jpg` (source: `portrait-original.jpeg`) |
+| Statues (hero, Work, Claims, Method, /cv, 404) | `src/content/statues.ts` + baked maps in `public/statue/` (see below) |
 | OG share image | regenerate: edit `scripts/og-template.html`, then `node scripts/screenshot.mjs "file://$PWD/scripts/og-template.html" public/og.png '' 1200 630 3000` |
 
 **Content rules** (from PROJECT_PLAN.md): never invent numbers, ratings or
@@ -60,3 +60,21 @@ Motion honours `prefers-reduced-motion` everywhere; the loader runs once
 per session (shorter on mobile). Printing the homepage (Cmd/Ctrl+P)
 produces a clean CV-style document — there is deliberately no PDF download. Lighthouse (last run): desktop 98/96→100/100/100, mobile
 89–93/100/100/100.
+
+## Statues
+
+The statues are real 3D scans, baked into small PNG "cell maps" that a 2D
+canvas (`src/components/statue/`) relights every frame. To add or re-bake one,
+put the source `.stl` files in a folder outside the repo, add an entry to
+`STATUES` in `scripts/statue/bake.mjs`, then:
+
+```bash
+node scripts/statue/bake.mjs <folder-with-stl-files> public/statue
+```
+
+Sources (keep the credit line for the Marcus scan, its licence requires it):
+
+| Statue | Source | Licence |
+| --- | --- | --- |
+| Marcus Aurelius (hero) | MAH Geneva inv. 19050, 3D scan by Rama, Wikimedia Commons | CC BY-SA 3.0 FR |
+| Farnese Hercules head, Hope Athena head, Apollo Belvedere, Belvedere Torso, Homer | SMK Royal Cast Collection, `api.smk.dk` (KAS701, KAS275, KAS353, KAS402, KAS210) | Public domain |

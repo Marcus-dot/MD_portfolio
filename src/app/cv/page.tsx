@@ -10,6 +10,8 @@ import Grain from "@/components/Grain";
 import LusakaClock from "@/components/LusakaClock";
 import Reveal from "@/components/Reveal";
 import Toast from "@/components/Toast";
+import SectionStatue from "@/components/statue/SectionStatue";
+import { STATUES } from "@/content/statues";
 
 export const metadata: Metadata = {
   title: "CV - Madalitso Daka",
@@ -38,7 +40,7 @@ export default function CvPage() {
         </Link>
         <Link
           href="/"
-          className="font-mono text-[11px] tracking-[0.12em] text-dim no-underline transition-colors hover:text-accent"
+          className="font-mono text-[11px] tracking-[0.12em] text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
         >
           ← PORTFOLIO
         </Link>
@@ -46,6 +48,11 @@ export default function CvPage() {
 
       <div className="px-page pt-[clamp(60px,12vh,140px)] pb-[clamp(80px,12vh,140px)] print:p-0">
         {/* masthead */}
+        <div className="relative">
+        <SectionStatue
+          statue={STATUES.homer}
+          className="!absolute right-0 bottom-[70px] h-[clamp(260px,28vw,400px)] w-[clamp(220px,24vw,340px)] max-[1023px]:opacity-40 max-[639px]:!top-[-30px] max-[639px]:!bottom-auto"
+        />
         <Reveal>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] tracking-[0.2em] text-faint">
             <span>CURRICULUM VITAE · UPDATED {CV_UPDATED.toUpperCase()}</span>
@@ -79,6 +86,7 @@ export default function CvPage() {
             </div>
           </div>
         </Reveal>
+        </div>
 
         <div className="mt-[clamp(70px,12vh,130px)] grid print:mt-6 print:block gap-x-16 min-[1024px]:grid-cols-[200px_minmax(0,1fr)]">
           <aside>

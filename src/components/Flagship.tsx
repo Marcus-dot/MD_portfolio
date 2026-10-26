@@ -2,6 +2,8 @@ import Link from "next/link";
 import { CONFIG } from "@/content/config";
 import Magnetic from "./Magnetic";
 import Reveal from "./Reveal";
+import SectionStatue from "./statue/SectionStatue";
+import { STATUES } from "@/content/statues";
 
 const STATS: [string, string][] = [
   ["215", "delegates"],
@@ -25,12 +27,15 @@ const STORE_LINKS: [string, string][] = [
 export default function Flagship() {
   return (
     <div>
-      <Reveal>
-        <h2 className="mb-10 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-          Two products are{" "}
-          <em className="font-serif font-normal italic text-accent">public.</em>
-        </h2>
-      </Reveal>
+      <div className="relative mb-10 flex min-h-[200px] items-end max-[639px]:pt-10 justify-between gap-10">
+        <Reveal className="relative z-[1]">
+          <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
+            Two products are{" "}
+            <em className="font-serif font-normal italic text-accent">public.</em>
+          </h2>
+        </Reveal>
+        <SectionStatue statue={STATUES.hercules} className="mb-6 h-[clamp(240px,30vw,380px)] w-[clamp(200px,25vw,320px)]" />
+      </div>
       <Reveal delay={0.08}>
       <div className="flex flex-wrap overflow-hidden rounded-[28px] border border-line bg-[linear-gradient(140deg,var(--musgo),var(--bg)_75%)]">
         <div className="flex-[1_1_460px] p-[clamp(36px,5vw,64px)]">
@@ -122,7 +127,7 @@ export default function Flagship() {
             </Magnetic>
             <Link
               href="/work/dashly"
-              className="font-mono text-[11px] tracking-[0.08em] text-accent no-underline"
+              className="font-mono pointer-coarse:py-3 text-[11px] tracking-[0.08em] text-accent no-underline"
             >
               CASE OUTLINE →
             </Link>

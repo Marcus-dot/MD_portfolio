@@ -1,26 +1,31 @@
-import HeroPortrait from "./HeroPortrait";
+import { STATUES } from "@/content/statues";
+import StatueCanvas from "./statue/StatueCanvas";
 import LusakaClock from "./LusakaClock";
 import Magnetic from "./Magnetic";
 
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-dvh overflow-hidden">
-      {/* full-bleed portrait column, right side */}
-      <div className="hero-portrait absolute top-0 right-0 bottom-0 w-[min(46vw,620px)] min-w-[280px] overflow-hidden max-[760px]:w-full max-[760px]:min-w-0 max-[760px]:opacity-40">
-        <HeroPortrait />
-        {/* moss duotone + fade into the black page */}
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[rgba(40,53,38,0.14)] mix-blend-multiply"
+      {/* statue column, right side - Marcus turns to follow the pointer */}
+      <div className="hero-portrait absolute top-0 right-0 bottom-0 w-[min(52vw,780px)] min-w-[280px] max-[760px]:w-full max-[760px]:min-w-0 max-[760px]:opacity-60">
+        <StatueCanvas
+          src={STATUES.marcus.src}
+          label={STATUES.marcus.label}
+          turn
+          scope="window"
+          waitLoader
+          className="absolute inset-x-0 top-[80px] bottom-0 max-[760px]:bottom-[40%]"
         />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(90deg,var(--bg)_0%,transparent_18%),linear-gradient(0deg,var(--bg)_0%,transparent_24%)]"
-        />
+        <div className="pointer-events-none absolute top-[84px] right-[clamp(20px,6vw,100px)] hidden text-right font-mono text-[9.5px] leading-[1.7] tracking-[0.14em] text-faint min-[761px]:block">
+          {STATUES.marcus.caption}
+          <br />
+          <span className="tracking-[0.06em] normal-case">{STATUES.marcus.credit}</span>
+        </div>
       </div>
 
-      {/* content layer - name overlaps the portrait edge */}
-      <div className="relative z-[2] flex min-h-dvh flex-col justify-end px-page pt-[140px] pb-[clamp(50px,8vh,90px)]">
+      {/* content layer - name overlaps the statue edge; clicks fall through to
+          the statue except on the actual links */}
+      <div className="pointer-events-none relative z-[2] flex min-h-dvh [&_a]:pointer-events-auto [&_button]:pointer-events-auto flex-col justify-end px-page pt-[140px] pb-[clamp(50px,8vh,90px)]">
         <div
           className="hero-fade mb-7 flex flex-wrap items-center gap-[18px]"
           style={{ animationDelay: "0.2s" }}
