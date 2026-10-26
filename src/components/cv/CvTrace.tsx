@@ -52,7 +52,7 @@ export default function CvTrace({
                       aria-pressed={on}
                       onClick={() => pick(item)}
                       data-cursor="VIEW"
-                      className={`cursor-pointer rounded-full border px-3 py-1 text-[12.5px] transition-colors duration-300 ${
+                      className={`cursor-pointer rounded-full border px-3 py-1 text-[12.5px] transition-colors duration-300 pointer-coarse:py-2.5 ${
                         on
                           ? "border-accent bg-accent text-bg"
                           : "border-line bg-transparent text-text hover:border-line-hover"

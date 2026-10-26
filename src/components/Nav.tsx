@@ -35,7 +35,7 @@ export default function Nav() {
         <Magnetic
           href="#contact"
           strength={0.25}
-          className="ml-1 inline-flex shrink-0 items-center rounded-full bg-text px-5 py-2.5 text-[13px] leading-none font-semibold whitespace-nowrap text-bg no-underline"
+          className="ml-1 inline-flex shrink-0 items-center rounded-full bg-text px-5 py-2.5 pointer-coarse:py-3.5 text-[13px] leading-none font-semibold whitespace-nowrap text-bg no-underline"
         >
           Let&apos;s&nbsp;talk
         </Magnetic>

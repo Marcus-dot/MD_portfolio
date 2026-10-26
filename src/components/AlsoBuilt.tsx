@@ -4,12 +4,13 @@ import Reveal from "./Reveal";
 export default function AlsoBuilt() {
   return (
     <div className="mt-[100px]">
-      <div className="mb-[30px] font-mono text-[11px] tracking-[0.2em] text-faint">
+      <div className="mb-[30px] flex items-baseline justify-between font-mono text-[11px] tracking-[0.2em] text-faint">
         ALSO BUILT
+        <span className="tracking-[0.1em] min-[640px]:hidden">SWIPE →</span>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[18px]">
+      <div className="rail grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[18px]">
         {BUILDS.map((b, i) => (
-          <Reveal key={b.t} delay={i * 0.08} className="h-full">
+          <Reveal key={b.t} delay={i * 0.08} className="rail-item h-full">
             <div className="h-full rounded-3xl border border-line bg-surface px-7 py-[30px]">
               <div className="text-[18px] font-semibold tracking-[-0.02em]">
                 {b.t}

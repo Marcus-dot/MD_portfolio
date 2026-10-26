@@ -60,8 +60,8 @@ export default function WorkStack() {
           onMouseEnter={() => desktop() && setPreview(s)}
           onMouseLeave={() => setPreview(null)}
           onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
-          className="sticky mb-[26px] flex flex-wrap items-baseline gap-7 rounded-[26px] border border-line bg-[linear-gradient(150deg,#131713,var(--bg))] p-[clamp(28px,4vw,48px)] shadow-[0_-20px_50px_-30px_rgba(0,0,0,0.9)]"
-          style={{ top: `calc(90px + ${i * 26}px)` }}
+          className="sticky mb-[26px] flex [--stack-step:26px] [--stack-top:90px] max-[639px]:[--stack-step:10px] max-[639px]:[--stack-top:72px] flex-wrap items-baseline gap-7 rounded-[26px] border border-line bg-[linear-gradient(150deg,#131713,var(--bg))] p-[clamp(28px,4vw,48px)] shadow-[0_-20px_50px_-30px_rgba(0,0,0,0.9)]"
+          style={{ top: `calc(var(--stack-top) + ${i} * var(--stack-step))` }}
         >
           <span
             aria-hidden
@@ -89,7 +89,7 @@ export default function WorkStack() {
           </span>
           <a
             href={`/work/${s.slug}`}
-            className="w-full pt-1 text-right font-mono text-[11px] tracking-[0.08em] text-accent no-underline"
+            className="w-full pt-1 text-right font-mono pointer-coarse:py-3 text-[11px] tracking-[0.08em] text-accent no-underline"
           >
             CASE OUTLINE →
           </a>

@@ -44,7 +44,7 @@ export default async function CaseOutline({
         </Link>
         <Link
           href="/#work"
-          className="font-mono text-[11px] tracking-[0.12em] text-dim no-underline transition-colors hover:text-accent"
+          className="font-mono text-[11px] tracking-[0.12em] text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
         >
           ← ALL WORK
         </Link>

@@ -139,6 +139,29 @@ body {
   padding-inline: clamp(20px, 6vw, 100px);
 }
 
+/* Phones: a grid becomes a swipeable rail that bleeds to the screen edges.
+   Children opt in with `rail-item`. */
+@media (max-width: 639px) {
+  .rail {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * clamp(20px, 6vw, 100px));
+    padding-inline: clamp(20px, 6vw, 100px);
+    scroll-padding-inline: clamp(20px, 6vw, 100px);
+    overscroll-behavior-x: contain;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+  .rail-item {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+}
+
 .btn {
   transition:
     transform 0.4s var(--ease),

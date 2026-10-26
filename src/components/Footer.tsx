@@ -36,7 +36,7 @@ export default function Footer() {
         >
           {CONFIG.email} →
         </Magnetic>
-        <div className="mt-[22px] font-mono text-[12px] text-dim print:hidden">
+        <div className="mt-[22px] font-mono text-[12px] text-dim pointer-coarse:hidden print:hidden">
           or press <kbd>⌘K</kbd> anywhere
         </div>
         {/* print-only contact line - the CTA button above is interactive-only */}
@@ -51,7 +51,7 @@ export default function Footer() {
           href={CONFIG.links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-dim no-underline transition-colors hover:text-accent"
+          className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
         >
           GitHub ↗
         </a>
@@ -59,13 +59,13 @@ export default function Footer() {
           href={CONFIG.links.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-dim no-underline transition-colors hover:text-accent"
+          className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
         >
           LinkedIn ↗
         </a>
         <Link
           href="/cv"
-          className="text-dim no-underline transition-colors hover:text-accent"
+          className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
         >
           CV →
         </Link>
