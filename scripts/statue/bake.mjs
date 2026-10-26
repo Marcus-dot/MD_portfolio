@@ -34,6 +34,7 @@ const SS = 3; // supersample factor per cell axis
  * yaw       degrees about the vertical axis that puts the face to camera
  * z         [from, to] fraction of the scan's height to frame (crops plinths)
  * turn      also bake a -60..+60 turntable
+ * up        "y" / "-y" when a scan was exported lying down (y-up); stood upright on load
  *
  * marcus    MAH Geneva inv. 19050, 3D scan by Rama, Wikimedia Commons, CC BY-SA 3.0 FR
  * others    SMK Royal Cast Collection (api.smk.dk), public domain
@@ -48,11 +49,18 @@ const STATUES = [
   { name: "discobolus", file: "discobolus.stl", yaw: 0, z: [0.02, 1] },
   { name: "alexander", file: "alexander.stl", yaw: 90, z: [0.25, 1] },
   { name: "zeus", file: "zeus.stl", yaw: 0, z: [0.25, 1] },
+  { name: "laocoon", file: "laocoon.stl", yaw: 0, z: [0.02, 1] },
+  { name: "moses", file: "moses.stl", yaw: 0, z: [0.02, 1] },
+  { name: "gladiator", file: "gladiator.stl", yaw: 0, z: [0.02, 1] },
+  { name: "david", file: "david.stl", yaw: 30, z: [0.1, 1] },
+  { name: "faun", file: "faun.stl", yaw: 0, z: [0.02, 1] },
+  { name: "prisoner", file: "prisoner.stl", yaw: 0, z: [0.02, 1] },
+  { name: "pieta", file: "pieta.stl", yaw: 0, z: [0.02, 1], up: "y" },
 ];
 
 /* ---------- mesh ---------- */
 
-function loadStl(file) {
+function loadStl(file, up) {
   const b = fs.readFileSync(file);
   const n = b.readUInt32LE(80);
   const pos = new Float32Array(n * 9);
@@ -61,12 +69,22 @@ function loadStl(file) {
   for (let i = 0; i < n; i++) {
     const o = 84 + i * 50 + 12;
     for (let k = 0; k < 9; k++) {
-      const v = b.readFloatLE(o + k * 4);
-      pos[i * 9 + k] = v;
-      const a = k % 3;
-      if (v < min[a]) min[a] = v;
-      if (v > max[a]) max[a] = v;
+      pos[i * 9 + k] = b.readFloatLE(o + k * 4);
     }
+  }
+  // stand y-up scans upright: (x, y, z) -> (x, -z, y), or (x, z, -y) for -y
+  if (up === "y" || up === "-y") {
+    const sgn = up === "y" ? 1 : -1;
+    for (let k = 0; k < pos.length; k += 3) {
+      const y = pos[k + 1], z = pos[k + 2];
+      pos[k + 1] = -z * sgn;
+      pos[k + 2] = y * sgn;
+    }
+  }
+  for (let k = 0; k < pos.length; k++) {
+    const v = pos[k], a = k % 3;
+    if (v < min[a]) min[a] = v;
+    if (v > max[a]) max[a] = v;
   }
   return { n, pos, min, max };
 }
@@ -193,7 +211,7 @@ const rad = (d) => (d * Math.PI) / 180;
 
 for (const st of STATUES) {
   if (only && !only.includes(st.name)) continue;
-  const mesh = loadStl(path.join(srcDir, st.file));
+  const mesh = loadStl(path.join(srcDir, st.file), st.up);
   const frame = frameFor(mesh, st.z);
   if (process.env.PREVIEW) {
     writePng(
