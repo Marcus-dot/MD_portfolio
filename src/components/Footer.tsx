@@ -76,7 +76,7 @@ export default function Footer() {
       <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
         <span>© 2026 Madalitso Daka · Lusaka, Zambia</span>
         <span className="font-mono text-[11px]">
-          NOW: engineering at Gralix Technologies · shipping event tech
+          NOW: engineering at Gralix Technologies · co-founder of Dashly
         </span>
         <LusakaClock />
         <a
