@@ -1,7 +1,17 @@
-/* Additional build work - §5 of PORTFOLIO_SOURCE_OF_TRUTH.md. */
+/* Additional build work - §5 of PORTFOLIO_SOURCE_OF_TRUTH.md and the Oct 2026 CV. */
 export type Build = { t: string; stack: string; d: string };
 
 export const BUILDS: Build[] = [
+  {
+    t: "AgriPredict credit scoring",
+    stack: "Django · DRF · PostgreSQL",
+    d: "Agriculture credit-scoring platform for smallholder farmers in Zambia, a Gralix Actuarial Consulting and AgriPredict joint venture. Built the scoring platform and an internal double-entry ledger, with disbursement and collection over MTN MoMo, Airtel Money and Zamtel Kwacha.",
+  },
+  {
+    t: "Fixed-asset & finance module",
+    stack: "Django · PostgreSQL",
+    d: "Part of the team on a Gralix enterprise finance platform: asset transfers, straight-line and declining-balance depreciation with simulation, revaluations, disposal gain/loss, multi-currency, automatic double-entry posting and FIFO/LIFO/weighted-average stock with audit trails.",
+  },
   {
     t: "ZSIC SBP Tracker",
     stack: "Django · DRF · React · PostgreSQL",

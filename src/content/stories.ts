@@ -27,7 +27,7 @@ export const STORIES: Story[] = [
     d: "A production project-portfolio SaaS I co-founded and lead the build on: AI health scoring, 26 industry-specific financial calculators, and multi-tenant teams with role-based access and MFA. Around 47,000 lines of TypeScript across 56 Postgres migrations, live at dashlyhq.com.",
     case: {
       intro:
-        "Dashly is a strategic project-portfolio management platform for emerging markets, live in production at dashlyhq.com. I co-founded it and lead the engineering: teams track project health, risk, budgets and milestones in one place, with AI-assisted insights and industry-grade financial tooling built in.",
+        "Dashly is a strategic project-portfolio management platform for emerging markets, live in production at dashlyhq.com. I co-founded it, through Dashly Software, a registered software partnership in Zambia, and lead the engineering: teams track project health, risk, budgets and milestones in one place, with AI-assisted insights and industry-grade financial tooling built in.",
       did: [
         "Architected the multi-tenant SaaS on Next.js 16 and Supabase: Postgres with row-level-security isolation, MFA, role-based teams and per-workspace data separation, backed by RLS-isolation tests",
         "Built Dashly Sense, the AI health-scoring layer: Anthropic-powered structured insights with forced tool-use and schema validation, grading each project across schedule, budget, risk, progress and activity",

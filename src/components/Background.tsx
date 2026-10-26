@@ -21,6 +21,11 @@ export default function Background() {
               <div className="mt-1.5 font-mono text-[11px] tracking-[0.08em] text-faint uppercase">
                 {e.detail}
               </div>
+              {e.thesis && (
+                <p className="mt-3 mb-0 max-w-[380px] text-[13.5px] leading-[1.65] text-dim">
+                  {e.thesis}
+                </p>
+              )}
             </div>
           ))}
         </Reveal>
