@@ -37,7 +37,7 @@ export default function Flagship() {
         <SectionStatue statue={STATUES.hercules} className="mb-6 h-[clamp(240px,30vw,380px)] w-[clamp(200px,25vw,320px)]" />
       </div>
       <Reveal delay={0.08}>
-      <div className="flex flex-wrap overflow-hidden rounded-[28px] border border-line bg-[linear-gradient(140deg,var(--musgo),var(--bg)_75%)]">
+      <div className="flex flex-wrap overflow-hidden rounded-[28px] border border-line bg-surface">
         <div className="flex-[1_1_460px] p-[clamp(36px,5vw,64px)]">
           <h3 className="mb-5 text-[clamp(40px,6vw,76px)] font-semibold leading-none tracking-[-0.04em]">
             NexVenue<span className="text-accent">.</span>
@@ -75,14 +75,11 @@ export default function Flagship() {
           </div>
         </div>
         <div className="flex flex-[1_1_320px] items-center justify-center p-10 print:hidden">
-          <div className="w-[230px] rounded-[34px] border border-line-hover bg-bg p-3.5 shadow-[0_50px_100px_-30px_rgba(0,0,0,0.9)]">
+          <div className="w-[230px] rounded-[34px] border border-line-hover bg-bg p-3.5">
             <div className="flex flex-col gap-2.5 rounded-3xl bg-surface p-4">
               <div className="flex items-center justify-between">
                 <span className="text-[13px] font-bold">NexVenue</span>
-                <span
-                  aria-hidden
-                  className="h-2 w-2 rounded-full bg-accent [animation:ticker_2s_infinite]"
-                />
+                <span className="font-mono text-[9px] tracking-[0.16em] text-accent">LIVE</span>
               </div>
               {MOCK_ROWS.map(([a, b]) => (
                 <div

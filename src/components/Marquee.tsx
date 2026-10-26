@@ -22,10 +22,10 @@ export default function Marquee() {
                 <span className="font-serif text-[22px] italic text-dim">
                   {s}
                 </span>
-                <span
-                  aria-hidden
-                  className="inline-block h-[7px] w-[7px] rotate-45 bg-accent"
-                />
+                {/* interpunct, as Roman inscriptions divide words */}
+                <span aria-hidden className="font-serif text-[22px] text-accent">
+                  ·
+                </span>
               </span>
             ))}
           </div>

@@ -21,31 +21,37 @@ export default function ScrollUI() {
 
   return (
     <>
-      {/* scroll progress */}
-      <div className="fixed top-0 right-0 left-0 z-40 h-[2px]">
-        <motion.div
-          className="h-full origin-left bg-[linear-gradient(90deg,var(--musgo),var(--accent))]"
-          style={{ scaleX: scrollYProgress }}
-        />
+      {/* scroll progress: a single hairline along the top edge */}
+      <div className="fixed top-0 right-0 left-0 z-40 h-px">
+        <motion.div className="h-full origin-left bg-accent" style={{ scaleX: scrollYProgress }} />
       </div>
 
-      {/* section dots - desktop affordance; 7px targets are useless on touch */}
-      <div className="fixed top-1/2 right-[22px] z-30 hidden -translate-y-1/2 flex-col gap-3.5 pointer-fine:flex">
-        {SECTIONS.map((id) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            title={id}
-            aria-label={`Go to ${id} section`}
-            className="block h-[7px] rounded-full transition-all duration-400 ease-(--ease)"
-            style={{
-              width: active === id ? 22 : 7,
-              background:
-                active === id ? "var(--accent)" : "rgba(237,240,228,0.2)",
-            }}
-          />
-        ))}
-      </div>
+      {/* section index - numerals, not dots; desktop only */}
+      <nav
+        aria-label="Sections"
+        className="fixed top-1/2 right-[18px] z-30 hidden -translate-y-1/2 flex-col items-end gap-2.5 pointer-fine:flex"
+      >
+        {SECTIONS.map((id, i) => {
+          const on = active === id;
+          return (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-label={`Go to ${id} section`}
+              aria-current={on ? "true" : undefined}
+              className={`flex items-center gap-2 font-mono text-[10px] tracking-[0.12em] no-underline transition-colors duration-300 ${
+                on ? "text-text" : "text-faint hover:text-dim"
+              }`}
+            >
+              <span
+                aria-hidden
+                className={`block h-px transition-all duration-500 ease-(--ease) ${on ? "w-4 bg-accent" : "w-0"}`}
+              />
+              0{i}
+            </a>
+          );
+        })}
+      </nav>
     </>
   );
 }

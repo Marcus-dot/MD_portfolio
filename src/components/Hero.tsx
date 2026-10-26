@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="pointer-events-none relative z-[2] flex min-h-dvh [&_a]:pointer-events-auto [&_button]:pointer-events-auto flex-col justify-end px-page pt-[140px] pb-[clamp(50px,8vh,90px)] max-[760px]:pt-[calc(80px+44svh)]">
         {/* meta strip: local time set large, status as plain type - no badges */}
         <div
-          className="hero-fade mb-8 flex flex-wrap items-stretch gap-x-8 gap-y-5"
+          className="hero-fade mb-8 flex flex-wrap items-stretch gap-x-8 gap-y-5 max-[400px]:gap-x-5"
           style={{ animationDelay: "0.2s" }}
         >
           <div>
@@ -37,7 +37,7 @@ export default function Hero() {
             </div>
             <LusakaClock size="display" />
           </div>
-          <div className="flex flex-col border-l border-line pl-8">
+          <div className="flex flex-col border-l border-line pl-8 max-[400px]:pl-5">
             <div className="mb-3 font-mono text-[10.5px] tracking-[0.2em] text-faint">
               STATUS
             </div>
@@ -87,7 +87,7 @@ export default function Hero() {
             </Magnetic>
             <Magnetic
               href="#method"
-              className="inline-block rounded-full border border-line bg-[rgba(10,10,11,0.45)] px-[30px] py-4 text-[15px] font-medium text-text no-underline backdrop-blur-[6px]"
+              className="inline-block rounded-full border border-line bg-bg px-[30px] py-4 text-[15px] font-medium text-text no-underline"
             >
               How I work
             </Magnetic>

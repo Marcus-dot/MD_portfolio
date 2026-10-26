@@ -20,7 +20,7 @@ export default function CvTimeline({ roles }: { roles: Role[] }) {
       <span aria-hidden className="absolute top-2 bottom-2 left-[5px] w-px bg-line" />
       <motion.span
         aria-hidden
-        className="absolute top-2 bottom-2 left-[5px] w-px origin-top bg-[linear-gradient(var(--accent),var(--musgo))] print:hidden"
+        className="absolute top-2 bottom-2 left-[5px] w-px origin-top bg-accent print:hidden"
         style={{ scaleY: reduce ? 1 : scrollYProgress }}
       />
       {roles.map((r, i) => (

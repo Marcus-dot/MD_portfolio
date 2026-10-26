@@ -119,7 +119,7 @@ function Panel({ close }: { close: () => void }) {
   return (
     <div
       onClick={close}
-      className="fixed inset-0 z-[60] flex justify-center bg-[rgba(5,6,5,0.7)] pt-[18vh] backdrop-blur-[8px]"
+      className="fixed inset-0 z-[60] flex justify-center bg-[rgba(5,6,5,0.86)] pt-[18vh]"
     >
       <div
         ref={panelRef}
@@ -128,7 +128,7 @@ function Panel({ close }: { close: () => void }) {
         aria-label="Command palette"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={trapTab}
-        className="h-fit w-[min(560px,92vw)] overflow-hidden rounded-[20px] border border-line-hover bg-surface shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9),0_0_80px_-30px_rgba(155,201,126,0.3)] [animation:fadeUp_.35s_var(--ease)_both]"
+        className="h-fit w-[min(560px,92vw)] overflow-hidden rounded-[20px] border border-line-hover bg-surface [animation:fadeUp_.35s_var(--ease)_both]"
       >
         <input
           ref={inputRef}

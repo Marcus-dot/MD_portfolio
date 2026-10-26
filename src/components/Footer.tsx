@@ -12,10 +12,6 @@ export default function Footer() {
       id="contact"
       className="relative z-[3] -mt-10 overflow-hidden rounded-t-[40px] bg-musgo px-page pt-[clamp(100px,16vh,180px)] pb-10"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-[40%] left-1/2 h-[60vh] w-[80vw] -translate-x-1/2 bg-[radial-gradient(ellipse,rgba(40,53,38,0.9),transparent_65%)]"
-      />
       {/* the athlete a breath before the throw, beside the ask */}
       <SectionStatue
         statue={STATUES.discobolus}

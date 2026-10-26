@@ -170,9 +170,7 @@ body {
   cursor: pointer;
   will-change: transform;
 }
-.btn:hover {
-  box-shadow: 0 14px 36px -10px rgba(155, 201, 126, 0.35);
-}
+
 
 kbd {
   font-family: var(--font-jetbrains-mono), monospace;

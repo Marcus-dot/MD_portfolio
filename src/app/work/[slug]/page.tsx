@@ -77,10 +77,11 @@ export default async function CaseOutline({
             {story.scale}
           </span>
           <span
-            className={`rounded-full border border-line px-3.5 py-1.5 font-mono text-[11px] ${
+            className={`flex items-center gap-2.5 font-mono text-[11px] tracking-[0.14em] uppercase ${
               story.badge === "Confidential" ? "text-dim" : "text-accent"
             }`}
           >
+            <span aria-hidden className="h-px w-4 bg-current" />
             {story.badge}
           </span>
         </div>

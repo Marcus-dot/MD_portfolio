@@ -123,7 +123,7 @@ export default function CvTrace({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.5, ease: EASE }}
-            className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4 rounded-full border border-line-hover bg-[rgba(16,18,16,0.85)] py-2 pr-2 pl-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.9)] backdrop-blur-[20px] print:hidden"
+            className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4 rounded-full border border-line-hover bg-surface py-2 pr-2 pl-5 print:hidden"
           >
             <span className="font-mono text-[11px] tracking-[0.1em] whitespace-nowrap text-dim">
               TRACING <span className="text-accent">{skill}</span> · {hits.length}

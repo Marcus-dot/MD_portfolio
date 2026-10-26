@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { STORIES, type Story } from "@/content/stories";
+import { CASE_STATUE, CAST_ROOM } from "@/content/statues";
 
+/* A catalogue slip: bone paper, square corners, held slightly askew,
+   ruled fields like a museum index card. Names the statue that keeps
+   the case outline's page (see the Cast Room). */
 function HoverPreview({
   item,
   pos,
@@ -11,22 +15,33 @@ function HoverPreview({
   pos: { x: number; y: number };
 }) {
   if (!item) return null;
+  const keeper = CAST_ROOM.find((e) => e.key === CASE_STATUE[item.slug]);
+  const rows: [string, string][] = [
+    ["SCALE", item.scale],
+    ["STATUS", item.badge],
+    ...(keeper ? ([["KEEPER", keeper.title]] as [string, string][]) : []),
+  ];
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed z-30 w-[250px] overflow-hidden rounded-[18px] border border-line-hover bg-[linear-gradient(150deg,var(--musgo),var(--bg))] shadow-[0_30px_70px_-20px_rgba(0,0,0,0.85)] [animation:fadeUp_.3s_var(--ease)_both]"
-      style={{ left: pos.x + 24, top: pos.y - 90 }}
+      className="pointer-events-none fixed z-30 w-[264px] origin-top-left -rotate-[1.5deg] rounded-[2px] bg-text px-5 pt-4 pb-3 text-bg [animation:fadeUp_.3s_var(--ease)_both]"
+      style={{ left: pos.x + 26, top: pos.y - 70 }}
     >
-      <div className="p-[18px_18px_14px]">
-        <div className="font-mono text-[10px] tracking-[0.16em] text-accent">
-          {item.badge.toUpperCase()}
-        </div>
-        <div className="mt-2 font-serif text-[30px] leading-[1.05] italic">
-          {item.s}
-        </div>
-        <div className="mt-1.5 text-[11.5px] text-dim">{item.scale}</div>
+      <div className="flex items-baseline justify-between font-mono text-[9.5px] tracking-[0.16em]">
+        <span>CAT. No. {item.n}</span>
+        <span className="opacity-60">CASE OUTLINE</span>
       </div>
-      <div className="h-[5px] bg-[linear-gradient(90deg,var(--musgo),var(--accent))]" />
+      <div className="mt-3 border-b border-bg/80 pb-3 font-serif text-[30px] leading-[1.02] italic">
+        {item.s}
+      </div>
+      <dl className="m-0">
+        {rows.map(([k, v]) => (
+          <div key={k} className="flex gap-3 border-b border-bg/25 py-[7px] last:border-b-0">
+            <dt className="w-[52px] shrink-0 font-mono text-[9px] leading-[1.6] tracking-[0.14em] opacity-60">{k}</dt>
+            <dd className="m-0 text-[12px] leading-[1.4]">{v}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   );
 }
@@ -60,7 +75,7 @@ export default function WorkStack() {
           onMouseEnter={() => desktop() && setPreview(s)}
           onMouseLeave={() => setPreview(null)}
           onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
-          className="sticky mb-[26px] flex [--stack-step:26px] [--stack-top:90px] max-[639px]:[--stack-step:10px] max-[639px]:[--stack-top:72px] flex-wrap items-baseline gap-7 rounded-[26px] border border-line bg-[linear-gradient(150deg,#131713,var(--bg))] p-[clamp(28px,4vw,48px)] shadow-[0_-20px_50px_-30px_rgba(0,0,0,0.9)]"
+          className="sticky mb-[26px] flex [--stack-step:26px] [--stack-top:90px] max-[639px]:[--stack-step:10px] max-[639px]:[--stack-top:72px] flex-wrap items-baseline gap-7 rounded-[26px] border border-line bg-surface p-[clamp(28px,4vw,48px)]"
           style={{ top: `calc(var(--stack-top) + ${i} * var(--stack-step))` }}
         >
           <span
@@ -81,10 +96,11 @@ export default function WorkStack() {
             {s.d}
           </p>
           <span
-            className={`self-start rounded-full border border-line px-3.5 py-1.5 font-mono text-[11px] ${
+            className={`flex items-center gap-2.5 self-start font-mono text-[11px] tracking-[0.14em] uppercase ${
               s.badge === "Confidential" ? "text-dim" : "text-accent"
             }`}
           >
+            <span aria-hidden className="h-px w-4 bg-current" />
             {s.badge}
           </span>
           <a
