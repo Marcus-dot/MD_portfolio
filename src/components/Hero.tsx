@@ -1,12 +1,13 @@
 import { STATUES } from "@/content/statues";
 import StatueCanvas from "./statue/StatueCanvas";
 import ChipCounter from "./statue/ChipCounter";
+import Note from "./marginalia/Note";
 import LusakaClock from "./LusakaClock";
 import ArrowLink from "./ArrowLink";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-dvh overflow-hidden">
+    <section id="hero" data-anno="<section #hero> · statue canvas under a content layer that lets clicks through" className="relative min-h-dvh overflow-hidden">
       {/* statue column, right side - Marcus turns to follow the pointer */}
       <div className="hero-portrait absolute top-0 right-0 bottom-0 w-[min(52vw,780px)] min-w-[280px] max-[760px]:w-full max-[760px]:min-w-0 max-[760px]:opacity-90">
         <StatueCanvas
@@ -26,6 +27,31 @@ export default function Hero() {
         {/* phones: the tally sits at the statue's base */}
         <ChipCounter className="pointer-events-none absolute top-[calc(80px+44svh-26px)] right-5 text-[11px] text-dim min-[761px]:hidden" />
       </div>
+
+      <Note
+        className="top-[104px] left-[clamp(20px,6vw,100px)] max-w-[440px] max-[899px]:!hidden"
+        lines={[
+          "Not a 3D engine. The scan was baked offline",
+          "into a 150 x 150 map of surface directions;",
+          "a 2D canvas relights it every frame.",
+          "25 baked angles make the head turn.",
+        ]}
+        refs={[5, 9]}
+        arrow={{ d: "M4 46 C 70 10, 150 6, 214 40 M201 30 L214 40 L199 46", w: 220, h: 60, className: "left-[360px] top-[52px]" }}
+      />
+      <Note
+        className="top-[156px] right-[clamp(20px,6vw,100px)] max-w-[330px] text-right max-[899px]:!hidden"
+        rotate={1.5}
+        delay={2.4}
+        lines={["Click him. Tiles fly out on damped springs", "and settle back. The tally lives in your", "browser and nowhere else."]}
+      />
+      <Note
+        className="top-[74px] left-[calc(50%-150px)] max-[899px]:!hidden"
+        rotate={-0.5}
+        delay={4.6}
+        size={19}
+        lines={["Registration marks, numbered rooms; the green", "hairline follows the room you are in."]}
+      />
 
       {/* content layer - name overlaps the statue edge; clicks fall through to
           the statue except on the actual links */}

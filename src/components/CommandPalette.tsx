@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CONFIG } from "@/content/config";
 import { toast } from "./Toast";
+import { setMarginalia } from "./marginalia/MarginaliaToggle";
 
 export const PALETTE_EVENT = "md:palette-toggle";
 
@@ -11,7 +12,7 @@ type Command = {
   hint: string;
   href?: string;
   external?: string;
-  action?: "email";
+  action?: "email" | "marginalia";
 };
 
 const COMMANDS: Command[] = [
@@ -24,6 +25,7 @@ const COMMANDS: Command[] = [
   { k: "Open GitHub", hint: "github.com/Marcus-dot", external: CONFIG.links.github },
   { k: "Open LinkedIn", hint: "profile", external: CONFIG.links.linkedin },
   { k: "Copy email", hint: CONFIG.email, action: "email" },
+  { k: "Toggle marginalia", hint: "show the working: notes, outlines, references", action: "marginalia" },
 ];
 
 export default function CommandPalette() {
@@ -72,7 +74,9 @@ function Panel({ close }: { close: () => void }) {
   );
 
   const run = (c: Command) => {
-    if (c.action === "email") {
+    if (c.action === "marginalia") {
+      setMarginalia(!document.documentElement.hasAttribute("data-marginalia"));
+    } else if (c.action === "email") {
       navigator.clipboard?.writeText(CONFIG.email);
       toast("EMAIL COPIED");
     } else if (c.external) {

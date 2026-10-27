@@ -15,6 +15,8 @@ import Claims from "@/components/Claims";
 import Background from "@/components/Background";
 import Method from "@/components/Method";
 import Footer from "@/components/Footer";
+import Workbench from "@/components/marginalia/Workbench";
+import References from "@/components/marginalia/References";
 
 export default function Home() {
   return (
@@ -29,8 +31,9 @@ export default function Home() {
       <main>
         <Hero />
         <Manifesto />
+        <Workbench />
         <Marquee />
-        <section id="work" className="px-page py-[clamp(90px,14vh,160px)]">
+        <section id="work" data-anno="<section #work> · Flagship, WorkStack (position: sticky), AlsoBuilt" className="relative px-page py-[clamp(90px,14vh,160px)]">
           <Flagship />
           <WorkStack />
           <AlsoBuilt />
@@ -38,6 +41,7 @@ export default function Home() {
         <Claims />
         <Background />
         <Method />
+        <References />
       </main>
       <Footer />
     </>

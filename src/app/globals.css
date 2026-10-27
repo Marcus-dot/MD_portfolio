@@ -254,6 +254,133 @@ kbd {
   outline-offset: 4px;
 }
 
+/* ─────────────────────────────────────────
+   Marginalia: the site showing its working.
+   Off by default; <html data-marginalia> turns it on (Nav toggle).
+   Red pen for notes, blueprint blue for structure.
+───────────────────────────────────────── */
+:root {
+  --pen: #ff6b4a;
+  --blueprint: rgba(120, 170, 210, 0.55);
+}
+.mg {
+  display: none;
+}
+html[data-marginalia] .mg {
+  display: block;
+}
+html[data-marginalia] body {
+  background-image:
+    linear-gradient(rgba(120, 170, 210, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 170, 210, 0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+}
+/* dashed outlines with a dev-tools label on annotated elements */
+html[data-marginalia] [data-anno] {
+  outline: 1px dashed var(--blueprint);
+  outline-offset: -8px;
+}
+html[data-marginalia] [data-anno]::after {
+  content: attr(data-anno);
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 5;
+  padding: 1px 6px;
+  background: var(--bg);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: rgba(150, 195, 230, 0.95);
+  pointer-events: none;
+}
+/* a note: lines written one after another, then its arrow drawn */
+.mg-note {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 500;
+  color: var(--pen);
+  line-height: 1.12;
+  /* a dark halo keeps the pen legible over statues and text */
+  text-shadow:
+    0 0 3px var(--bg),
+    0 0 8px var(--bg),
+    0 0 14px var(--bg);
+}
+.mg-line {
+  display: block;
+  white-space: nowrap;
+}
+html[data-marginalia] .mg-line {
+  animation: mg-write var(--t, 0.9s) steps(24, end) var(--d, 0s) both;
+}
+@keyframes mg-write {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.mg-arrow path {
+  fill: none;
+  stroke: var(--pen);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+html[data-marginalia] .mg-arrow path {
+  animation: mg-draw 0.6s var(--ease) var(--d, 0s) forwards;
+}
+@keyframes mg-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.mg-ref {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.55em;
+  vertical-align: super;
+  color: var(--pen);
+  text-decoration: none;
+}
+@media (max-width: 899px) {
+  /* phones and small tablets: notes become inline asides, no arrows */
+  .mg-note.mg-float {
+    position: static !important;
+    transform: none !important;
+    margin: 18px 0;
+    width: 100%;
+    max-width: none !important;
+    text-align: left !important;
+  }
+  html[data-marginalia] [data-anno]::after {
+    white-space: normal;
+    max-width: calc(100% - 28px);
+  }
+  .mg-note.mg-float .mg-line {
+    white-space: normal;
+  }
+  .mg-arrow {
+    display: none !important;
+  }
+}
+@media print {
+  .mg,
+  .mg-arrow {
+    display: none !important;
+  }
+  html[data-marginalia] [data-anno] {
+    outline: none;
+  }
+  html[data-marginalia] [data-anno]::after {
+    content: none;
+  }
+}
+
 ::selection {
   background: var(--accent);
   color: var(--bg);

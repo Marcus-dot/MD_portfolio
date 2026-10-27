@@ -10,6 +10,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
+      data-anno="<footer #contact> · a sheet pulled 40px over the section above"
       className="relative z-[3] -mt-10 overflow-hidden bg-musgo px-page pt-[clamp(100px,16vh,180px)] pb-10"
     >
       {/* the athlete a breath before the throw, beside the ask */}

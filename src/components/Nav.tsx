@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowLink from "./ArrowLink";
 import PaletteTrigger from "./PaletteTrigger";
+import MarginaliaToggle from "./marginalia/MarginaliaToggle";
 
 const LINKS = ["Work", "Skills", "Method", "Contact"];
 
@@ -105,6 +106,7 @@ export default function Nav() {
           />
         </span>
 
+        <MarginaliaToggle />
         <PaletteTrigger />
         <ArrowLink
           href="#contact"

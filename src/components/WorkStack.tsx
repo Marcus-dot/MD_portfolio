@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { STORIES, type Story } from "@/content/stories";
 import { CASE_STATUE, CAST_ROOM } from "@/content/statues";
+import Note from "./marginalia/Note";
 
 /* A catalogue slip: bone paper, square corners, held slightly askew,
    ruled fields like a museum index card. Names the statue that keeps
@@ -55,7 +56,7 @@ export default function WorkStack() {
     window.matchMedia("(pointer: fine)").matches;
 
   return (
-    <div className="mt-[100px]">
+    <div className="relative mt-[100px]">
       <HoverPreview item={preview} pos={pos} />
       <div className="mb-[30px] flex flex-wrap items-baseline justify-between gap-3">
         <h3 className="m-0 text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em]">
@@ -67,6 +68,11 @@ export default function WorkStack() {
         <span className="font-mono text-[11px] text-faint">
           {"// scroll: cards stack"}
         </span>
+        <Note
+          className="-top-[64px] right-0 text-right"
+          rotate={1}
+          lines={["position: sticky, each card's top a step lower", "than the last. The stacking is all CSS."]}
+        />
       </div>
       {STORIES.map((s, i) => (
         <article

@@ -5,7 +5,7 @@ import { STATUES } from "@/content/statues";
 
 export default function Method() {
   return (
-    <section id="method" className="px-page py-[clamp(90px,14vh,160px)]">
+    <section id="method" data-anno="<section #method> · four principles" className="relative px-page py-[clamp(90px,14vh,160px)]">
       <div className="relative mb-[50px] flex min-h-[200px] items-end max-[639px]:pt-10 justify-between gap-10">
         <Reveal className="relative z-[1]">
           <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Caveat, Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import MotionProvider from "@/components/MotionProvider";
 import { CONFIG } from "@/content/config";
 import "./globals.css";
@@ -7,6 +7,9 @@ import "./globals.css";
 /* Runs before first paint: skip the loader on repeat visits this session
    and for reduced-motion users, and let hero entrance play immediately. */
 const loaderSkipScript = `try{if(sessionStorage.getItem("md-loader-seen")||matchMedia("(prefers-reduced-motion: reduce)").matches){var d=document.documentElement;d.setAttribute("data-loader-skip","");d.setAttribute("data-loaded","")}}catch(e){}`;
+
+/* Marginalia (the annotated "show your working" layer) remembered per visitor */
+const marginaliaScript = `try{if(localStorage.getItem("md-marginalia")==="1")document.documentElement.setAttribute("data-marginalia","")}catch(e){}`;
 
 /* For the engineers who open DevTools */
 const consoleScript = `try{console.log("%cVERIFIED CLAIMS ONLY","font-family:monospace;font-size:12px;letter-spacing:.15em;color:#9BC97E;background:#0A0A0B;padding:6px 10px;border-radius:6px");console.log("%cAudit the source: https://github.com/Marcus-dot","font-family:monospace;font-size:11px;color:#9AA394")}catch(e){}`;
@@ -40,6 +43,14 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
+});
+
+// Marginalia's handwriting; only fetched when the layer is switched on
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  preload: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -86,10 +97,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${interTight.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${interTight.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${caveat.variable} antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: loaderSkipScript }} />
+        <script dangerouslySetInnerHTML={{ __html: marginaliaScript }} />
         <script dangerouslySetInnerHTML={{ __html: consoleScript }} />
         <script
           type="application/ld+json"
