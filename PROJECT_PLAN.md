@@ -1,3 +1,5 @@
+> **Original brief, July 2026, kept for history.** The site has moved on since (Next.js 16, statues, the Cast Room, the Dashly room). `README.md` describes the site as it is now.
+
 # PROJECT PLAN — Madalitso Daka Portfolio (Production Build)
 
 ## 0. Context for the agent
