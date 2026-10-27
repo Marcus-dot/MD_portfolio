@@ -21,7 +21,7 @@ const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["600",
 export const metadata: Metadata = {
   title: "Dashly - Madalitso Daka",
   description:
-    "Dashly, the project-portfolio SaaS I co-founded and build: one honest health score per project, 26 industry calculators, live at dashlyhq.com.",
+    "Dashly: project-portfolio management for emerging markets, built around one auditable health score per project. In production at dashlyhq.com.",
   alternates: { canonical: "/dashly" },
 };
 
@@ -53,7 +53,14 @@ export default function DashlyRoom() {
     [n(LEDGER.testCases), "automated tests"],
     [String(LEDGER.migrations), "database migrations"],
     [String(LEDGER.calculators), "industry calculators"],
-    [String(LEDGER.humanAuthors), "human author"],
+  ];
+
+  const colophon: [string, string][] = [
+    ["ROLE", "Co-founder, engineering"],
+    ["COMPANY", "Dashly Software, Zambia"],
+    ["FIRST COMMIT", day(LEDGER.firstCommit)],
+    ["STATUS", "In production"],
+    ["STACK", "Next.js · Supabase · Claude"],
   ];
 
   return (
@@ -80,7 +87,7 @@ export default function DashlyRoom() {
           />
           <TypedLine line={MEDITATIONS.dashly} className="relative z-[1] mb-12 max-w-[460px]" />
           <div className="relative z-[1] font-mono text-[11px] tracking-[0.2em] text-faint">
-            THE DASHLY ROOM · CO-FOUNDED · LIVE
+            THE DASHLY ROOM · IN PRODUCTION
           </div>
           <h1 className="relative z-[1] mt-5 mb-0 font-[family-name:var(--font-syne)] text-[clamp(64px,13vw,190px)] leading-[0.88] font-bold tracking-[-0.03em]">
             Dashly<span className="text-[#A56ABD]">.</span>
@@ -102,26 +109,17 @@ export default function DashlyRoom() {
           </a>
         </div>
 
-        {/* two hats */}
-        <div className="mt-[clamp(70px,12vh,130px)] grid gap-px border border-line bg-line min-[760px]:grid-cols-2">
-          <Reveal className="bg-bg p-[clamp(26px,4vw,44px)]">
-            <div className="font-mono text-[10.5px] tracking-[0.18em] text-[#A56ABD]">HAT ONE · CO-FOUNDER</div>
-            <p className="mt-5 mb-0 text-[16px] leading-[1.7] text-text">
-              Dashly Software is a registered software partnership in Zambia that I co-founded with
-              my business partner in 2025.
-            </p>
-          </Reveal>
-          <Reveal delay={0.08} className="bg-bg p-[clamp(26px,4vw,44px)]">
-            <div className="font-mono text-[10.5px] tracking-[0.18em] text-[#A56ABD]">HAT TWO · DEVELOPER</div>
-            <p className="mt-5 mb-0 text-[16px] leading-[1.7] text-text">
-              Every human commit in the repository is mine: {n(LEDGER.commits)} on main since{" "}
-              {day(LEDGER.firstCommit)}.
-            </p>
-            <p className="mt-3 mb-0 font-mono text-[10px] tracking-[0.12em] text-faint">
-              {LEDGER.humanAuthors} HUMAN AUTHOR · AUTOMATED DEPENDENCY BOTS EXCLUDED
-            </p>
-          </Reveal>
-        </div>
+        {/* colophon: the facts, stated once, like a label beside the work */}
+        <Reveal>
+          <dl className="m-0 mt-[clamp(70px,12vh,130px)] grid grid-cols-2 border-t border-line min-[760px]:grid-cols-5">
+            {colophon.map(([k, v]) => (
+              <div key={k} className="border-b border-line py-5 pr-4 min-[760px]:border-b-0">
+                <dt className="font-mono text-[10px] tracking-[0.16em] text-faint">{k}</dt>
+                <dd className="m-0 mt-2 text-[14.5px] leading-[1.5] text-text">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
 
         <div className="mt-[clamp(90px,14vh,150px)] flex flex-col gap-[clamp(90px,14vh,150px)]">
           <Room n="01" title={<>One honest score<span className="text-[#A56ABD]">.</span></>} aside="Try it: move the sliders">
@@ -134,8 +132,8 @@ export default function DashlyRoom() {
             <HonestScore />
           </Room>
 
-          <Room n="02" title={<>The ledger<span className="text-[#A56ABD]">.</span></>} aside={`Counted from the codebase on ${day(LEDGER.countedOn)}`}>
-            <dl className="m-0 grid grid-cols-2 gap-x-6 gap-y-10 min-[760px]:grid-cols-3 min-[1100px]:grid-cols-6">
+          <Room n="02" title={<>The ledger<span className="text-[#A56ABD]">.</span></>} aside={`The codebase, counted ${day(LEDGER.countedOn)}`}>
+            <dl className="m-0 grid grid-cols-2 gap-x-6 gap-y-10 min-[760px]:grid-cols-3 min-[1100px]:grid-cols-5">
               {stats.map(([v, l]) => (
                 <div key={l} className="border-t border-line pt-4">
                   <dt className="sr-only">{l}</dt>
@@ -148,8 +146,8 @@ export default function DashlyRoom() {
               <CommitStrip />
             </div>
             <p className="mt-8 mb-0 max-w-[620px] font-mono text-[10.5px] leading-[1.8] tracking-[0.04em] text-faint">
-              The repository is private. These figures are counted from it by a script
-              (scripts/dashly-ledger.mjs) and only the counts are published: no code leaves it.
+              The repository is private; a script counts these figures from it, and only the
+              figures are published.
             </p>
           </Room>
 

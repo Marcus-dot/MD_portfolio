@@ -28,10 +28,10 @@ export const STORIES: Story[] = [
     s: "Dashly",
     scale: "Live SaaS · co-founded",
     badge: "Live",
-    d: `A production project-portfolio SaaS I co-founded with my business partner and build myself: one honest health score per project, ${LEDGER.calculators} industry-specific financial calculators, and multi-tenant teams with role-based access and MFA. ${n(LEDGER.commits)} commits and ${n(LEDGER.sourceLines)} lines of TypeScript so far, live at dashlyhq.com.`,
+    d: `Project-portfolio management for emerging markets, built around one auditable health score per project, with ${LEDGER.calculators} industry-specific financial calculators and multi-tenant workspaces. ${n(LEDGER.sourceLines)} lines of TypeScript, in production at dashlyhq.com.`,
     case: {
       intro:
-        "Dashly is a strategic project-portfolio management platform for emerging markets, live in production at dashlyhq.com. I co-founded it with my business partner, through Dashly Software, a registered software partnership in Zambia, and I build it: every human commit in the repository is mine. Teams track project health, risk, budgets and milestones in one place, with industry-grade financial tooling built in.",
+        "Dashly is a project-portfolio management platform for emerging markets, in production at dashlyhq.com. Teams see the health, risk, budget and milestones of every project in one place, each project carrying a single score they can audit. It is the product of Dashly Software, the partnership I co-founded in 2025, where I lead engineering.",
       did: [
         "Architected the multi-tenant SaaS on Next.js 16 and Supabase: Postgres with row-level-security isolation, MFA, role-based teams and per-workspace data separation, backed by RLS-isolation tests",
         "Built Dashly Sense: an auditable health score, a weighted formula across schedule, budget, risk, progress and activity, recomputed every time it is read. The AI never grades: Claude writes three recommendations on top of the score, forced through a single tool and validated with zod before anything is shown",

@@ -86,7 +86,7 @@ export const PROJECTS: CvProject[] = [
   },
   {
     t: "Dashly",
-    d: "Project-portfolio SaaS, co-founded and live: an auditable health score per project, 26 industry-specific financial calculators, multi-tenant teams with row-level security and MFA.",
+    d: "Project-portfolio platform in production: an auditable health score per project, 26 industry-specific financial calculators, multi-tenant teams with row-level security and MFA.",
     stack: ["Next.js", "React", "JavaScript / TypeScript", "PostgreSQL", "Tailwind", "AI/LLM integration"],
     slug: "dashly",
   },

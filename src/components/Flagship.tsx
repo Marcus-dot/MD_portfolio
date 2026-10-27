@@ -106,9 +106,9 @@ export default function Flagship() {
               Dashly<span className="text-accent">.</span>
             </h3>
             <p className="max-w-[560px] text-[15.5px] leading-[1.7] text-dim">
-              Project-portfolio SaaS I co-founded and build: one honest health
-              score per project, 26 industry calculators, multi-tenant teams
-              with MFA. Next.js 16 and Supabase, live in production.
+              Project-portfolio management for emerging markets, built around
+              one auditable health score per project, with 26 industry
+              calculators. Next.js 16 and Supabase, in production.
             </p>
           </div>
           <div className="flex flex-col items-start gap-3">
