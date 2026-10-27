@@ -37,7 +37,7 @@ lives in the components. No CMS.
 | Footer NOW line | `src/components/Footer.tsx` |
 | Case-study pages (/work/…) | `case` blocks in `src/content/stories.ts` |
 | Statues (hero, Work, Claims, Method, Education, footer, /cv, case pages, 404) | `src/content/statues.ts` + baked maps in `public/statue/` (see below) |
-| OG share image | regenerate: edit `scripts/og-template.html`, then `node scripts/screenshot.mjs "file://$PWD/scripts/og-template.html" public/og.png '' 1200 630 3000` |
+| OG share image | regenerate: `scripts/og-template.html` draws the statue from `public/statue/marcus.png`; serve both from one origin (e.g. a temp folder with `og.html` + `statue/marcus.png` under `python3 -m http.server`), screenshot at 1200x630, save as an 8-bit PNG under ~300 KB to `public/og.png` |
 
 **Content rules** (from PROJECT_PLAN.md): never invent numbers, ratings or
 client names; NDA work is described by sector and scale only; no emojis
