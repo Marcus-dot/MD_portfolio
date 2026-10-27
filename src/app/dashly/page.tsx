@@ -168,7 +168,7 @@ export default function DashlyRoom() {
           </Room>
 
           {DASHLY_SCREENS.length > 0 && (
-            <Room n="04" title={<>In production<span className="text-[#A56ABD]">.</span></>} aside="dashlyhq.com">
+            <Room n="04" title={<>In production<span className="text-[#A56ABD]">.</span></>} aside="Inside the app, and on dashlyhq.com">
               <div className="grid gap-x-8 gap-y-14 min-[900px]:grid-cols-2">
                 {DASHLY_SCREENS.map((s, i) => (
                   <figure key={s.src} className={`m-0 ${i === 0 ? "min-[900px]:col-span-2" : ""}`}>
