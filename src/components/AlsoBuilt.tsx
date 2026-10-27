@@ -11,7 +11,7 @@ export default function AlsoBuilt() {
       <div className="rail grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[18px]">
         {BUILDS.map((b, i) => (
           <Reveal key={b.t} delay={i * 0.08} className="rail-item h-full">
-            <div className="h-full rounded-3xl border border-line bg-surface px-7 py-[30px]">
+            <div className="h-full rounded-[4px] border border-line bg-surface px-7 py-[30px]">
               <div className="text-[18px] font-semibold tracking-[-0.02em]">
                 {b.t}
               </div>

@@ -18,7 +18,7 @@ export function SavePdfButton({ className = "" }: { className?: string }) {
     <button
       type="button"
       onClick={() => window.print()}
-      className={`cursor-pointer rounded-full bg-text px-4 py-2 font-mono text-[11.5px] text-bg ${className}`}
+      className={`cursor-pointer rounded-[3px] bg-text px-4 py-2 font-mono text-[11.5px] text-bg ${className}`}
     >
       Save as PDF
     </button>
@@ -85,7 +85,7 @@ export default function CvRail() {
           type="button"
           onClick={() => window.print()}
           data-cursor="GO"
-          className="cursor-pointer rounded-full bg-text px-5 py-2.5 text-[13px] font-semibold text-bg"
+          className="cursor-pointer rounded-[3px] bg-text px-5 py-2.5 text-[13px] font-semibold text-bg"
         >
           Save as PDF
         </button>

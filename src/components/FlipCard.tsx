@@ -75,7 +75,7 @@ export default function FlipCard({ claim }: { claim: Claim }) {
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   onKeyDown={(e) => e.stopPropagation()}
-                  className="rounded-full border border-line-hover px-3 py-1 font-mono text-[11px] pointer-coarse:py-2.5 tracking-[0.08em] text-accent no-underline"
+                  className="rounded-[3px] border border-line-hover px-3 py-1 font-mono text-[11px] pointer-coarse:py-2.5 tracking-[0.08em] text-accent no-underline"
                 >
                   {p.label}
                 </a>

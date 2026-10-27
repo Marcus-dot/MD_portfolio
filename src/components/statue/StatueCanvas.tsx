@@ -15,6 +15,7 @@ import {
 } from "./engine";
 
 const CARVE_S = 1.9;
+export const CHIP_EVENT = "md:chip";
 
 /*
  * A baked statue drawn as etched marble tiles and relit by a lamp.
@@ -209,15 +210,20 @@ export default function StatueCanvas({
       const gx = (e.clientX - r.left - ox) / cell;
       const gy = (e.clientY - r.top - oy) / cell;
       const R = Math.max(10, cols * 0.14);
+      const f0 = frames[turn ? Math.round(yawIdx) : Math.floor(frames.length / 2)];
+      let chipped = 0;
       for (let i = 0; i < cols * rows; i++) {
         const dx = (i % cols) - gx, dy = Math.floor(i / cols) - gy;
         const d = Math.hypot(dx, dy);
         if (d > R) continue;
+        if (f0.tone[i]) chipped++;
         const force = Math.pow(1 - d / R, 2) * 26;
         velX[i] += (dx / (d || 1)) * force + (Math.random() - 0.5) * 6;
         velY[i] += (dy / (d || 1)) * force - Math.random() * 8;
       }
       dustLive = true;
+      // tiles actually knocked loose (empty cells don't count)
+      if (chipped) window.dispatchEvent(new CustomEvent(CHIP_EVENT, { detail: chipped }));
     };
 
     const ro = new ResizeObserver(layout);

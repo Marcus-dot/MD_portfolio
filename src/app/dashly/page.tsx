@@ -170,7 +170,7 @@ export default function DashlyRoom() {
               <div className="grid gap-x-8 gap-y-14 min-[900px]:grid-cols-2">
                 {DASHLY_SCREENS.map((s, i) => (
                   <figure key={s.src} className={`m-0 ${i === 0 ? "min-[900px]:col-span-2" : ""}`}>
-                    <div className="overflow-hidden rounded-[10px] border border-line">
+                    <div className="overflow-hidden rounded-[4px] border border-line">
                       <Image src={s.src} width={s.w} height={s.h} alt={s.alt} sizes="(max-width: 900px) 100vw, 60vw" className="block h-auto w-full" />
                     </div>
                     <figcaption className="mt-3 font-mono text-[10.5px] tracking-[0.1em] text-faint uppercase">{s.caption}</figcaption>
@@ -184,7 +184,7 @@ export default function DashlyRoom() {
         <div className="mt-[clamp(90px,14vh,150px)] flex flex-wrap items-center justify-between gap-6 border-t border-line pt-10">
           <a
             href={`mailto:${CONFIG.email}`}
-            className="inline-block rounded-full bg-text px-7 py-3.5 text-[14px] font-semibold text-bg no-underline"
+            className="inline-block rounded-[3px] bg-text px-7 py-3.5 text-[14px] font-semibold text-bg no-underline"
           >
             Talk about Dashly →
           </a>

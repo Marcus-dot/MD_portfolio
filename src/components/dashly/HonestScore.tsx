@@ -76,7 +76,7 @@ export default function HonestScore() {
               key={name}
               type="button"
               onClick={() => setInp(p)}
-              className="cursor-pointer rounded-full border border-line bg-transparent px-3.5 py-1.5 font-mono text-[11px] tracking-[0.08em] text-dim transition-colors hover:border-[#A56ABD] hover:text-text pointer-coarse:py-2.5"
+              className="cursor-pointer rounded-[3px] border border-line bg-transparent px-3.5 py-1.5 font-mono text-[11px] tracking-[0.08em] text-dim transition-colors hover:border-[#A56ABD] hover:text-text pointer-coarse:py-2.5"
             >
               {name}
             </button>

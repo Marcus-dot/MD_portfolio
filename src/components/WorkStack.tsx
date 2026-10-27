@@ -75,7 +75,7 @@ export default function WorkStack() {
           onMouseEnter={() => desktop() && setPreview(s)}
           onMouseLeave={() => setPreview(null)}
           onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
-          className="sticky mb-[26px] flex [--stack-step:26px] [--stack-top:90px] max-[639px]:[--stack-step:10px] max-[639px]:[--stack-top:72px] flex-wrap items-baseline gap-7 rounded-[26px] border border-line bg-surface p-[clamp(28px,4vw,48px)]"
+          className="sticky mb-[26px] flex [--stack-step:26px] [--stack-top:90px] max-[639px]:[--stack-step:10px] max-[639px]:[--stack-top:72px] flex-wrap items-baseline gap-7 rounded-[4px] border border-line bg-surface p-[clamp(28px,4vw,48px)]"
           style={{ top: `calc(var(--stack-top) + ${i} * var(--stack-step))` }}
         >
           <span

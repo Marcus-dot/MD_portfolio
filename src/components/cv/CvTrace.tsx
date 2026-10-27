@@ -52,7 +52,7 @@ export default function CvTrace({
                       aria-pressed={on}
                       onClick={() => pick(item)}
                       data-cursor="VIEW"
-                      className={`cursor-pointer rounded-full border px-3 py-1 text-[12.5px] transition-colors duration-300 pointer-coarse:py-2.5 ${
+                      className={`cursor-pointer rounded-[3px] border px-3 py-1 text-[12.5px] transition-colors duration-300 pointer-coarse:py-2.5 ${
                         on
                           ? "border-accent bg-accent text-bg"
                           : "border-line bg-transparent text-text hover:border-line-hover"
@@ -63,7 +63,7 @@ export default function CvTrace({
                   ) : (
                     <span
                       key={item}
-                      className="rounded-full border border-line px-3 py-1 text-[12.5px] text-dim"
+                      className="rounded-[3px] border border-line px-3 py-1 text-[12.5px] text-dim"
                     >
                       {item}
                     </span>
@@ -87,7 +87,7 @@ export default function CvTrace({
             return (
               <li
                 key={p.t}
-                className={`flex flex-col rounded-3xl border bg-surface px-7 py-[28px] break-inside-avoid print:mb-3 print:rounded-xl print:px-4 print:py-3 transition-[opacity,border-color,transform] duration-500 ease-(--ease) ${
+                className={`flex flex-col rounded-[4px] border bg-surface px-7 py-[28px] break-inside-avoid print:mb-3 print:rounded-xl print:px-4 print:py-3 transition-[opacity,border-color,transform] duration-500 ease-(--ease) ${
                   skill && lit ? "border-line-hover" : "border-line"
                 } ${lit ? "opacity-100" : "opacity-25 print:opacity-100"}`}
               >
@@ -123,14 +123,14 @@ export default function CvTrace({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 24 }}
             transition={{ duration: 0.5, ease: EASE }}
-            className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4 rounded-full border border-line-hover bg-surface py-2 pr-2 pl-5 print:hidden"
+            className="fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-4 rounded-[3px] border border-line-hover bg-surface py-2 pr-2 pl-5 print:hidden"
           >
             <span className="font-mono text-[11px] tracking-[0.1em] whitespace-nowrap text-dim">
               TRACING <span className="text-accent">{skill}</span> · {hits.length}
             </span>
             <a
               href="#projects"
-              className="rounded-full px-3 py-1.5 font-mono text-[11px] text-text no-underline hover:bg-white/[0.06]"
+              className="rounded-[3px] px-3 py-1.5 font-mono text-[11px] text-text no-underline hover:bg-white/[0.06]"
             >
               View
             </a>
@@ -138,7 +138,7 @@ export default function CvTrace({
               type="button"
               onClick={() => setSkill(null)}
               aria-label="Clear skill trace"
-              className="cursor-pointer rounded-full border-none bg-text px-3 py-1.5 font-mono text-[11px] text-bg"
+              className="cursor-pointer rounded-[3px] border-none bg-text px-3 py-1.5 font-mono text-[11px] text-bg"
             >
               Clear
             </button>

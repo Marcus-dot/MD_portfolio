@@ -8,7 +8,7 @@ export default function Claims() {
   return (
     <section
       id="skills"
-      className="relative z-[3] -mt-10 rounded-t-[40px] bg-surface px-page py-[clamp(90px,14vh,160px)]"
+      className="relative z-[3] -mt-10 bg-surface px-page py-[clamp(90px,14vh,160px)]"
     >
       <div className="relative flex min-h-[200px] items-end max-[639px]:pt-10 justify-between gap-10">
       <Reveal className="relative z-[1]">

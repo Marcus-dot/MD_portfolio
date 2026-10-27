@@ -30,7 +30,7 @@ export default function Toast() {
   return (
     <div
       role="status"
-      className="fixed bottom-8 left-1/2 z-[90] -translate-x-1/2 rounded-full border border-line-hover bg-surface px-5 py-2.5 font-mono text-[11px] tracking-[0.14em] text-accent [animation:fadeUp_.3s_var(--ease)_both]"
+      className="fixed bottom-8 left-1/2 z-[90] -translate-x-1/2 rounded-[3px] border border-line-hover bg-surface px-5 py-2.5 font-mono text-[11px] tracking-[0.14em] text-accent [animation:fadeUp_.3s_var(--ease)_both]"
     >
       {msg}
     </div>

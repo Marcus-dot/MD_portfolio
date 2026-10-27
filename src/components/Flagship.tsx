@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CONFIG } from "@/content/config";
-import Magnetic from "./Magnetic";
+import ArrowLink from "./ArrowLink";
 import Reveal from "./Reveal";
 import SectionStatue from "./statue/SectionStatue";
 import { STATUES } from "@/content/statues";
@@ -37,7 +37,7 @@ export default function Flagship() {
         <SectionStatue statue={STATUES.hercules} className="mb-6 h-[clamp(240px,30vw,380px)] w-[clamp(200px,25vw,320px)]" />
       </div>
       <Reveal delay={0.08}>
-      <div className="flex flex-wrap overflow-hidden rounded-[28px] border border-line bg-surface">
+      <div className="flex flex-wrap overflow-hidden rounded-[4px] border border-line bg-surface">
         <div className="flex-[1_1_460px] p-[clamp(36px,5vw,64px)]">
           <h3 className="mb-5 text-[clamp(40px,6vw,76px)] font-semibold leading-none tracking-[-0.04em]">
             NexVenue<span className="text-accent">.</span>
@@ -61,22 +61,21 @@ export default function Flagship() {
           </div>
           <div className="flex flex-wrap gap-2.5">
             {STORE_LINKS.map(([b, url]) => (
-              <Magnetic
+              <ArrowLink
                 key={b}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                strength={0.2}
-                className="inline-block rounded-full border border-line px-5 py-[11px] text-[13px] font-medium text-text no-underline"
+                className="inline-block rounded-[3px] border border-line px-5 py-[11px] text-[13px] font-medium text-text no-underline"
               >
                 {b}
-              </Magnetic>
+              </ArrowLink>
             ))}
           </div>
         </div>
         <div className="flex flex-[1_1_320px] items-center justify-center p-10 print:hidden">
           <div className="w-[230px] rounded-[34px] border border-line-hover bg-bg p-3.5">
-            <div className="flex flex-col gap-2.5 rounded-3xl bg-surface p-4">
+            <div className="flex flex-col gap-2.5 rounded-[22px] bg-surface p-4">
               <div className="flex items-center justify-between">
                 <span className="text-[13px] font-bold">NexVenue</span>
                 <span className="font-mono text-[9px] tracking-[0.16em] text-accent">LIVE</span>
@@ -84,7 +83,7 @@ export default function Flagship() {
               {MOCK_ROWS.map(([a, b]) => (
                 <div
                   key={a}
-                  className="rounded-[14px] border border-line bg-[rgba(237,240,228,0.03)] px-3.5 py-3"
+                  className="rounded-[4px] border border-line bg-[rgba(237,240,228,0.03)] px-3.5 py-3"
                 >
                   <div className="text-[12.5px] font-semibold">{a}</div>
                   <div className="mt-0.5 text-[11px] text-dim">{b}</div>
@@ -97,7 +96,7 @@ export default function Flagship() {
       </Reveal>
 
       <Reveal delay={0.12}>
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-[24px] border border-line bg-[rgba(237,240,228,0.02)] p-[clamp(24px,3.5vw,40px)]">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-6 rounded-[4px] border border-line bg-[rgba(237,240,228,0.02)] p-[clamp(24px,3.5vw,40px)]">
           <div className="flex-[1_1_420px]">
             <div className="mb-2.5 font-mono text-[11px] tracking-[0.12em] text-faint uppercase">
               The other one · live · co-founded
@@ -112,15 +111,14 @@ export default function Flagship() {
             </p>
           </div>
           <div className="flex flex-col items-start gap-3">
-            <Magnetic
+            <ArrowLink
               href={CONFIG.links.dashly}
               target="_blank"
               rel="noopener noreferrer"
-              strength={0.2}
-              className="inline-block rounded-full border border-line px-5 py-[11px] text-[13px] font-medium text-text no-underline"
+              className="inline-block rounded-[3px] border border-line px-5 py-[11px] text-[13px] font-medium text-text no-underline"
             >
               dashlyhq.com ↗
-            </Magnetic>
+            </ArrowLink>
             <Link
               href="/dashly"
               className="font-mono pointer-coarse:py-3 text-[11px] tracking-[0.08em] text-accent no-underline"

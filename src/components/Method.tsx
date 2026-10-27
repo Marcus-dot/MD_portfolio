@@ -21,7 +21,7 @@ export default function Method() {
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.t} delay={i * 0.08} className="h-full">
           <div
-            className="h-full rounded-3xl border border-line bg-surface px-7 py-[30px]"
+            className="h-full rounded-[4px] border border-line bg-surface px-7 py-[30px]"
           >
             <div className="mb-5 font-serif text-[40px] leading-none italic text-accent">
               0{i + 1}

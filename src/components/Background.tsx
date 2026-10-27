@@ -52,7 +52,7 @@ export default function Background() {
                   {g.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-line px-3 py-1 text-[12.5px] text-dim"
+                      className="rounded-[3px] border border-line px-3 py-1 text-[12.5px] text-dim"
                     >
                       {item}
                     </span>

@@ -128,7 +128,7 @@ function Panel({ close }: { close: () => void }) {
         aria-label="Command palette"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={trapTab}
-        className="h-fit w-[min(560px,92vw)] overflow-hidden rounded-[20px] border border-line-hover bg-surface [animation:fadeUp_.35s_var(--ease)_both]"
+        className="h-fit w-[min(560px,92vw)] overflow-hidden rounded-[4px] border border-line-hover bg-surface [animation:fadeUp_.35s_var(--ease)_both]"
       >
         <input
           ref={inputRef}

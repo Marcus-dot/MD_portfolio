@@ -80,7 +80,7 @@ export default function CvPage() {
                   {...(href.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="rounded-full border border-line px-4 py-2 font-mono text-[11.5px] text-text no-underline transition-colors hover:border-line-hover"
+                  className="rounded-[3px] border border-line px-4 py-2 font-mono text-[11.5px] text-text no-underline transition-colors hover:border-line-hover"
                 >
                   {label}
                 </a>
@@ -133,7 +133,7 @@ export default function CvPage() {
               <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[18px]">
                 {EDUCATION.map((e, i) => (
                   <Reveal key={e.degree} delay={i * 0.08} className="h-full">
-                    <div className="h-full rounded-3xl border border-line bg-surface px-7 py-[30px]">
+                    <div className="h-full rounded-[4px] border border-line bg-surface px-7 py-[30px]">
                       <div className="font-mono text-[11px] tracking-[0.1em] text-accent uppercase">
                         {e.detail}
                       </div>
@@ -160,7 +160,7 @@ export default function CvPage() {
         <div className="mt-[clamp(90px,14vh,150px)] flex flex-wrap items-center justify-between gap-6 border-t border-line pt-10 print:hidden">
           <a
             href={`mailto:${CONFIG.email}`}
-            className="inline-block rounded-full bg-text px-7 py-3.5 text-[14px] font-semibold text-bg no-underline"
+            className="inline-block rounded-[3px] bg-text px-7 py-3.5 text-[14px] font-semibold text-bg no-underline"
           >
             Building something that has to be right? →
           </a>

@@ -121,7 +121,7 @@ export default async function CaseOutline({
             href={story.case.link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block rounded-full border border-line px-5 py-2.5 font-mono text-[12px] tracking-[0.06em] text-accent no-underline transition-colors hover:border-line-hover"
+            className="mt-6 inline-block rounded-[3px] border border-line px-5 py-2.5 font-mono text-[12px] tracking-[0.06em] text-accent no-underline transition-colors hover:border-line-hover"
           >
             {story.case.link.label}
           </a>
@@ -135,7 +135,7 @@ export default async function CaseOutline({
         <div className="mt-16 flex flex-wrap items-center gap-6 border-t border-line pt-10">
           <a
             href={`mailto:${CONFIG.email}`}
-            className="inline-block rounded-full bg-text px-7 py-3.5 text-[14px] font-semibold text-bg no-underline"
+            className="inline-block rounded-[3px] bg-text px-7 py-3.5 text-[14px] font-semibold text-bg no-underline"
           >
             Talk about work like this →
           </a>

@@ -1,7 +1,8 @@
 import { STATUES } from "@/content/statues";
 import StatueCanvas from "./statue/StatueCanvas";
+import ChipCounter from "./statue/ChipCounter";
 import LusakaClock from "./LusakaClock";
-import Magnetic from "./Magnetic";
+import ArrowLink from "./ArrowLink";
 
 export default function Hero() {
   return (
@@ -20,7 +21,10 @@ export default function Hero() {
           {STATUES.marcus.caption}
           <br />
           <span className="tracking-[0.06em] normal-case">{STATUES.marcus.credit}</span>
+          <ChipCounter className="mt-3 block text-[10.5px] text-dim" />
         </div>
+        {/* phones: the tally sits at the statue's base */}
+        <ChipCounter className="pointer-events-none absolute top-[calc(80px+44svh-26px)] right-5 text-[11px] text-dim min-[761px]:hidden" />
       </div>
 
       {/* content layer - name overlaps the statue edge; clicks fall through to
@@ -78,19 +82,19 @@ export default function Hero() {
             className="hero-fade flex flex-wrap gap-3"
             style={{ animationDelay: "0.65s" }}
           >
-            <Magnetic
+            <ArrowLink
               href="#work"
               data-cursor="GO"
-              className="inline-block rounded-full bg-accent px-[30px] py-4 text-[15px] font-semibold text-bg no-underline"
+              className="inline-block rounded-[3px] bg-accent px-[30px] py-4 text-[15px] font-semibold text-bg no-underline"
             >
               View the work
-            </Magnetic>
-            <Magnetic
+            </ArrowLink>
+            <ArrowLink
               href="#method"
-              className="inline-block rounded-full border border-line bg-bg px-[30px] py-4 text-[15px] font-medium text-text no-underline"
+              className="inline-block rounded-[3px] border border-line bg-bg px-[30px] py-4 text-[15px] font-medium text-text no-underline"
             >
               How I work
-            </Magnetic>
+            </ArrowLink>
           </div>
         </div>
       </div>

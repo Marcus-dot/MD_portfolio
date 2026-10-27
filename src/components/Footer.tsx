@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CONFIG } from "@/content/config";
 import LusakaClock from "./LusakaClock";
-import Magnetic from "./Magnetic";
+import ArrowLink from "./ArrowLink";
 import Reveal from "./Reveal";
 import SectionStatue from "./statue/SectionStatue";
 import { STATUES } from "@/content/statues";
@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative z-[3] -mt-10 overflow-hidden rounded-t-[40px] bg-musgo px-page pt-[clamp(100px,16vh,180px)] pb-10"
+      className="relative z-[3] -mt-10 overflow-hidden bg-musgo px-page pt-[clamp(100px,16vh,180px)] pb-10"
     >
       {/* the athlete a breath before the throw, beside the ask */}
       <SectionStatue
@@ -28,13 +28,13 @@ export default function Footer() {
           that has to be{" "}
           <em className="font-serif font-normal italic text-accent">right?</em>
         </h2>
-        <Magnetic
+        <ArrowLink
           href={`mailto:${CONFIG.email}`}
           data-cursor="SAY HI"
-          className="mt-12 inline-block rounded-full bg-text px-11 py-5 text-[16px] font-semibold text-bg no-underline"
+          className="mt-12 inline-block rounded-[3px] bg-text px-11 py-5 text-[16px] font-semibold text-bg no-underline"
         >
-          {CONFIG.email} →
-        </Magnetic>
+          {`${CONFIG.email} →`}
+        </ArrowLink>
         <div className="mt-[22px] font-mono text-[12px] text-dim pointer-coarse:hidden print:hidden">
           or press <kbd>⌘K</kbd> anywhere
         </div>
@@ -85,7 +85,7 @@ export default function Footer() {
           href="#hero"
           aria-label="Back to top"
           data-cursor="TOP"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-[15px] text-dim no-underline"
+          className="flex h-10 w-10 items-center justify-center rounded-[3px] border border-line text-[15px] text-dim no-underline"
         >
           ↑
         </a>

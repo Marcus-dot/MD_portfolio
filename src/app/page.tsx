@@ -2,7 +2,6 @@ import Loader from "@/components/Loader";
 import ScrollUI from "@/components/ScrollUI";
 import Grain from "@/components/Grain";
 import ContextCursor from "@/components/ContextCursor";
-import Spotlight from "@/components/Spotlight";
 import CommandPalette from "@/components/CommandPalette";
 import Toast from "@/components/Toast";
 import Nav from "@/components/Nav";
@@ -23,7 +22,6 @@ export default function Home() {
       <Loader />
       <Grain />
       <ContextCursor />
-      <Spotlight />
       <CommandPalette />
       <Toast />
       <ScrollUI />
