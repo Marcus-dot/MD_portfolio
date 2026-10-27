@@ -58,8 +58,21 @@ OpenGraph/Twitter tags, `sitemap.xml` and `robots.txt`.
 
 Motion honours `prefers-reduced-motion` everywhere; the loader runs once
 per session (shorter on mobile). Printing the homepage (Cmd/Ctrl+P)
-produces a clean CV-style document — there is deliberately no PDF download. Lighthouse (last run): desktop 98/96→100/100/100, mobile
-89–93/100/100/100.
+produces a clean CV-style document; the CV page (/cv) has its own Save as PDF.
+
+Lighthouse, measured 27 Oct 2026 on the production build (perf / a11y / best
+practices / SEO):
+
+| Page | Desktop | Mobile (simulated slow 4G) |
+| --- | --- | --- |
+| / | 99 / 100 / 100 / 100 | 92 / 100 / 100 / 100 |
+| /cast-room | 100 / 100 / 100 / 100 | 95 / 100 / 100 / 100 |
+| /dashly | 100 / 100 / 100 / 100 | 92 / 100 / 100 / 100 |
+| /cv | 100 / 100 / 100 / 100 | 91 / 100 / 100 / 100 |
+| /work/* | 100 / 100 / 100 / 100 | 97 / 100 / 100 / 100 |
+
+The "This site" card on the homepage quotes these numbers; re-measure before
+changing it.
 
 ## Statues
 

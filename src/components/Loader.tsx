@@ -26,7 +26,7 @@ export default function Loader() {
     }
     const start = performance.now();
     // Shorter ceremony on small screens - keeps mobile LCP inside budget
-    const duration = window.matchMedia("(max-width: 760px)").matches ? 900 : 1600;
+    const duration = window.matchMedia("(max-width: 760px)").matches ? 700 : 1000;
     const tick = (t: number) => {
       const p = Math.min(100, Math.round(((t - start) / duration) * 100));
       setN(p);

@@ -80,7 +80,7 @@ export default function WorkStack() {
         >
           <span
             aria-hidden
-            className="w-[100px] font-serif text-[clamp(48px,7vw,92px)] leading-none italic text-[rgba(155,201,126,0.28)]"
+            className="w-[100px] font-serif text-[clamp(48px,7vw,92px)] leading-none italic text-[#4f6b44]"
           >
             {s.n}
           </span>

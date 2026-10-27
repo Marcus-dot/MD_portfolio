@@ -46,7 +46,7 @@ export default function CastRoom() {
             a classical sculpture, rebuilt as etched marble tiles and relit live.
             Move close to one to bring the lamp; click to chip the marble.
           </p>
-          <p className="mt-5 mb-0 font-mono text-[11px] tracking-[0.12em] text-faint">
+          <p className="mt-5 mb-0 font-mono text-[11px] tracking-[0.12em] text-faint max-[639px]:text-[12px]">
             {CAST_ROOM.length} WORKS · HUNG IN THE ORDER YOU MEET THEM
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function CastRoom() {
                         </span>
                         <Link
                           href={ex.where.href}
-                          className="font-mono text-[11px] tracking-[0.1em] text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
+                          className="font-mono text-[11px] tracking-[0.1em] text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3 max-[639px]:text-[12px]"
                         >
                           SEE IT IN PLACE: {ex.where.label.toUpperCase()} →
                         </Link>
@@ -84,7 +84,7 @@ export default function CastRoom() {
                       <p className="mt-3 mb-0 max-w-[460px] text-[15px] leading-[1.7] text-dim">
                         {ex.why}
                       </p>
-                      <p className="mt-5 mb-0 font-mono text-[10.5px] leading-[1.8] tracking-[0.06em] text-faint">
+                      <p className="mt-5 mb-0 font-mono text-[10.5px] leading-[1.8] tracking-[0.06em] text-faint max-[639px]:text-[12px]">
                         {ex.object}
                         <br />
                         {ex.source}

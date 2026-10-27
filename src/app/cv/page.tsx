@@ -104,22 +104,21 @@ export default function CvPage() {
                   {SUMMARY}
                 </p>
               </Reveal>
-              <dl className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-[18px] print:mt-5 print:grid-cols-4">
+              <div className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-[18px] print:mt-5 print:grid-cols-4">
                 {FIGURES.map((f, i) => (
                   <Reveal key={f.l} delay={i * 0.08}>
                     <div className="border-t border-line pt-5">
-                      <dt className="sr-only">{f.l}</dt>
-                      <dd className="m-0 font-serif text-[clamp(48px,6vw,72px)] leading-none italic">
+                      <div className="font-serif text-[clamp(48px,6vw,72px)] leading-none italic">
                         {f.n}
-                      </dd>
-                      <dd className="m-0 mt-3 text-[12.5px] tracking-[0.08em] text-dim uppercase">
+                      </div>
+                      <div className="mt-3 text-[12.5px] tracking-[0.08em] text-dim uppercase">
                         {f.l}
-                      </dd>
-                      <dd className="m-0 mt-1 font-mono text-[10.5px] text-faint">{f.src}</dd>
+                      </div>
+                      <div className="mt-1 font-mono text-[10.5px] text-faint">{f.src}</div>
                     </div>
                   </Reveal>
                 ))}
-              </dl>
+              </div>
             </section>
 
             <section id="experience" className="scroll-mt-10">

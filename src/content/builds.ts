@@ -30,6 +30,6 @@ export const BUILDS: Build[] = [
   {
     t: "This site",
     stack: "Next.js 16 · TypeScript · Tailwind v4",
-    d: "Dark by design, audited like the systems it describes: reduced-motion paths, axe-clean accessibility, Lighthouse 95+ desktop. Verified claims only.",
+    d: "Dark by design, audited like the systems it describes: reduced-motion paths, Lighthouse accessibility 100 on every page and performance 99 to 100 on desktop, measured October 2026. Verified claims only.",
   },
 ];
