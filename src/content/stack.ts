@@ -43,9 +43,9 @@ export const EDUCATION: Education[] = [
   {
     degree: "BEng Software Engineering (Honours)",
     school: "Xiamen University",
-    detail: "Xiamen University Malaysia campus · 2020 – 2025",
+    detail: "Xiamen University Malaysia campus · 2020 – 2026",
     thesis:
-      "Thesis: feature selection for IoT device detection using machine learning (SVM, Random Forest, DNN; RFE, PCA, ReliefF).",
+      "Degree conferred 30 June 2026. Thesis: feature selection for IoT device detection using machine learning (SVM, Random Forest, DNN; RFE, PCA, ReliefF).",
   },
   {
     degree: "Foundation in Science",
