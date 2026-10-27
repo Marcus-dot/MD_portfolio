@@ -269,17 +269,31 @@ kbd {
 html[data-marginalia] .mg {
   display: block;
 }
-html[data-marginalia] body {
+/* the blueprint grid fades in behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     linear-gradient(rgba(120, 170, 210, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(120, 170, 210, 0.07) 1px, transparent 1px);
   background-size: 32px 32px;
-  background-attachment: fixed;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease);
+}
+html[data-marginalia] body::before {
+  opacity: 1;
+}
+[data-anno] {
+  outline: 1px dashed transparent;
+  outline-offset: -8px;
+  transition: outline-color 0.9s var(--ease);
 }
 /* dashed outlines with a dev-tools label on annotated elements */
 html[data-marginalia] [data-anno] {
-  outline: 1px dashed var(--blueprint);
-  outline-offset: -8px;
+  outline-color: var(--blueprint);
 }
 html[data-marginalia] [data-anno]::after {
   content: attr(data-anno);
@@ -295,6 +309,13 @@ html[data-marginalia] [data-anno]::after {
   white-space: nowrap;
   color: rgba(150, 195, 230, 0.95);
   pointer-events: none;
+  animation: mg-fade 0.9s var(--ease) both;
+}
+@keyframes mg-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
 }
 /* a note: lines written one after another, then its arrow drawn */
 .mg-note {
@@ -313,7 +334,7 @@ html[data-marginalia] [data-anno]::after {
   white-space: nowrap;
 }
 html[data-marginalia] .mg-line {
-  animation: mg-write var(--t, 0.9s) steps(24, end) var(--d, 0s) both;
+  animation: mg-write var(--t, 0.9s) cubic-bezier(0.45, 0.05, 0.55, 0.95) var(--d, 0s) both;
 }
 @keyframes mg-write {
   from {
@@ -333,7 +354,7 @@ html[data-marginalia] .mg-line {
   stroke-dashoffset: 1;
 }
 html[data-marginalia] .mg-arrow path {
-  animation: mg-draw 0.6s var(--ease) var(--d, 0s) forwards;
+  animation: mg-draw 0.9s cubic-bezier(0.65, 0, 0.35, 1) var(--d, 0s) forwards;
 }
 @keyframes mg-draw {
   to {

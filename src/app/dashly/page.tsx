@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Syne } from "next/font/google";
 import Grain from "@/components/Grain";
+import Note from "@/components/marginalia/Note";
+import References from "@/components/marginalia/References";
+import MarginaliaToggle from "@/components/marginalia/MarginaliaToggle";
 import Reveal from "@/components/Reveal";
 import TypedLine from "@/components/TypedLine";
 import SectionStatue from "@/components/statue/SectionStatue";
@@ -31,9 +34,9 @@ const day = (iso: string) =>
 
 const story = STORIES.find((s) => s.slug === "dashly")!;
 
-function Room({ n: num, title, aside, children }: { n: string; title: React.ReactNode; aside?: string; children: React.ReactNode }) {
+function Room({ n: num, title, aside, anno, children }: { n: string; title: React.ReactNode; aside?: string; anno?: string; children: React.ReactNode }) {
   return (
-    <section className="scroll-mt-24 border-t border-line pt-10">
+    <section data-anno={anno} className="relative scroll-mt-24 border-t border-line pt-10">
       <div className="mb-[clamp(36px,6vh,60px)] flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
         <h2 className="m-0 flex items-baseline gap-4 font-[family-name:var(--font-syne)] text-[clamp(30px,4.2vw,54px)] leading-[1.02] font-bold tracking-[-0.02em]">
           <span className="font-mono text-[12px] font-normal tracking-[0.16em] text-[#A56ABD]">{num}</span>
@@ -77,6 +80,9 @@ export default function DashlyRoom() {
           ← ALL WORK
         </Link>
       </header>
+      <div className="flex justify-center px-page">
+        <MarginaliaToggle />
+      </div>
 
       <main className="px-page pt-[clamp(60px,11vh,130px)] pb-[clamp(80px,12vh,140px)]">
         {/* entrance */}
@@ -96,6 +102,11 @@ export default function DashlyRoom() {
             Every project. One honest <span className="text-[#A56ABD]">score.</span>
           </p>
           <div className="relative z-[1] mt-3 font-mono text-[10px] tracking-[0.16em] text-faint">DASHLY&apos;S TAGLINE</div>
+          <Note
+            className="top-[150px] left-[clamp(560px,48vw,720px)] max-w-[340px]"
+            lines={["This room borrows Dashly's own purple,", "#6E3482, and its display face, Syne,", "straight from the product's globals.css."]}
+            refs={[4]}
+          />
           <p className="relative z-[1] mt-10 mb-0 max-w-[640px] text-[clamp(16px,1.6vw,18.5px)] leading-[1.75] text-dim">
             {story.case.intro}
           </p>
@@ -122,7 +133,12 @@ export default function DashlyRoom() {
         </Reveal>
 
         <div className="mt-[clamp(90px,14vh,150px)] flex flex-col gap-[clamp(90px,14vh,150px)]">
-          <Room n="01" title={<>One honest score<span className="text-[#A56ABD]">.</span></>} aside="Try it: move the sliders">
+          <Room n="01" anno="<section> · HonestScore, a client component; no network calls" title={<>One honest score<span className="text-[#A56ABD]">.</span></>} aside="Try it: move the sliders">
+            <Note
+              className="top-[118px] right-0 max-w-[420px] text-right"
+              rotate={1.2}
+              lines={["A re-creation, not the original: the real", "formula stays in Dashly's private repo. This", "one keeps its five weights and its status", "bands (80, 65, 45, 25) and writes its own rules."]}
+            />
             <p className="mt-0 mb-12 max-w-[680px] text-[16px] leading-[1.75] text-dim">
               Dashly Sense grades every project across five dimensions with fixed weights, and
               recomputes the score each time it is read. The score is arithmetic, so it can be
@@ -130,9 +146,14 @@ export default function DashlyRoom() {
               forced through a single tool and validated before anything is shown.
             </p>
             <HonestScore />
+            <Note
+              className="bottom-[-10px] left-0 max-w-[520px]"
+              delay={2.4}
+              lines={["In Dashly the AI never gets a blank page. It is", "handed the computed score and must answer through", "one tool, deliver_insights: exactly three items,", "then checked by zod before anything is shown."]}
+            />
           </Room>
 
-          <Room n="02" title={<>The ledger<span className="text-[#A56ABD]">.</span></>} aside={`The codebase, counted ${day(LEDGER.countedOn)}`}>
+          <Room n="02" anno="<section> · numbers from src/content/dashly-ledger.json" title={<>The ledger<span className="text-[#A56ABD]">.</span></>} aside={`The codebase, counted ${day(LEDGER.countedOn)}`}>
             <dl className="m-0 grid grid-cols-2 gap-x-6 gap-y-10 min-[760px]:grid-cols-3 min-[1100px]:grid-cols-5">
               {stats.map(([v, l]) => (
                 <div key={l} className="border-t border-line pt-4">
@@ -142,16 +163,33 @@ export default function DashlyRoom() {
                 </div>
               ))}
             </dl>
-            <div className="mt-16">
+            <div className="relative mt-16">
+              <Note
+                className="top-[10px] left-[8%] max-w-[380px]"
+                rotate={-1}
+                lines={["One tile is five commits. July and", "October 2026 were the big months."]}
+              />
               <CommitStrip />
             </div>
+            <Note
+              className="bottom-[-6px] right-0 max-w-[430px] text-right"
+              rotate={1}
+              delay={1.6}
+              lines={["Counted, not claimed: a script reads git log on", "main and the files on disk, and writes only", "numbers. Re-run it and every figure moves."]}
+              refs={[10]}
+            />
             <p className="mt-8 mb-0 max-w-[620px] font-mono text-[10.5px] leading-[1.8] tracking-[0.04em] text-faint">
               The repository is private; a script counts these figures from it, and only the
               figures are published.
             </p>
           </Room>
 
-          <Room n="03" title={<>Inside the build<span className="text-[#A56ABD]">.</span></>}>
+          <Room n="03" anno="<section> · from the case outline in stories.ts" title={<>Inside the build<span className="text-[#A56ABD]">.</span></>}>
+            <Note
+              className="top-[8px] right-0 max-w-[460px] text-right"
+              rotate={1}
+              lines={["26 calculators, one factory: each is a zod", "schema and a pure function; sign-in, tenancy", "and saving are written once. Tenant isolation", "is Postgres row-level security, with its own tests."]}
+            />
             <ul className="m-0 grid list-none gap-x-[clamp(32px,5vw,80px)] gap-y-6 p-0 min-[900px]:grid-cols-2">
               {story.case.did.map((d) => (
                 <li key={d} className="flex gap-4 border-t border-line pt-5 text-[15px] leading-[1.7] text-dim">
@@ -166,7 +204,12 @@ export default function DashlyRoom() {
           </Room>
 
           {DASHLY_SCREENS.length > 0 && (
-            <Room n="04" title={<>In production<span className="text-[#A56ABD]">.</span></>} aside="Inside the app, and on dashlyhq.com">
+            <Room n="04" anno="<section> · next/image, WebP, cropped by hand" title={<>In production<span className="text-[#A56ABD]">.</span></>} aside="Inside the app, and on dashlyhq.com">
+              <Note
+                className="top-[58px] right-0 max-w-[460px] text-right"
+                rotate={0.8}
+                lines={["Captured signed in to a test workspace. The", "sidebar is cropped out: it shows an email address."]}
+              />
               <div className="grid gap-x-8 gap-y-14 min-[900px]:grid-cols-2">
                 {DASHLY_SCREENS.map((s, i) => (
                   <figure key={s.src} className={`m-0 ${i === 0 ? "min-[900px]:col-span-2" : ""}`}>
@@ -192,6 +235,7 @@ export default function DashlyRoom() {
             More work
           </Link>
         </div>
+        <References />
       </main>
     </div>
   );

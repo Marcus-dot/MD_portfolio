@@ -7,6 +7,9 @@ import CvRail, { SavePdfButton } from "@/components/cv/CvRail";
 import CvTimeline from "@/components/cv/CvTimeline";
 import CvTrace, { SectionHead } from "@/components/cv/CvTrace";
 import Grain from "@/components/Grain";
+import Note from "@/components/marginalia/Note";
+import References from "@/components/marginalia/References";
+import MarginaliaToggle from "@/components/marginalia/MarginaliaToggle";
 import LusakaClock from "@/components/LusakaClock";
 import Reveal from "@/components/Reveal";
 import Toast from "@/components/Toast";
@@ -47,6 +50,9 @@ export default function CvPage() {
           ← PORTFOLIO
         </Link>
       </header>
+      <div className="flex justify-center px-page print:hidden">
+        <MarginaliaToggle />
+      </div>
 
       <div className="px-page pt-[clamp(60px,12vh,140px)] pb-[clamp(80px,12vh,140px)] print:p-0">
         {/* masthead */}
@@ -56,6 +62,12 @@ export default function CvPage() {
           className="!absolute right-0 bottom-[70px] h-[clamp(260px,28vw,400px)] w-[clamp(220px,24vw,340px)] max-[1023px]:opacity-40 max-[639px]:!top-[110px] max-[639px]:!bottom-auto"
         />
         <TypedLine line={MEDITATIONS.cv} className="relative z-[1] mb-12 max-w-[440px] print:hidden" />
+        <Note
+          className="top-[0px] left-[clamp(480px,40vw,620px)] max-w-[300px]"
+          delay={3.4}
+          lines={["Checked word for word against", "Project Gutenberg #15877."]}
+          refs={[7]}
+        />
         <Reveal>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] tracking-[0.2em] text-faint">
             <span>CURRICULUM VITAE · UPDATED {CV_UPDATED.toUpperCase()}</span>
@@ -97,7 +109,12 @@ export default function CvPage() {
           </aside>
 
           <main className="flex min-w-0 flex-col gap-[clamp(90px,14vh,150px)] print:block print:[&>section]:mt-8">
-            <section id="profile" className="scroll-mt-10">
+            <section id="profile" data-anno="<section #profile> · window.print() + a print stylesheet" className="relative scroll-mt-10">
+              <Note
+                className="top-[-4px] right-0 max-w-[420px] text-right"
+                rotate={1}
+                lines={["Save as PDF is window.print() and a print", "stylesheet. The PDF cannot go out of date:", "it is this page."]}
+              />
               <SectionHead n="01" title="Profile" />
               <Reveal>
                 <p className="m-0 max-w-[820px] text-[clamp(17px,1.9vw,21px)] leading-[1.7] text-text">
@@ -121,14 +138,25 @@ export default function CvPage() {
               </div>
             </section>
 
-            <section id="experience" className="scroll-mt-10">
+            <section id="experience" className="relative scroll-mt-10">
+              <Note
+                className="top-[-4px] right-0 max-w-[380px] text-right"
+                rotate={1}
+                lines={["The spine fills as you read:", "scroll progress, from useScroll."]}
+                refs={[2]}
+              />
               <SectionHead n="02" title="Experience" />
               <CvTimeline roles={EXPERIENCE} />
             </section>
 
             <CvTrace stack={STACK} projects={PROJECTS} />
 
-            <section id="education" className="scroll-mt-10">
+            <section id="education" className="relative scroll-mt-10">
+              <Note
+                className="bottom-[-8px] right-0 max-w-[380px] text-right"
+                rotate={1}
+                lines={["The paper CV carries a phone number.", "This page deliberately does not."]}
+              />
               <SectionHead n="05" title="Education" />
               <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[18px]">
                 {EDUCATION.map((e, i) => (
@@ -154,6 +182,7 @@ export default function CvPage() {
                 LANGUAGES · ENGLISH, FLUENT (WRITTEN AND SPOKEN)
               </p>
             </section>
+            <References />
           </main>
         </div>
 

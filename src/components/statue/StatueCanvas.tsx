@@ -142,12 +142,19 @@ export default function StatueCanvas({
 
       // a turntable shown still faces front (middle frame)
       let f = frames[Math.floor(frames.length / 2)];
+      // turning: blend the two nearest baked angles so the head turns
+      // continuously instead of stepping 5 degrees at a time
+      let g = f;
+      let mix = 0;
       if (turn) {
         const target = idle
           ? (frames.length - 1) / 2 + (reduce ? 0 : Math.sin(now * 0.4) * 3)
           : Math.min(1, Math.max(0, pointer.x)) * (frames.length - 1);
         yawIdx += (target - yawIdx) * (reduce ? 1 : 0.07);
-        f = frames[Math.round(yawIdx)];
+        const i0 = Math.min(frames.length - 1, Math.max(0, Math.floor(yawIdx)));
+        f = frames[i0];
+        g = frames[Math.min(frames.length - 1, i0 + 1)];
+        mix = reduce ? 0 : yawIdx - i0;
       }
 
       // dust: damped springs back to rest
@@ -167,8 +174,10 @@ export default function StatueCanvas({
       }
 
       for (let i = 0; i < cols * rows; i++) {
-        const tone = f.tone[i];
-        if (!tone) continue;
+        // cross-fade tone and surface between the two angles
+        const ta = f.tone[i], tb = g.tone[i];
+        const tone = ta + (tb - ta) * mix;
+        if (tone < 0.06) continue;
         const age = age0 - reveal[i];
         if (age < 0) continue;
         const c = i % cols, r = Math.floor(i / cols);
@@ -181,7 +190,15 @@ export default function StatueCanvas({
           ctx.drawImage(A, lvl * S, row * S, S, S, x, y, cell, cell);
           continue;
         }
-        const v = shade(f.nx[i], f.ny[i], f.nz[i], tone, L);
+        let nx = f.nx[i], ny = f.ny[i], nz = f.nz[i];
+        if (mix > 0) {
+          // where one angle has no surface, take the other's normal
+          const wa = ta ? 1 - mix : 0, wb = tb ? mix : 0, sum = wa + wb || 1;
+          nx = (f.nx[i] * wa + g.nx[i] * wb) / sum;
+          ny = (f.ny[i] * wa + g.ny[i] * wb) / sum;
+          nz = (f.nz[i] * wa + g.nz[i] * wb) / sum;
+        }
+        const v = shade(nx, ny, nz, tone, L);
         const lvl = Math.round(v * (LEVELS - 1));
         if (lvl <= 0) continue;
         const airborne = Math.abs(offX[i]) + Math.abs(offY[i]) > 0.6;

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Grain from "@/components/Grain";
+import Note from "@/components/marginalia/Note";
+import References from "@/components/marginalia/References";
+import MarginaliaToggle from "@/components/marginalia/MarginaliaToggle";
 import Toast from "@/components/Toast";
 import TypedLine from "@/components/TypedLine";
 import Reveal from "@/components/Reveal";
@@ -32,8 +35,17 @@ export default function CastRoom() {
           ← PORTFOLIO
         </Link>
       </header>
+      <div className="flex justify-center px-page">
+        <MarginaliaToggle />
+      </div>
 
-      <main className="px-page pt-[clamp(60px,12vh,140px)] pb-[clamp(80px,12vh,140px)]">
+      <main className="relative px-page pt-[clamp(60px,12vh,140px)] pb-[clamp(80px,12vh,140px)]">
+        <Note
+          className="top-[clamp(120px,18vh,200px)] right-[clamp(20px,6vw,100px)] max-w-[420px] text-right"
+          rotate={1.2}
+          lines={["Each scan, up to about 400,000 triangles, is", "rasterised offline in Node: a depth buffer at", "3x resolution, averaged down into 150 x 150", "cells. No WebGL anywhere."]}
+          refs={[9]}
+        />
         <div className="max-w-[760px]">
           <TypedLine line={MEDITATIONS.castRoom} className="mb-12 max-w-[520px]" />
           <h1 className="m-0 text-[clamp(52px,10vw,148px)] font-semibold leading-[0.92] tracking-[-0.05em] uppercase">
@@ -57,7 +69,36 @@ export default function CastRoom() {
             const st = STATUES[ex.key];
             return (
               <li key={ex.key} className="min-[900px]:even:mt-[clamp(120px,16vw,240px)]">
-                <figure className="m-0">
+                <figure className="relative m-0">
+                  {ex.key === "marcus" && (
+                    <Note
+                      className="top-[30px] left-[calc(100%+24px)] max-w-[300px]"
+                      delay={1.2}
+                      lines={["The only CC BY-SA scan, so his credit", "travels with every image made from it,", "the share card included."]}
+                      refs={[5]}
+                    />
+                  )}
+                  {ex.key === "pieta" && (
+                    <Note
+                      className="top-[-96px] right-0 max-w-[360px] text-right"
+                      rotate={1}
+                      lines={["Exported lying on its back. up: \"y\" in the", "bake turns (x, y, z) into (x, -z, y)."]}
+                      refs={[9]}
+                    />
+                  )}
+                  {ex.key === "hercules" && (
+                    <Note
+                      className="top-[30px] left-[calc(100%+24px)] max-w-[300px]"
+                      lines={["Carved top to bottom the first time it", "scrolls into view. The green flecks are", "the chisel."]}
+                    />
+                  )}
+                  {ex.key === "apollo" && (
+                    <Note
+                      className="top-[-96px] right-0 max-w-[360px] text-right"
+                      rotate={1}
+                      lines={["Label lines come only from the source records;", "a date appears only where the record gives one."]}
+                    />
+                  )}
                   <div
                     className={`relative w-full ${
                       ex.tall ? "h-[clamp(440px,52vw,640px)]" : "h-[clamp(360px,40vw,520px)]"
@@ -109,6 +150,7 @@ export default function CastRoom() {
             engine in the browser. Sources and licences are listed with each work.
           </p>
         </div>
+        <References />
       </main>
     </div>
   );

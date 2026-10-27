@@ -75,6 +75,12 @@ export default function Footer() {
         >
           Cast Room →
         </Link>
+        <Link
+          href="/credits"
+          className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
+        >
+          Credits →
+        </Link>
       </div>
       <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
         <span>© 2026 Madalitso Daka · Lusaka, Zambia</span>

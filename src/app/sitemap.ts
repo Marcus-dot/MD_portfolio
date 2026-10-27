@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${CONFIG.siteUrl}/credits`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
       url: `${CONFIG.siteUrl}/cast-room`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { CvProject } from "@/content/cv";
 import type { StackGroup } from "@/content/stack";
 import Reveal from "../Reveal";
+import Note from "../marginalia/Note";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -33,7 +34,12 @@ export default function CvTrace({
 
   return (
     <>
-      <section id="skills" className="scroll-mt-10">
+      <section id="skills" data-anno="<section #skills> · one useState shared with #projects" className="relative scroll-mt-10">
+        <Note
+          className="top-[-4px] right-0 max-w-[440px] text-right"
+          rotate={1}
+          lines={["Skills and projects share one piece of state,", "and project stacks use the exact skill names,", "so a click filters rather than searches."]}
+        />
         <SectionHead n="03" title="Skills" aside="Pick one to trace it through the work" />
         <div className="flex flex-col gap-5 print:block print:[&>div]:mb-2">
           {stack.map((g) => (
