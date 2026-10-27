@@ -135,7 +135,7 @@ export default function DashlyRoom() {
         <div className="mt-[clamp(90px,14vh,150px)] flex flex-col gap-[clamp(90px,14vh,150px)]">
           <Room n="01" anno="<section> · HonestScore, a client component; no network calls" title={<>One honest score<span className="text-[#A56ABD]">.</span></>} aside="Try it: move the sliders">
             <Note
-              className="top-[118px] right-0 max-w-[420px] text-right"
+              className="top-[-122px] right-0 max-w-[420px] text-right"
               rotate={1.2}
               lines={["A re-creation, not the original: the real", "formula stays in Dashly's private repo. This", "one keeps its five weights and its status", "bands (80, 65, 45, 25) and writes its own rules."]}
             />
@@ -147,9 +147,9 @@ export default function DashlyRoom() {
             </p>
             <HonestScore />
             <Note
-              className="bottom-[-10px] left-0 max-w-[520px]"
+              className="bottom-[-84px] left-0 max-w-[560px]"
               delay={2.4}
-              lines={["In Dashly the AI never gets a blank page. It is", "handed the computed score and must answer through", "one tool, deliver_insights: exactly three items,", "then checked by zod before anything is shown."]}
+              lines={["In Dashly the AI is handed the computed score and must answer", "through one tool, deliver_insights: exactly three items,", "checked by zod before anything is shown."]}
             />
           </Room>
 
@@ -172,7 +172,7 @@ export default function DashlyRoom() {
               <CommitStrip />
             </div>
             <Note
-              className="bottom-[-6px] right-0 max-w-[430px] text-right"
+              className="bottom-[-100px] right-0 max-w-[430px] text-right"
               rotate={1}
               delay={1.6}
               lines={["Counted, not claimed: a script reads git log on", "main and the files on disk, and writes only", "numbers. Re-run it and every figure moves."]}
@@ -206,7 +206,7 @@ export default function DashlyRoom() {
           {DASHLY_SCREENS.length > 0 && (
             <Room n="04" anno="<section> · next/image, WebP, cropped by hand" title={<>In production<span className="text-[#A56ABD]">.</span></>} aside="Inside the app, and on dashlyhq.com">
               <Note
-                className="top-[58px] right-0 max-w-[460px] text-right"
+                className="top-[-78px] right-0 max-w-[460px] text-right"
                 rotate={0.8}
                 lines={["Captured signed in to a test workspace. The", "sidebar is cropped out: it shows an email address."]}
               />

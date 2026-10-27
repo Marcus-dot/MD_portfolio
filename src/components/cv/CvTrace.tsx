@@ -36,7 +36,7 @@ export default function CvTrace({
     <>
       <section id="skills" data-anno="<section #skills> · one useState shared with #projects" className="relative scroll-mt-10">
         <Note
-          className="top-[-4px] right-0 max-w-[440px] text-right"
+          className="top-[-2px] left-[clamp(200px,20vw,260px)] max-w-[460px]"
           rotate={1}
           lines={["Skills and projects share one piece of state,", "and project stacks use the exact skill names,", "so a click filters rather than searches."]}
         />

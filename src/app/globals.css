@@ -298,8 +298,8 @@ html[data-marginalia] [data-anno] {
 html[data-marginalia] [data-anno]::after {
   content: attr(data-anno);
   position: absolute;
-  bottom: 14px;
-  left: 14px;
+  top: -24px;
+  left: 0;
   z-index: 5;
   padding: 1px 6px;
   background: var(--bg);
@@ -310,6 +310,18 @@ html[data-marginalia] [data-anno]::after {
   color: rgba(150, 195, 230, 0.95);
   pointer-events: none;
   animation: mg-fade 0.9s var(--ease) both;
+}
+@media (max-width: 899px) {
+  html[data-marginalia] #hero[data-anno]::after {
+    content: none;
+  }
+}
+/* hero and footer clip their overflow, so their labels sit inside */
+html[data-marginalia] #hero[data-anno]::after,
+html[data-marginalia] footer[data-anno]::after {
+  top: auto;
+  bottom: 14px;
+  left: 14px;
 }
 @keyframes mg-fade {
   from {
@@ -399,6 +411,36 @@ html[data-marginalia] .mg-arrow path {
   }
   html[data-marginalia] [data-anno]::after {
     content: none;
+  }
+}
+
+/* Page transitions (React <ViewTransition default="page"> in layout.tsx) */
+::view-transition {
+  pointer-events: none;
+}
+::view-transition-old(.page) {
+  animation: page-out 0.28s cubic-bezier(0.4, 0, 1, 1) both;
+}
+::view-transition-new(.page) {
+  animation: page-in 0.55s var(--ease) 0.08s both;
+}
+@keyframes page-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }
 

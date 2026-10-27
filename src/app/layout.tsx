@@ -1,3 +1,4 @@
+import { ViewTransition } from "react";
 import type { Metadata, Viewport } from "next";
 import { Caveat, Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import MotionProvider from "@/components/MotionProvider";
@@ -112,7 +113,10 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          {/* route changes cross-fade: the old page settles out, the new one rises in */}
+          <ViewTransition default="page">{children}</ViewTransition>
+        </MotionProvider>
       </body>
     </html>
   );

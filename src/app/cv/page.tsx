@@ -111,7 +111,7 @@ export default function CvPage() {
           <main className="flex min-w-0 flex-col gap-[clamp(90px,14vh,150px)] print:block print:[&>section]:mt-8">
             <section id="profile" data-anno="<section #profile> · window.print() + a print stylesheet" className="relative scroll-mt-10">
               <Note
-                className="top-[-4px] right-0 max-w-[420px] text-right"
+                className="top-[-84px] right-0 max-w-[420px] text-right"
                 rotate={1}
                 lines={["Save as PDF is window.print() and a print", "stylesheet. The PDF cannot go out of date:", "it is this page."]}
               />
@@ -140,7 +140,7 @@ export default function CvPage() {
 
             <section id="experience" className="relative scroll-mt-10">
               <Note
-                className="top-[-4px] right-0 max-w-[380px] text-right"
+                className="top-[-84px] right-0 max-w-[380px] text-right"
                 rotate={1}
                 lines={["The spine fills as you read:", "scroll progress, from useScroll."]}
                 refs={[2]}

@@ -25,6 +25,7 @@ Deploys automatically via Vercel on push to `main`.
 | `/work/[slug]` | Case outlines for every other piece of work |
 | `/cv` | The CV as a page: skills trace through the projects; Save as PDF prints it |
 | `/cast-room` | Every statue on the site, hung with a museum label |
+| `/credits` | Colophon: inspiration, sculpture and text sources, typefaces and their designers, software |
 | any unknown URL | 404, kept by the Belvedere Torso |
 
 ## Editing content: where everything lives
@@ -41,6 +42,7 @@ Real-world values sit in typed data files under `src/content/`. No CMS.
 | Education and tech stack | `src/content/stack.ts` |
 | CV page: summary, figures, roles, projects | `src/content/cv.ts` (skills come from `stack.ts`; project stacks must use the same names) |
 | Statues, their captions and the Cast Room labels | `src/content/statues.ts` |
+| Marginalia notes' references | `src/content/marginalia.ts` (notes themselves sit next to what they describe, in each page) |
 | Typed lines from the Meditations | `src/content/meditations.ts` (George Long's 1862 translation only, verbatim; modern translations are under copyright) |
 | Dashly figures (commits, lines, tests...) | `src/content/dashly-ledger.json`, generated, see below |
 | Dashly screenshots | `src/content/dashly-screens.ts` + `public/dashly/` |
@@ -84,11 +86,11 @@ practices / SEO):
 
 | Page | Desktop | Mobile (simulated slow 4G) |
 | --- | --- | --- |
-| / | 99 / 100 / 100 / 100 | 92 / 100 / 100 / 100 |
-| /cast-room | 100 / 100 / 100 / 100 | 95 / 100 / 100 / 100 |
-| /dashly | 100 / 100 / 100 / 100 | 92 / 100 / 100 / 100 |
-| /cv | 100 / 100 / 100 / 100 | 91 / 100 / 100 / 100 |
-| /work/* | 100 / 100 / 100 / 100 | 97 / 100 / 100 / 100 |
+| / | 99 / 100 / 100 / 100 | 93 / 100 / 100 / 100 |
+| /cast-room | 100 / 100 / 100 / 100 | 94 / 100 / 100 / 100 |
+| /dashly | 100 / 100 / 100 / 100 | 91 / 100 / 100 / 100 |
+| /cv | 100 / 100 / 100 / 100 | 90 / 100 / 100 / 100 |
+| /credits | 100 / 100 / 100 / 100 | 95 / 100 / 100 / 100 |
 
 The "This site" card on the homepage quotes these numbers; re-measure before
 changing it.
