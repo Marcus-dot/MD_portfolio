@@ -19,6 +19,10 @@ export const MEDITATIONS = {
     text: "Loss is nothing else than change.",
     ref: cite("IX.35"),
   },
+  dashly: {
+    text: "Look within. Let neither the peculiar quality of anything nor its value escape thee.",
+    ref: cite("VI.3"),
+  },
   castRoom: {
     text: "Everything is only for a day, both that which remembers and that which is remembered.",
     ref: cite("IV.35"),

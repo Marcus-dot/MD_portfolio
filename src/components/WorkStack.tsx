@@ -104,7 +104,7 @@ export default function WorkStack() {
             {s.badge}
           </span>
           <a
-            href={`/work/${s.slug}`}
+            href={s.slug === "dashly" ? "/dashly" : `/work/${s.slug}`}
             className="w-full pt-1 text-right font-mono pointer-coarse:py-3 text-[11px] tracking-[0.08em] text-accent no-underline"
           >
             CASE OUTLINE →

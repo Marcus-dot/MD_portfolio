@@ -17,12 +17,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${CONFIG.siteUrl}/dashly`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${CONFIG.siteUrl}/cast-room`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
-    ...STORIES.map((s) => ({
+    ...STORIES.filter((s) => s.slug !== "dashly").map((s) => ({
       url: `${CONFIG.siteUrl}/work/${s.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,

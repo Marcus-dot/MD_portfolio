@@ -190,7 +190,7 @@ export const CAST_ROOM: Exhibit[] = [
     title: "Zeus Ammon",
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS1110",
     source: "3D scan by SMK · public domain",
-    where: { label: "Dashly", href: "/work/dashly" },
+    where: { label: "The Dashly room", href: "/dashly" },
     why: "Zeus with the ram's horns of the Egyptian Amun, over the company I co-founded.",
   },
   {

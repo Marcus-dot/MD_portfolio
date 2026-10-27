@@ -1,5 +1,9 @@
 /* Facts sourced from PORTFOLIO_SOURCE_OF_TRUTH.md - verified claims only. */
 import { CONFIG } from "@/content/config";
+import LEDGER from "@/content/dashly-ledger.json";
+
+// Dashly figures come from the dated codebase snapshot (scripts/dashly-ledger.mjs)
+const n = (v: number) => v.toLocaleString("en-GB");
 
 export type Story = {
   n: string;
@@ -24,16 +28,16 @@ export const STORIES: Story[] = [
     s: "Dashly",
     scale: "Live SaaS · co-founded",
     badge: "Live",
-    d: "A production project-portfolio SaaS I co-founded and lead the build on: AI health scoring, 26 industry-specific financial calculators, and multi-tenant teams with role-based access and MFA. Around 47,000 lines of TypeScript across 56 Postgres migrations, live at dashlyhq.com.",
+    d: `A production project-portfolio SaaS I co-founded with my business partner and build myself: one honest health score per project, ${LEDGER.calculators} industry-specific financial calculators, and multi-tenant teams with role-based access and MFA. ${n(LEDGER.commits)} commits and ${n(LEDGER.sourceLines)} lines of TypeScript so far, live at dashlyhq.com.`,
     case: {
       intro:
-        "Dashly is a strategic project-portfolio management platform for emerging markets, live in production at dashlyhq.com. I co-founded it, through Dashly Software, a registered software partnership in Zambia, and lead the engineering: teams track project health, risk, budgets and milestones in one place, with AI-assisted insights and industry-grade financial tooling built in.",
+        "Dashly is a strategic project-portfolio management platform for emerging markets, live in production at dashlyhq.com. I co-founded it with my business partner, through Dashly Software, a registered software partnership in Zambia, and I build it: every human commit in the repository is mine. Teams track project health, risk, budgets and milestones in one place, with industry-grade financial tooling built in.",
       did: [
         "Architected the multi-tenant SaaS on Next.js 16 and Supabase: Postgres with row-level-security isolation, MFA, role-based teams and per-workspace data separation, backed by RLS-isolation tests",
-        "Built Dashly Sense, the AI health-scoring layer: Anthropic-powered structured insights with forced tool-use and schema validation, grading each project across schedule, budget, risk, progress and activity",
+        "Built Dashly Sense: an auditable health score, a weighted formula across schedule, budget, risk, progress and activity, recomputed every time it is read. The AI never grades: Claude writes three recommendations on top of the score, forced through a single tool and validated with zod before anything is shown",
         "Shipped 26 industry-specific financial calculators (NPV, DSCR, OEE, RevPAR, SROI and more) through a single factory pattern, each a validated input schema plus a pure compute function",
         "Delivered the planning surface: portfolio dashboard, calendar and Gantt, board-ready PDF reports and multi-workspace switching",
-        "Hardened it for production: rate limiting, error tracking, a server-rendered data layer and PWA offline support, across roughly 47,000 lines of TypeScript and 56 database migrations",
+        `Hardened it for production: rate limiting, error tracking, a server-rendered data layer and PWA offline support, held in place by ${n(LEDGER.testCases)} automated tests and ${LEDGER.migrations} database migrations`,
       ],
       tech: "Next.js 16 · React 19 · TypeScript · Supabase · Tailwind v4 · Anthropic API · TanStack Query",
       link: { label: "dashlyhq.com ↗", href: CONFIG.links.dashly },

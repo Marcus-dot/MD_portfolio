@@ -106,10 +106,9 @@ export default function Flagship() {
               Dashly<span className="text-accent">.</span>
             </h3>
             <p className="max-w-[560px] text-[15.5px] leading-[1.7] text-dim">
-              Project-portfolio SaaS I co-founded and lead the build on: AI
-              health scoring, 26 industry calculators, multi-tenant teams with
-              MFA. Next.js 16 and Supabase, live in production. Full outline
-              below.
+              Project-portfolio SaaS I co-founded and build: one honest health
+              score per project, 26 industry calculators, multi-tenant teams
+              with MFA. Next.js 16 and Supabase, live in production.
             </p>
           </div>
           <div className="flex flex-col items-start gap-3">
@@ -123,10 +122,10 @@ export default function Flagship() {
               dashlyhq.com ↗
             </Magnetic>
             <Link
-              href="/work/dashly"
+              href="/dashly"
               className="font-mono pointer-coarse:py-3 text-[11px] tracking-[0.08em] text-accent no-underline"
             >
-              CASE OUTLINE →
+              ENTER THE DASHLY ROOM →
             </Link>
           </div>
         </div>
