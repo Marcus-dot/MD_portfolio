@@ -81,16 +81,17 @@ Motion honours `prefers-reduced-motion` everywhere; the loader runs once per
 session. Printing the homepage produces a clean CV-style document; `/cv` has
 its own Save as PDF.
 
-Lighthouse, measured 27 Oct 2026 on the production build (perf / a11y / best
-practices / SEO):
+Lighthouse 12.8.2, measured 28 Oct 2026 on the production build (perf / a11y /
+best practices / SEO):
 
 | Page | Desktop | Mobile (simulated slow 4G) |
 | --- | --- | --- |
 | / | 99 / 100 / 100 / 100 | 93 / 100 / 100 / 100 |
-| /cast-room | 100 / 100 / 100 / 100 | 94 / 100 / 100 / 100 |
+| /cast-room | 100 / 100 / 100 / 100 | 92 / 100 / 100 / 100 |
 | /dashly | 100 / 100 / 100 / 100 | 91 / 100 / 100 / 100 |
-| /cv | 100 / 100 / 100 / 100 | 90 / 100 / 100 / 100 |
-| /credits | 100 / 100 / 100 / 100 | 95 / 100 / 100 / 100 |
+| /cv | 100 / 100 / 100 / 100 | 88 / 100 / 100 / 100 |
+| /credits | 100 / 100 / 100 / 100 | 98 / 100 / 100 / 100 |
+| /work/whatsapp-ussd-platform | 100 / 100 / 100 / 100 | 94 / 100 / 100 / 100 |
 
 The "This site" card on the homepage quotes these numbers; re-measure before
 changing it.

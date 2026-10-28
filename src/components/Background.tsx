@@ -2,10 +2,11 @@ import { EDUCATION, STACK } from "@/content/stack";
 import Reveal from "./Reveal";
 import SectionStatue from "./statue/SectionStatue";
 import { STATUES } from "@/content/statues";
+import Note from "./marginalia/Note";
 
 export default function Background() {
   return (
-    <section id="education" className="border-t border-line px-page py-[clamp(80px,12vh,140px)]">
+    <section id="education" data-anno="<section #education> · EDUCATION and STACK from stack.ts" className="relative border-t border-line px-page py-[clamp(80px,12vh,140px)]">
       <div className="flex flex-wrap items-start gap-x-16 gap-y-12">
         {/* Education */}
         <Reveal className="relative min-w-[280px] flex-[1_1_320px]">
@@ -30,6 +31,12 @@ export default function Background() {
               )}
             </div>
           ))}
+          <Note
+            className="top-[-58px] left-[150px] max-w-[360px]"
+            rotate={-1}
+            size={19}
+            lines={["The thesis: which network features identify", "an IoT device, and which ones you can drop."]}
+          />
           {/* Aristotle's student, under the education he'd recognise */}
           <SectionStatue
             statue={STATUES.alexander}

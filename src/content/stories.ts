@@ -17,6 +17,8 @@ export type Story = {
     did: string[];
     tech?: string;
     note?: string;
+    /** Marginalia: a handwritten aside, one string per written line */
+    margin?: string[];
     link?: { label: string; href: string };
   };
 };
@@ -60,6 +62,7 @@ export const STORIES: Story[] = [
         "Reconciled revenue figures recorded in mixed units, so the reported totals tie back to source",
         "Wrote up every issue with reproduction steps, business impact and the correction applied",
       ],
+      margin: ["Fan-out check: count rows before", "and after every join. If the key", "should be unique and the count", "grows, that's the bug."],
       note: "I'm not naming the operator. They're a client of my employer, and an audit isn't something to advertise on their behalf. What stayed with me is that these numbers had already passed review. They were still wrong, and the only way to show it was to reproduce it.",
     },
   },
@@ -81,6 +84,7 @@ export const STORIES: Story[] = [
         "Wrote the post-event analytics report that went to the board",
       ],
       tech: "React Native · Expo · Firebase/Firestore · Next.js web companion",
+      margin: ["The race: two people both read", "\"one seat left\" and both get in.", "A transaction re-reads the count", "before it writes."],
     },
   },
   {
@@ -101,6 +105,7 @@ export const STORIES: Story[] = [
         "Led a lot of the document production and QC against ILO reviewer feedback",
       ],
       note: "The deliverables are with the ILO for technical review.",
+      margin: ["Maker-checker: whoever enters", "a payment can't be the one who", "approves it. Two people, always."],
     },
   },
   {
@@ -121,6 +126,7 @@ export const STORIES: Story[] = [
         "Provisioned and deployed the production stack myself: Node.js, PostgreSQL, Nginx, PM2, SSL, object storage, CDN and DNS",
       ],
       tech: "Node.js · PostgreSQL · Nginx · PM2 · DigitalOcean",
+      margin: ["USSD gives you no session. The", "gateway sends everything typed so", "far on each step, so the server", "rebuilds where you are."],
       note: "Built for a national Zambia Sugar promotion, through Blink Marketing Solutions.",
     },
   },
@@ -142,6 +148,7 @@ export const STORIES: Story[] = [
         "Ran it on a hardened cloud host I set up myself: Nginx reverse proxy, SSL, PM2, Node.js",
       ],
       tech: "Node.js · WhatsApp Business Cloud API · Google Sheets API · Nginx · PM2",
+      margin: ["WhatsApp's 24-hour window: a", "business can only reply freely", "within a day of the person's", "last message."],
       note: "It ran in production for the promotion. The promotion has ended and the bot is switched off.",
     },
   },
@@ -163,6 +170,7 @@ export const STORIES: Story[] = [
         "Made the UI/UX wireframes and wrote the system documentation",
       ],
       tech: "Flask · GraphQL · Vue · MySQL · GitHub Actions",
+      margin: ["GraphQL on Flask: one endpoint,", "and the client asks for exactly", "the fields it needs."],
     },
   },
 ];

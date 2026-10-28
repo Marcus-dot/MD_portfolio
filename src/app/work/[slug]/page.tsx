@@ -8,6 +8,8 @@ import SectionStatue from "@/components/statue/SectionStatue";
 import Grain from "@/components/Grain";
 import TypedLine from "@/components/TypedLine";
 import { MEDITATIONS } from "@/content/meditations";
+import Note from "@/components/marginalia/Note";
+import MarginaliaToggle from "@/components/marginalia/MarginaliaToggle";
 
 export function generateStaticParams() {
   return STORIES.map((s) => ({ slug: s.slug }));
@@ -55,6 +57,7 @@ export default async function CaseOutline({
         >
           MD<span className="text-accent">.</span>
         </Link>
+        <MarginaliaToggle />
         <Link
           href="/#work"
           className="font-mono text-[11px] tracking-[0.12em] text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
@@ -63,7 +66,7 @@ export default async function CaseOutline({
         </Link>
       </header>
 
-      <main className="mx-auto max-w-[820px] px-page pt-[clamp(60px,10vh,120px)] pb-[clamp(80px,12vh,140px)]">
+      <main className="relative mx-auto max-w-[820px] px-page pt-[clamp(60px,10vh,120px)] pb-[clamp(80px,12vh,140px)]">
         <TypedLine line={MEDITATIONS.caseOutline} className="relative z-[1] mb-12 max-w-[460px]" />
         <div className="font-mono text-[11px] tracking-[0.2em] text-faint">
           CASE OUTLINE · {story.n}
@@ -90,10 +93,20 @@ export default async function CaseOutline({
           {story.case.intro}
         </p>
 
-        <div className="mt-12 font-mono text-[11px] tracking-[0.2em] text-faint">
+        <div className="relative mt-12 font-mono text-[11px] tracking-[0.2em] text-faint">
           WHAT I DID
+          {/* left margin on wide screens (the statue holds the right); inline below that */}
+          {story.case.margin && (
+            <Note
+              lines={story.case.margin}
+              className="top-0 right-[calc(100%+100px)] w-[250px] text-right normal-case tracking-normal max-[1259px]:!static max-[1259px]:!w-full max-[1259px]:!text-left max-[1259px]:![transform:none] max-[1259px]:my-5"
+              rotate={-1.2}
+              delay={0.6}
+              size={18}
+            />
+          )}
         </div>
-        <ul className="mt-6 flex list-none flex-col gap-4 p-0">
+        <ul data-anno="<ul> · story.case.did in stories.ts" className="relative mt-8 flex list-none flex-col gap-4 p-0">
           {story.case.did.map((item) => (
             <li key={item} className="flex items-start gap-3.5">
               <svg

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Note from "./marginalia/Note";
 
 /* The hero name. Hover (or tap) the first name and its letters lift one by
    one while what it means writes in underneath. */
@@ -9,7 +10,15 @@ export default function HeroName() {
   const viaMouse = useRef(false);
 
   return (
-    <>
+    <div className="relative">
+      {/* beside DAKA on wide screens: the line is about 3em long at hero size */}
+      <Note
+        className="left-[calc(clamp(56px,11.5vw,164px)*3.35)] top-[calc(clamp(56px,11.5vw,164px)*1.2)] max-[899px]:!hidden"
+        rotate={-2}
+        delay={5.8}
+        lines={["Hover the first name.", "It means something."]}
+        arrow={{ d: "M4 8 C 30 -2, 60 2, 80 22 M70 18 L80 22 L78 11", w: 86, h: 28, className: "left-[-96px] top-[-20px] -scale-x-100" }}
+      />
       <h1 className="m-0 text-[clamp(56px,11.5vw,164px)] font-bold uppercase leading-[0.92] tracking-[-0.045em]">
         <span className="line-wrap">
           <span className="line-in" style={{ animationDelay: "0.1s" }}>
@@ -70,6 +79,6 @@ export default function HeroName() {
         <em className="font-serif text-[clamp(26px,3vw,38px)] italic text-text">blessings</em>
         <span className="font-mono text-[11px] tracking-[0.2em] text-faint max-[639px]:tracking-[0.14em]">· GOES BY MARCUS</span>
       </p>
-    </>
+    </div>
   );
 }

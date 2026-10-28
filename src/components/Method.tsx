@@ -2,6 +2,7 @@ import { PRINCIPLES } from "@/content/principles";
 import Reveal from "./Reveal";
 import SectionStatue from "./statue/SectionStatue";
 import { STATUES } from "@/content/statues";
+import Note from "./marginalia/Note";
 
 export default function Method() {
   return (
@@ -15,8 +16,20 @@ export default function Method() {
             </em>
           </h2>
         </Reveal>
+        <Note
+          className="bottom-[14px] left-[clamp(330px,30vw,440px)] max-w-[380px] max-[899px]:!hidden"
+          rotate={1}
+          lines={["Rule 1 for real: the NexVenue capacity race", "was reproduced before anyone touched the fix."]}
+        />
         <SectionStatue statue={STATUES.athena} className="mb-6 h-[clamp(240px,30vw,380px)] w-[clamp(170px,21vw,270px)]" />
       </div>
+      {/* phones: the same note, inline under the heading */}
+      <Note
+        className="mt-[-24px] mb-8 min-[900px]:!hidden"
+        rotate={1}
+        size={19}
+        lines={["Rule 1 for real: the NexVenue capacity race", "was reproduced before anyone touched the fix."]}
+      />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[18px]">
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.t} delay={i * 0.08} className="h-full">

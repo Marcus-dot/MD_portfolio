@@ -5,6 +5,7 @@ import ArrowLink from "./ArrowLink";
 import Reveal from "./Reveal";
 import SectionStatue from "./statue/SectionStatue";
 import { STATUES } from "@/content/statues";
+import Note from "./marginalia/Note";
 
 export default function Footer() {
   return (
@@ -36,6 +37,13 @@ export default function Footer() {
         >
           {`${CONFIG.email} →`}
         </ArrowLink>
+        <Note
+          className="bottom-[34px] right-[clamp(0px,6vw,120px)] max-w-[300px] text-right"
+          rotate={1.5}
+          delay={0.8}
+          size={19}
+          lines={["A plain mailto link. No form,", "so nothing about you gets stored."]}
+        />
         <div className="mt-[22px] font-mono text-[12px] text-dim pointer-coarse:hidden print:hidden">
           or press <kbd>⌘K</kbd> anywhere
         </div>

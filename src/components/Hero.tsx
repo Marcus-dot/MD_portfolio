@@ -57,6 +57,20 @@ export default function Hero() {
       {/* content layer - name overlaps the statue edge; clicks fall through to
           the statue except on the actual links */}
       <div className="pointer-events-none relative z-[2] flex min-h-dvh [&_a]:pointer-events-auto [&_button]:pointer-events-auto flex-col justify-end px-page pt-[140px] pb-[clamp(50px,8vh,90px)] max-[760px]:pt-[calc(80px+44svh)]">
+        {/* phones: the hero notes as one inline aside under the statue */}
+        <Note
+          className="mb-6 min-[900px]:!hidden"
+          rotate={-1}
+          delay={0.8}
+          size={19}
+          lines={[
+            "No 3D engine. The scan is baked into a",
+            "150 x 150 map and a 2D canvas relights it.",
+            "Tap him and the tiles fly out and settle.",
+            "Tap my first name: it means something.",
+          ]}
+          refs={[9]}
+        />
         {/* meta strip: local time set large, status as plain type - no badges */}
         <div
           className="hero-fade mb-8 flex flex-wrap items-stretch gap-x-8 gap-y-5 max-[400px]:gap-x-5"
