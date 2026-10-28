@@ -26,7 +26,7 @@ export default function Manifesto() {
       />
       <div className="flex items-end gap-[clamp(32px,5vw,80px)]">
         <div className="relative z-[1] min-w-0 flex-1">
-          <ScrollType text={MANIFESTO_TEXT} />
+          <ScrollType text={MANIFESTO_TEXT} signed />
         </div>
         {/* the one work Michelangelo signed, beside the statement signed here */}
         <SectionStatue
