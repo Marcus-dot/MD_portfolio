@@ -22,7 +22,7 @@ export async function generateMetadata({
   const story = STORIES.find((s) => s.slug === slug);
   if (!story) return {};
   return {
-    title: `${story.s} - Madalitso Daka`,
+    title: `${story.s} · Madalitso Daka`,
     description: story.d,
     alternates: { canonical: `/work/${story.slug}` },
   };

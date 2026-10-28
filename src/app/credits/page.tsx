@@ -6,7 +6,7 @@ import { CAST_ROOM } from "@/content/statues";
 import { CONFIG } from "@/content/config";
 
 export const metadata: Metadata = {
-  title: "Colophon - Madalitso Daka",
+  title: "Colophon · Madalitso Daka",
   description: "Who and what this site is built on, what it keeps about you, and who may reuse what.",
   alternates: { canonical: "/credits" },
 };
@@ -25,7 +25,7 @@ const GROUPS: { title: string; id?: string; lines: Line[] }[] = [
     lines: [
       {
         k: "daoho.dev",
-        v: <>Dao Ho&apos;s site, a koi pond you can feed, gave this one its brief: one living, playful centrepiece instead of ten effects, and a typed line opening each page. {ext("https://www.daoho.dev", "daoho.dev ↗")}</>,
+        v: <>Dao Ho&apos;s site has a koi pond you can feed. It&apos;s why this one has one thing to play with instead of ten effects, and a line typed out at the top of each page. {ext("https://www.daoho.dev", "daoho.dev ↗")}</>,
       },
     ],
   },

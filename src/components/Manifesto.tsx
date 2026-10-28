@@ -4,7 +4,7 @@ import { STATUES } from "@/content/statues";
 import Note from "./marginalia/Note";
 
 export const MANIFESTO_TEXT =
-  "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former. Two products are public. Scroll on.";
+  "Most software doesn't break on launch day. It breaks months later, when the data has grown, someone has added a feature in a hurry, or a number on a report has stopped adding up. That's the part I care about. I'd rather spend a day finding the real cause than an hour patching the symptom. Two of the products are live. Keep scrolling.";
 
 export default function Manifesto() {
   return (
@@ -14,7 +14,7 @@ export default function Manifesto() {
       </div>
       <Note
         className="top-[clamp(64px,10vh,120px)] left-[clamp(260px,26vw,420px)]"
-        lines={["How far you have scrolled decides how many", "letters show. Scroll back up and it un-writes."]}
+        lines={["How far you've scrolled decides how many", "letters show. Scroll back up and it un-writes."]}
         refs={[2]}
       />
       <Note

@@ -15,14 +15,14 @@ export default function Claims() {
       <div className="relative flex min-h-[200px] items-end max-[899px]:flex-wrap max-[639px]:pt-10 justify-between gap-10">
       <Reveal className="relative z-[1]">
         <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-          Hover a claim.
+          What I&apos;m good at.
           <br />
           <em className="font-serif font-normal italic text-accent">
-            See the evidence.
+            Flip for the proof.
           </em>
         </h2>
         <p className="mt-4 font-mono text-[14px] text-faint">
-          {"// every card flips: front is the claim, back is the evidence"}
+          {"// front: the claim. back: where it came from"}
         </p>
       </Reveal>
         <Note

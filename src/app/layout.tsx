@@ -62,7 +62,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const TITLE = "Madalitso Daka · Software Engineer, Lusaka";
 const DESCRIPTION =
-  "I care how engineering decisions compound: architecture, data flows, and the trade-offs that decide whether a system holds up under growth or breaks under complexity. I build for the former.";
+  "Madalitso (Marcus) Daka, software engineer in Lusaka, Zambia. I build for insurers, live events and product teams, and I co-founded Dashly.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.siteUrl),

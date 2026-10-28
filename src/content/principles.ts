@@ -2,19 +2,19 @@ export type Principle = { t: string; d: string };
 
 export const PRINCIPLES: Principle[] = [
   {
-    t: "No fixes without diagnosis",
-    d: "Reproduce the failure before touching the code.",
+    t: "Diagnose first",
+    d: "I reproduce the bug before I touch the code.",
   },
   {
-    t: "Verified claims only",
-    d: "If a number can't be traced, it doesn't ship.",
+    t: "Only numbers I can trace",
+    d: "If I can't show where a figure came from, it doesn't go out.",
   },
   {
-    t: "Instrumentation first",
-    d: "Measure the system before theorising about it.",
+    t: "Measure, then guess",
+    d: "Look at what the system is actually doing before deciding why.",
   },
   {
-    t: "Clean prose",
-    d: "Documentation stakeholders read without a translator.",
+    t: "Write it plainly",
+    d: "Docs people can follow without having to call me.",
   },
 ];

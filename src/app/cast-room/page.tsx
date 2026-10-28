@@ -12,7 +12,7 @@ import { CAST_ROOM, STATUES } from "@/content/statues";
 import { MEDITATIONS } from "@/content/meditations";
 
 export const metadata: Metadata = {
-  title: "The Cast Room - Madalitso Daka",
+  title: "The Cast Room · Madalitso Daka",
   description:
     "Every statue on this site, from 3D scans of classical sculpture, rebuilt as etched marble tiles and relit live.",
   alternates: { canonical: "/cast-room" },
@@ -54,9 +54,10 @@ export default function CastRoom() {
             Room<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 mb-0 max-w-[560px] text-[clamp(16px,1.6vw,18px)] leading-[1.7] text-dim">
-            Every statue on this site, hung in one room. Each is a real 3D scan of
-            a classical sculpture, rebuilt as etched marble tiles and relit live.
-            Move close to one to bring the lamp; click to chip the marble.
+            Every statue on the site, in one room. They&apos;re real 3D scans of
+            classical sculpture, turned into etched marble tiles and lit live in
+            your browser. Bring your pointer close to move the light, and click to
+            chip the marble.
           </p>
           <p className="mt-5 mb-0 font-mono text-[11px] tracking-[0.12em] text-faint max-[639px]:text-[12px]">
             {CAST_ROOM.length} WORKS · HUNG IN THE ORDER YOU MEET THEM
@@ -96,7 +97,7 @@ export default function CastRoom() {
                     <Note
                       className="top-[-96px] right-0 max-w-[360px] text-right"
                       rotate={1}
-                      lines={["Label lines come only from the source records;", "a date appears only where the record gives one."]}
+                      lines={["Labels only say what the source records say.", "No date unless the record gives one."]}
                     />
                   )}
                   <div

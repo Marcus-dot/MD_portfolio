@@ -7,7 +7,7 @@ import StatueCanvas from "@/components/statue/StatueCanvas";
 import { STATUES } from "@/content/statues";
 
 export const metadata: Metadata = {
-  title: "Not found - Madalitso Daka",
+  title: "Not found · Madalitso Daka",
 };
 
 export default function NotFound() {

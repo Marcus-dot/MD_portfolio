@@ -1,4 +1,5 @@
 import { STATUES } from "@/content/statues";
+import HeroName from "./HeroName";
 import StatueCanvas from "./statue/StatueCanvas";
 import ChipCounter from "./statue/ChipCounter";
 import Note from "./marginalia/Note";
@@ -31,9 +32,9 @@ export default function Hero() {
       <Note
         className="top-[104px] left-[clamp(20px,6vw,100px)] max-w-[440px] max-[899px]:!hidden"
         lines={[
-          "Not a 3D engine. The scan was baked offline",
-          "into a 150 x 150 map of surface directions;",
-          "a 2D canvas relights it every frame.",
+          "No 3D engine here. I baked the scan offline",
+          "into a 150 x 150 map of which way each bit",
+          "faces, and a 2D canvas relights it every frame.",
           "25 baked angles make the head turn.",
         ]}
         refs={[5, 9]}
@@ -50,7 +51,7 @@ export default function Hero() {
         rotate={-0.5}
         delay={4.6}
         size={19}
-        lines={["Registration marks, numbered rooms; the green", "hairline follows the room you are in."]}
+        lines={["The thin green line in the nav follows", "whichever room you're in."]}
       />
 
       {/* content layer - name overlaps the statue edge; clicks fall through to
@@ -72,37 +73,22 @@ export default function Hero() {
               STATUS
             </div>
             <p className="m-0 mt-auto max-w-[200px] text-[15px] leading-[1.45] text-text">
-              Open to select
+              Open to the
               <br />
-              engagements
+              right project
             </p>
           </div>
         </div>
-        <h1 className="m-0 text-[clamp(56px,11.5vw,164px)] font-bold uppercase leading-[0.92] tracking-[-0.045em]">
-          <span className="line-wrap">
-            <span className="line-in" style={{ animationDelay: "0.1s" }}>
-              Madalitso
-            </span>
-          </span>
-          <span className="line-wrap">
-            <span className="line-in" style={{ animationDelay: "0.24s" }}>
-              Daka
-              <em className="font-serif font-normal italic normal-case tracking-[-0.02em] text-accent">
-                .
-              </em>
-            </span>
-          </span>
-        </h1>
-        <div className="mt-9 flex flex-wrap items-end justify-between gap-8">
+        <HeroName />
+        <div className="mt-5 flex flex-wrap items-end justify-between gap-8">
           <p
             className="hero-fade m-0 max-w-[420px] text-[16.5px] leading-[1.7] text-dim"
             style={{ animationDelay: "0.5s" }}
           >
-            Engineer in Lusaka. I build, audit and ship software that{" "}
-            <em className="font-serif italic text-text">
-              holds up in production
-            </em>{", "}
-            for insurance, live events and product teams.
+            Software engineer in Lusaka. I build for insurers, live events
+            and product teams, and I care most about what happens{" "}
+            <em className="font-serif italic text-text">after launch</em>,
+            when real people start using it.
           </p>
           <div
             className="hero-fade flex flex-wrap gap-3"
@@ -113,7 +99,7 @@ export default function Hero() {
               data-cursor="GO"
               className="inline-block rounded-[3px] bg-accent px-[30px] py-4 text-[15px] font-semibold text-bg no-underline"
             >
-              View the work
+              See the work
             </ArrowLink>
             <ArrowLink
               href="#method"

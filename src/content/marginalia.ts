@@ -13,5 +13,5 @@ export const REFS: Ref[] = [
   { n: 8, title: "Lighthouse 12.8.2", detail: "Measured 27 October 2026 on the production build; full table in the README." },
   { n: 9, title: "scripts/statue/bake.mjs", detail: "Rasterises each scan offline (Node.js, ImageMagick for PNG) into surface directions and depth: the cell map." },
   { n: 10, title: "scripts/dashly-ledger.mjs", detail: "Counts commits, lines, tests and migrations from Dashly's private repository; only the numbers are published." },
-  { n: 11, title: "daoho.dev, by Dao Ho", detail: "The inspiration for one living, playful centrepiece and for typed opening lines on every page.", href: "https://www.daoho.dev" },
+  { n: 11, title: "daoho.dev, by Dao Ho", detail: "Where the idea came from: one thing to play with instead of ten effects, and a typed line at the top of each page.", href: "https://www.daoho.dev" },
 ];

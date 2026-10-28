@@ -9,9 +9,9 @@ export default function Method() {
       <div className="relative mb-[50px] flex min-h-[200px] items-end max-[639px]:pt-10 justify-between gap-10">
         <Reveal className="relative z-[1]">
           <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-            Four rules,{" "}
+            How I{" "}
             <em className="font-serif font-normal italic text-dim">
-              zero exceptions.
+              work.
             </em>
           </h2>
         </Reveal>

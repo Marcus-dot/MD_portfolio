@@ -12,11 +12,11 @@ export const CLAIMS: Claim[] = [
     t: "Product delivery",
     sub: "Idea → App Store",
     front:
-      "End-to-end ownership: auth, real-time data, capacity logic under race conditions, release discipline on iOS + Android.",
+      "I've taken an app from idea to both app stores: sign-in, live data, session limits that hold when everyone rushes the same session, and releases on iOS and Android.",
     back: [
-      "Production app live in both stores",
-      "Multi-day live events served",
-      "Design system + release pipeline owned solo",
+      "Live in both stores",
+      "Ran multi-day live events",
+      "Owned the design system and release pipeline",
     ],
     proof: [
       {
@@ -28,31 +28,31 @@ export const CLAIMS: Claim[] = [
   },
   {
     t: "Security & correctness",
-    sub: "Bugs that pass code review",
+    sub: "The bugs review misses",
     front:
-      "Privilege-escalation vulns, race conditions, silent row-multiplication, found before they cost money.",
+      "Privilege escalation, race conditions, rows multiplying where nobody's looking. I'd rather find them before they cost anyone money.",
     back: [
-      "Live Firestore privilege-escalation closed pre-launch",
-      "Capacity race condition reproduced, then fixed",
-      "No fix ships without a reproduced cause",
+      "Closed a live Firestore privilege-escalation hole before launch",
+      "Reproduced a capacity race condition, then fixed it",
+      "I don't ship a fix until I've reproduced the cause",
     ],
   },
   {
     t: "Data & analytics",
-    sub: "Defensible numbers",
+    sub: "Numbers you can trace",
     front:
-      "Pipeline validation and board-grade reporting on national-scale telecom data.",
+      "Checking pipelines and writing reports on national-scale telecom data, for the people who make decisions with it.",
     back: [
-      "Many-to-many join blowup caught & quantified",
-      "Inverted recency scoring corrected",
-      "Every reported figure traceable to source",
+      "Caught and measured a many-to-many join blowup",
+      "Fixed a recency score that ran backwards",
+      "Every figure traced back to source",
     ],
   },
   {
     t: "Full-stack breadth",
     sub: "Web · Mobile · Integrations",
     front:
-      "Django and Node on the back end; React, Next.js and React Native up front; Postgres underneath, plus WhatsApp, USSD and Firebase integrations.",
+      "Django and Node on the back end. React, Next.js and React Native on the front. Postgres underneath, and WhatsApp, USSD and Firebase where they're needed.",
     back: [
       "Software Engineer at Gralix Technologies",
       "WhatsApp + USSD platform live in production, built solo",

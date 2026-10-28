@@ -30,8 +30,8 @@ export default function Flagship() {
       <div className="relative mb-10 flex min-h-[200px] items-end max-[639px]:pt-10 justify-between gap-10">
         <Reveal className="relative z-[1]">
           <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-            Two products are{" "}
-            <em className="font-serif font-normal italic text-accent">public.</em>
+            Two you can use{" "}
+            <em className="font-serif font-normal italic text-accent">right now.</em>
           </h2>
         </Reveal>
         <SectionStatue statue={STATUES.hercules} className="mb-6 h-[clamp(240px,30vw,380px)] w-[clamp(200px,25vw,320px)]" />
@@ -43,9 +43,9 @@ export default function Flagship() {
             NexVenue<span className="text-accent">.</span>
           </h3>
           <p className="max-w-[520px] text-[16.5px] leading-[1.75] text-dim">
-            Event networking platform: live Q&A, session management, delegate
-            networking. React Native + Expo + Firebase, shipped to both app
-            stores. Delivered end-to-end for a national insurance conference.
+            An event app for conferences: the agenda, live Q&A and networking
+            between delegates. Built at Gralix with React Native, Expo and
+            Firebase for a national insurance conference, and on both app stores.
           </p>
           <div className="my-9 flex flex-wrap gap-9">
             {STATS.map(([n, l]) => (
@@ -105,9 +105,9 @@ export default function Flagship() {
               Dashly<span className="text-accent">.</span>
             </h3>
             <p className="max-w-[560px] text-[15.5px] leading-[1.7] text-dim">
-              Project-portfolio management for emerging markets, built around
-              one auditable health score per project, with 26 industry
-              calculators. Next.js 16 and Supabase, in production.
+              Project portfolio software for emerging markets. Every project
+              gets one health score you can check the maths on, and there are
+              26 industry calculators. Next.js and Supabase, live now.
             </p>
           </div>
           <div className="flex flex-col items-start gap-3">

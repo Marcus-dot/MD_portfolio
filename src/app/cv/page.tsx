@@ -19,7 +19,7 @@ import SectionStatue from "@/components/statue/SectionStatue";
 import { STATUES } from "@/content/statues";
 
 export const metadata: Metadata = {
-  title: "CV - Madalitso Daka",
+  title: "CV · Madalitso Daka",
   description: SUMMARY,
   alternates: { canonical: "/cv" },
 };
@@ -113,7 +113,7 @@ export default function CvPage() {
               <Note
                 className="top-[-84px] right-0 max-w-[420px] text-right"
                 rotate={1}
-                lines={["Save as PDF is window.print() and a print", "stylesheet. The PDF cannot go out of date:", "it is this page."]}
+                lines={["Save as PDF is just window.print() and a", "print stylesheet, so the PDF can't go out", "of date. It is this page."]}
               />
               <SectionHead n="01" title="Profile" />
               <Reveal>
@@ -155,7 +155,7 @@ export default function CvPage() {
               <Note
                 className="bottom-[-8px] right-0 max-w-[380px] text-right"
                 rotate={1}
-                lines={["The paper CV carries a phone number.", "This page deliberately does not."]}
+                lines={["The paper CV has my phone number.", "This one doesn't, on purpose."]}
               />
               <SectionHead n="05" title="Education" />
               <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-[18px]">

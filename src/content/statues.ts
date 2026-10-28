@@ -125,7 +125,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Marble bust, 161–169 CE · Musée d'art et d'histoire, Geneva, inv. 19050",
     source: "3D scan by Rama, Wikimedia Commons · CC BY-SA 3.0 FR",
     where: { label: "Homepage", href: "/" },
-    why: "Emperor, Stoic, and my namesake: I go by Marcus. He keeps the front door, and he is the only statue here that turns to look at you.",
+    why: "Roman emperor and Stoic. I go by Marcus, so he got the front door. He's the only statue here that turns to look at you.",
   },
   {
     key: "pieta",
@@ -133,7 +133,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS115",
     source: "3D scan by SMK · public domain",
     where: { label: "The short version", href: "/#manifesto" },
-    why: "By Vasari's account, the only work Michelangelo ever signed: he carved his name on it after hearing it credited to another sculptor. It sits beside the statement I put my name to.",
+    why: "According to Vasari, the only work Michelangelo ever signed. He carved his name into it after hearing people credit someone else. So it sits next to the paragraph I'd sign.",
   },
   {
     key: "hercules",
@@ -141,7 +141,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS701",
     source: "3D scan by SMK · public domain",
     where: { label: "Work", href: "/#work" },
-    why: "The hero of the twelve labours stands over the work.",
+    why: "Twelve labours. He gets the work section.",
   },
   {
     key: "apollo",
@@ -149,7 +149,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS353",
     source: "3D scan by SMK · public domain",
     where: { label: "Claims", href: "/#skills" },
-    why: "Apollo was the god of truth. He keeps watch over the claims and the evidence behind them.",
+    why: "God of truth, among other things, so he watches over the claims.",
     tall: true,
   },
   {
@@ -158,7 +158,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS275",
     source: "3D scan by SMK · public domain",
     where: { label: "Method", href: "/#method" },
-    why: "Goddess of wisdom and strategy, beside the four rules I work by.",
+    why: "Goddess of wisdom and strategy. She stands next to how I work.",
   },
   {
     key: "alexander",
@@ -174,7 +174,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast of a Roman copy, with a modern head · SMK Royal Cast Collection, Copenhagen, KAS1549",
     source: "3D scan by SMK · public domain",
     where: { label: "Contact", href: "/#contact" },
-    why: "The athlete a breath before the throw, beside the ask.",
+    why: "An athlete just before the throw, next to the part where I ask you to get in touch.",
     tall: true,
   },
   {
@@ -183,7 +183,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS210",
     source: "3D scan by SMK · public domain",
     where: { label: "CV", href: "/cv" },
-    why: "The storyteller, on the page that tells mine.",
+    why: "The storyteller. He gets the CV.",
   },
   {
     key: "zeus",
@@ -191,7 +191,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS1110",
     source: "3D scan by SMK · public domain",
     where: { label: "The Dashly room", href: "/dashly" },
-    why: "Zeus with the ram's horns of the Egyptian Amun, keeping the one room given to a single product."
+    why: "Zeus with the ram's horns of the Egyptian god Amun. He looks after the Dashly room."
   },
   {
     key: "laocoon",
@@ -199,7 +199,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS385",
     source: "3D scan by SMK · public domain",
     where: { label: "Telecom audit", href: "/work/telecom-analytics-audit" },
-    why: "The priest who warned Troy that the gift at its gates was not what it seemed, over an audit of numbers that had passed review and were still wrong.",
+    why: "The priest who warned Troy the horse wasn't what it looked like. Nobody listened. He's on the audit of numbers that had passed review and were still wrong.",
   },
   {
     key: "gladiator",
@@ -207,7 +207,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS499",
     source: "3D scan by SMK · public domain",
     where: { label: "NexVenue", href: "/work/insurance-conference-platform" },
-    why: "A fighter mid-contest with the crowd watching: the event platform that ran live for 215 delegates.",
+    why: "A fighter mid-contest with a crowd watching. That's roughly what running an app live at a conference feels like.",
     tall: true,
   },
   {
@@ -216,7 +216,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS243",
     source: "3D scan by SMK · public domain",
     where: { label: "Health insurance MIS", href: "/work/health-insurance-mis" },
-    why: "The lawgiver with the tablets, over the work of writing the rules down: processes, controls and SOPs.",
+    why: "He came down with the rules on stone tablets. The MIS project was mostly writing rules down too: processes, controls, SOPs.",
   },
   {
     key: "david",
@@ -224,7 +224,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS2232",
     source: "3D scan by SMK · public domain",
     where: { label: "WhatsApp + USSD", href: "/work/whatsapp-ussd-platform" },
-    why: "One against a giant: a national-scale platform, built and run solo.",
+    why: "One person against a giant. I built and ran a national promotion platform alone, so he felt right.",
   },
   {
     key: "faun",
@@ -232,7 +232,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS208",
     source: "3D scan by SMK · public domain",
     where: { label: "WhatsApp chatbot", href: "/work/whatsapp-promotion-chatbot" },
-    why: "Asleep after the revel. The promotion ended and the bot was decommissioned; it rests here.",
+    why: "Asleep after the party. The promotion ended and the bot was switched off.",
   },
   {
     key: "prisoner",
@@ -240,7 +240,7 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS2360",
     source: "3D scan by SMK · public domain",
     where: { label: "Internship", href: "/work/insurtech-internship" },
-    why: "Michelangelo left his Prisoners half-freed from the block. The early years, still being carved.",
+    why: "Michelangelo never finished him. Seemed right for the internship.",
     tall: true,
   },
   {
@@ -249,6 +249,6 @@ export const CAST_ROOM: Exhibit[] = [
     object: "Plaster cast · SMK Royal Cast Collection, Copenhagen, KAS402",
     source: "3D scan by SMK · public domain",
     where: { label: "Any page that doesn't exist", href: "/lost-to-time" },
-    why: "Missing its head and arms, it keeps watch over the pages that went missing too.",
+    why: "No head, no arms. He looks after the pages that are missing too.",
   },
 ];

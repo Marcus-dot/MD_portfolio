@@ -22,7 +22,7 @@ import LEDGER from "@/content/dashly-ledger.json";
 const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["600", "700"] });
 
 export const metadata: Metadata = {
-  title: "Dashly - Madalitso Daka",
+  title: "Dashly · Madalitso Daka",
   description:
     "Dashly: project-portfolio management for emerging markets, built around one auditable health score per project. In production at dashlyhq.com.",
   alternates: { canonical: "/dashly" },
@@ -104,7 +104,7 @@ export default function DashlyRoom() {
           <div className="relative z-[1] mt-3 font-mono text-[10px] tracking-[0.16em] text-faint">DASHLY&apos;S TAGLINE</div>
           <Note
             className="top-[150px] left-[clamp(560px,48vw,720px)] max-w-[340px]"
-            lines={["This room borrows Dashly's own purple,", "#6E3482, and its display face, Syne,", "straight from the product's globals.css."]}
+            lines={["This room uses Dashly's own purple,", "#6E3482, and its display font, Syne,", "lifted straight from the app's globals.css."]}
             refs={[4]}
           />
           <p className="relative z-[1] mt-10 mb-0 max-w-[640px] text-[clamp(16px,1.6vw,18.5px)] leading-[1.75] text-dim">
@@ -137,19 +137,19 @@ export default function DashlyRoom() {
             <Note
               className="top-[-122px] right-0 max-w-[420px] text-right"
               rotate={1.2}
-              lines={["A re-creation, not the original: the real", "formula stays in Dashly's private repo. This", "one keeps its five weights and its status", "bands (80, 65, 45, 25) and writes its own rules."]}
+              lines={["This is a re-creation. The real formula", "stays in Dashly's private repo. This one", "keeps the five weights and the status", "bands (80, 65, 45, 25), but the rules are new."]}
             />
             <p className="mt-0 mb-12 max-w-[680px] text-[16px] leading-[1.75] text-dim">
-              Dashly Sense grades every project across five dimensions with fixed weights, and
-              recomputes the score each time it is read. The score is arithmetic, so it can be
-              audited. The AI never grades: Claude reads the score and writes three recommendations,
-              forced through a single tool and validated before anything is shown.
+              Dashly Sense scores every project on five things, with fixed weights, and works the
+              score out again every time you look. It&apos;s plain arithmetic, so anyone can check it.
+              The AI doesn&apos;t grade. Claude reads the score and suggests three next steps through a
+              single tool, and nothing shows until it passes validation.
             </p>
             <HonestScore />
             <Note
               className="bottom-[-84px] left-0 max-w-[560px]"
               delay={2.4}
-              lines={["In Dashly the AI is handed the computed score and must answer", "through one tool, deliver_insights: exactly three items,", "checked by zod before anything is shown."]}
+              lines={["In Dashly the AI gets the finished score and has to", "answer through one tool, deliver_insights: exactly", "three items, checked by zod before anyone sees them."]}
             />
           </Room>
 
@@ -175,12 +175,11 @@ export default function DashlyRoom() {
               className="bottom-[-100px] right-0 max-w-[430px] text-right"
               rotate={1}
               delay={1.6}
-              lines={["Counted, not claimed: a script reads git log on", "main and the files on disk, and writes only", "numbers. Re-run it and every figure moves."]}
+              lines={["A script reads git log on main and the files", "on disk, and only writes out numbers. Run it", "again and they all move."]}
               refs={[10]}
             />
             <p className="mt-8 mb-0 max-w-[620px] font-mono text-[10.5px] leading-[1.8] tracking-[0.04em] text-faint">
-              The repository is private; a script counts these figures from it, and only the
-              figures are published.
+              The repo is private. A script counts these from it, and only the numbers come out.
             </p>
           </Room>
 
@@ -188,7 +187,7 @@ export default function DashlyRoom() {
             <Note
               className="top-[8px] right-0 max-w-[460px] text-right"
               rotate={1}
-              lines={["26 calculators, one factory: each is a zod", "schema and a pure function; sign-in, tenancy", "and saving are written once. Tenant isolation", "is Postgres row-level security, with its own tests."]}
+              lines={["26 calculators from one factory. Each is a zod", "schema plus a pure function. Sign-in, tenancy", "and saving are written once. Teams are kept", "apart by Postgres row-level security, with tests."]}
             />
             <ul className="m-0 grid list-none gap-x-[clamp(32px,5vw,80px)] gap-y-6 p-0 min-[900px]:grid-cols-2">
               {story.case.did.map((d) => (
@@ -208,7 +207,7 @@ export default function DashlyRoom() {
               <Note
                 className="top-[-78px] right-0 max-w-[460px] text-right"
                 rotate={0.8}
-                lines={["Captured signed in to a test workspace. The", "sidebar is cropped out: it shows an email address."]}
+                lines={["Taken signed in to a test workspace. I cropped", "the sidebar out because it shows an email address."]}
               />
               <div className="grid gap-x-8 gap-y-14 min-[900px]:grid-cols-2">
                 {DASHLY_SCREENS.map((s, i) => (

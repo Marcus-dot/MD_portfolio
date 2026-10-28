@@ -60,9 +60,9 @@ export default function WorkStack() {
       <HoverPreview item={preview} pos={pos} />
       <div className="mb-[30px] flex flex-wrap items-baseline justify-between gap-3">
         <h3 className="m-0 text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em]">
-          Selected work,{" "}
+          All the work,{" "}
           <em className="font-serif font-normal italic text-dim">
-            credible outlines.
+            briefly.
           </em>
         </h3>
         <span className="font-mono text-[11px] text-faint">
@@ -71,7 +71,7 @@ export default function WorkStack() {
         <Note
           className="-top-[64px] right-0 text-right"
           rotate={1}
-          lines={["position: sticky, each card's top a step lower", "than the last. The stacking is all CSS."]}
+          lines={["position: sticky, each card stopping a little", "lower than the last. No JavaScript in it."]}
         />
       </div>
       {STORIES.map((s, i) => (
