@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Mark from "@/components/Mark";
 import Grain from "@/components/Grain";
 import Reveal from "@/components/Reveal";
 import { CAST_ROOM } from "@/content/statues";
@@ -114,8 +115,9 @@ export default function Credits() {
     <div className="min-h-dvh">
       <Grain />
       <header className="flex items-center justify-between px-page pt-8">
-        <Link href="/" className="text-[14px] font-bold tracking-[-0.02em] text-text no-underline">
-          MD<span className="text-accent">.</span>
+        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:py-2">
+          <Mark size={30} />
+          <span className="font-mono text-[11px] tracking-[0.16em] max-[400px]:hidden">MADALITSO DAKA</span>
         </Link>
         <Link href="/" className="font-mono text-[11px] tracking-[0.12em] text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3">
           ← PORTFOLIO

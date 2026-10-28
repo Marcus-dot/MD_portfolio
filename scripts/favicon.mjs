@@ -4,7 +4,8 @@
  * lit from the upper left, like the hero's resting lamp), then averages the
  * light down into a few tiles.
  *
- *   node scripts/favicon.mjs        writes src/app/icon.svg and src/app/apple-icon.png
+ *   node scripts/favicon.mjs        writes src/app/icon.svg, src/app/apple-icon.png
+ *                                   and src/components/mark-tiles.json
  *
  * Needs ImageMagick (`magick`).
  */
@@ -80,6 +81,13 @@ function svg(n, pad, { size = 64, accent = true } = {}) {
 }
 
 writeFileSync("src/app/icon.svg", svg(16, 1));
+// the same 16-tile bust, without its background, for the inline mark (components/Mark.tsx)
+{
+  const ts = tiles(16, 1);
+  const chip = ts.reduce((a, b) => (b.v > a.v ? b : a));
+  const data = { n: 16, tiles: ts.map((t) => [t.tx, t.ty, t === chip ? -1 : Math.round(t.v * 100) / 100]) };
+  writeFileSync("src/components/mark-tiles.json", JSON.stringify(data) + "\n");
+}
 writeFileSync("/tmp/md-apple-icon.svg", svg(30, 2, { size: 180 }));
 execFileSync("magick", ["-background", "none", "-density", "300", "/tmp/md-apple-icon.svg", "-resize", "180x180", "-strip", "src/app/apple-icon.png"]);
 console.log("wrote src/app/icon.svg and src/app/apple-icon.png");

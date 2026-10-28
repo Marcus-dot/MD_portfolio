@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowLink from "./ArrowLink";
+import Mark from "./Mark";
 import PaletteTrigger from "./PaletteTrigger";
 import MarginaliaToggle from "./marginalia/MarginaliaToggle";
 
@@ -25,7 +26,7 @@ export default function Nav() {
   const [active, setActive] = useState<string | null>(null);
   const [bar, setBar] = useState<{ x: number; w: number } | null>(null);
   const rowRef = useRef<HTMLSpanElement>(null);
-  // phones: MD. opens a floor plan of every room
+  // phones: the mark opens a floor plan of every room
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null); // the header: pill + floor plan
 
@@ -90,20 +91,18 @@ export default function Nav() {
           <span key={c} aria-hidden className={`pointer-events-none absolute h-[9px] w-[9px] border-faint ${c}`} />
         ))}
 
-        <span className="px-3 text-[14px] font-bold tracking-[-0.02em] whitespace-nowrap max-[860px]:hidden">
-          MD<span className="text-accent">.</span>
-        </span>
+        <a href="#hero" aria-label="Madalitso Daka, back to the top" className="group px-2.5 py-0.5 max-[860px]:hidden">
+          <Mark size={27} />
+        </a>
         <button
           type="button"
           aria-expanded={open}
           aria-controls="floor-plan"
           onClick={() => setOpen((o) => !o)}
-          className="flex items-center gap-2 rounded-full border-0 bg-transparent px-3 py-2.5 text-[14px] font-bold tracking-[-0.02em] whitespace-nowrap text-text min-[861px]:hidden"
+          className="group flex items-center gap-2 rounded-full border-0 bg-transparent px-2.5 py-1.5 text-text min-[861px]:hidden"
         >
-          <span>
-            MD<span className="text-accent">.</span>
-            <span className="sr-only"> room list</span>
-          </span>
+          <Mark size={27} />
+          <span className="sr-only">Madalitso Daka, room list</span>
           <span
             aria-hidden
             className="font-mono text-[13px] font-normal text-dim transition-transform duration-300 ease-(--ease)"

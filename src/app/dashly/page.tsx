@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Mark from "@/components/Mark";
 import { Syne } from "next/font/google";
 import Grain from "@/components/Grain";
 import Note from "@/components/marginalia/Note";
@@ -70,8 +71,9 @@ export default function DashlyRoom() {
     <div className={`${syne.variable} min-h-dvh`}>
       <Grain />
       <header className="flex items-center justify-between px-page pt-8">
-        <Link href="/" className="text-[14px] font-bold tracking-[-0.02em] text-text no-underline">
-          MD<span className="text-accent">.</span>
+        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:py-2">
+          <Mark size={30} />
+          <span className="font-mono text-[11px] tracking-[0.16em] max-[400px]:hidden">MADALITSO DAKA</span>
         </Link>
         <Link
           href="/#work"
