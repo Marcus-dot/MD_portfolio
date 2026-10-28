@@ -82,6 +82,10 @@ const GROUPS: { title: string; id?: string; lines: Line[] }[] = [
         v: <>Three small values stay in your own browser and are never sent anywhere: <code className="font-mono text-[13px] text-text">md-loader-seen</code> skips the opening animation for the rest of your visit, <code className="font-mono text-[13px] text-text">md-marginalia</code> remembers whether Marginalia is on, and <code className="font-mono text-[13px] text-text">md-chips</code> counts the marble chips you have knocked off. Clearing this site&apos;s data removes them.</>,
       },
       {
+        k: "Where you are",
+        v: <>The homepage shows you your own rough location (city and country, worked out from your IP address by Vercel) and how far that is from Lusaka. It goes back to your browser only and is never stored. </>,
+      },
+      {
         k: "Hosting",
         v: <>Vercel serves the site and, like any host, keeps standard request logs (IP address, page, time) to run and secure it, under its own policy. {ext("https://vercel.com/legal/privacy-policy", "Vercel privacy ↗")}</>,
       },

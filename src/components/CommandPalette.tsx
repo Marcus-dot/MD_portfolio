@@ -123,6 +123,7 @@ function Panel({ close }: { close: () => void }) {
   return (
     <div
       onClick={close}
+      data-lenis-prevent
       className="fixed inset-0 z-[60] flex justify-center bg-[rgba(5,6,5,0.86)] pt-[18vh]"
     >
       <div

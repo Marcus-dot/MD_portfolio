@@ -2,6 +2,7 @@ import { ViewTransition } from "react";
 import type { Metadata, Viewport } from "next";
 import { Caveat, Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import MotionProvider from "@/components/MotionProvider";
+import SmoothScroll from "@/components/SmoothScroll";
 import { CONFIG } from "@/content/config";
 import "./globals.css";
 
@@ -62,7 +63,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const TITLE = "Madalitso Daka · Software Engineer, Lusaka";
 const DESCRIPTION =
-  "Madalitso (Marcus) Daka, software engineer in Lusaka, Zambia. I build for insurers, live events and product teams, and I co-founded Dashly.";
+  "Madalitso (Marcus) Daka, software engineer in Lusaka, Zambia. I build web, mobile and data products end to end, and I co-founded Dashly.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONFIG.siteUrl),
@@ -113,6 +114,7 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
+        <SmoothScroll />
         <MotionProvider>
           {/* route changes cross-fade: the old page settles out, the new one rises in */}
           <ViewTransition default="page">{children}</ViewTransition>

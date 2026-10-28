@@ -1,5 +1,6 @@
 import { STATUES } from "@/content/statues";
 import HeroName from "./HeroName";
+import VisitorWhere from "./VisitorWhere";
 import StatueCanvas from "./statue/StatueCanvas";
 import ChipCounter from "./statue/ChipCounter";
 import Note from "./marginalia/Note";
@@ -92,6 +93,7 @@ export default function Hero() {
               right project
             </p>
           </div>
+          <VisitorWhere />
         </div>
         <HeroName />
         <div className="mt-5 flex flex-wrap items-end justify-between gap-8">
@@ -99,8 +101,8 @@ export default function Hero() {
             className="hero-fade m-0 max-w-[420px] text-[16.5px] leading-[1.7] text-dim"
             style={{ animationDelay: "0.5s" }}
           >
-            Software engineer in Lusaka. I build for insurers, live events
-            and product teams, and I care most about what happens{" "}
+            Software engineer in Lusaka. I build web, mobile and data
+            products end to end, and I care most about what happens{" "}
             <em className="font-serif italic text-text">after launch</em>,
             when real people start using it.
           </p>
