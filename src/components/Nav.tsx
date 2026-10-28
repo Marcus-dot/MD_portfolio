@@ -97,12 +97,12 @@ export default function Nav() {
           type="button"
           aria-expanded={open}
           aria-controls="floor-plan"
-          aria-label={open ? "Close the room list" : "Open the room list"}
           onClick={() => setOpen((o) => !o)}
           className="flex items-center gap-2 rounded-full border-0 bg-transparent px-3 py-2.5 text-[14px] font-bold tracking-[-0.02em] whitespace-nowrap text-text min-[861px]:hidden"
         >
           <span>
             MD<span className="text-accent">.</span>
+            <span className="sr-only"> room list</span>
           </span>
           <span
             aria-hidden

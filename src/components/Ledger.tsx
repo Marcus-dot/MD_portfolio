@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   motion,
   useAnimationFrame,
+  useInView,
   useMotionValue,
   useReducedMotion,
   useScroll,
@@ -29,9 +30,12 @@ export default function Ledger() {
   const v = useSpring(useVelocity(scrollY), { damping: 50, stiffness: 400 });
   const dir = useRef(-1);
   const held = useRef(false);
+  // only runs while the band is on screen
+  const bandRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(bandRef);
 
   useAnimationFrame((_, delta) => {
-    if (reduce || held.current) return;
+    if (reduce || held.current || !inView) return;
     const vel = v.get();
     if (vel < -5) dir.current = 1;
     else if (vel > 5) dir.current = -1;
@@ -42,6 +46,7 @@ export default function Ledger() {
 
   return (
     <div
+      ref={bandRef}
       aria-labelledby="ledger-title"
       role="region"
       data-anno="<Ledger> · scroll velocity drives x; content/ledger.ts"

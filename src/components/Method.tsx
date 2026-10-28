@@ -31,15 +31,15 @@ export default function Method() {
       {/* an engraved list, not cards: rules between, numerals cut large */}
       <ol className="m-0 grid list-none border-t border-line-hover p-0 min-[640px]:grid-cols-2 min-[1100px]:grid-cols-4">
         {PRINCIPLES.map((p, i) => (
-          <Reveal key={p.t} delay={i * 0.08} className="h-full">
-            <li className="h-full border-b border-line py-8 min-[640px]:px-7 min-[640px]:max-[1099px]:odd:border-r min-[1100px]:border-r min-[1100px]:last:border-r-0 min-[1100px]:first:pl-0">
+          <li key={p.t} className="border-b border-line py-8 min-[640px]:px-7 min-[640px]:max-[1099px]:odd:border-r min-[1100px]:border-r min-[1100px]:last:border-r-0 min-[1100px]:first:pl-0">
+            <Reveal delay={i * 0.08}>
               <div className="mb-6 font-serif text-[clamp(56px,6vw,84px)] leading-[0.8] text-accent tabular-nums">
                 {["I", "II", "III", "IV"][i]}
               </div>
               <div className="mb-2.5 text-[19px] font-semibold tracking-[-0.02em]">{p.t}</div>
               <p className="m-0 max-w-[300px] text-[14.5px] leading-[1.65] text-dim">{p.d}</p>
-            </li>
-          </Reveal>
+            </Reveal>
+          </li>
         ))}
       </ol>
     </section>
