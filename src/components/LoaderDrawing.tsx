@@ -13,7 +13,7 @@ export default function LoaderDrawing() {
   return (
     <svg
       viewBox="-40 -90 1080 1100"
-      className="loader-drawing h-full max-h-[min(70vh,96vw)] w-auto max-w-full"
+      className="loader-drawing h-auto w-[min(340px,62vw)] max-h-[44vh]"
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
