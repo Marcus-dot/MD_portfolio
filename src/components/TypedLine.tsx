@@ -58,7 +58,7 @@ export default function TypedLine({
         </span>
       </blockquote>
       <figcaption
-        className={`mt-2 font-mono text-[9.5px] tracking-[0.16em] text-faint max-[639px]:text-[12px] max-[639px]:tracking-[0.06em] ${
+        className={`mt-2 font-mono text-[9.5px] max-[639px]:text-[11px] tracking-[0.16em] text-faint max-[639px]:text-[12px] max-[639px]:tracking-[0.06em] ${
           done ? "visible" : "invisible"
         }`}
       >

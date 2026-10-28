@@ -71,7 +71,7 @@ export default function DashlyRoom() {
     <div className={`${syne.variable} min-h-dvh`}>
       <Grain />
       <header className="flex items-center justify-between px-page pt-8">
-        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:py-2">
+        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:min-h-11 pointer-coarse:min-w-11">
           <Mark size={30} />
           <span className="font-mono text-[11px] tracking-[0.16em] max-[400px]:hidden">MADALITSO DAKA</span>
         </Link>
@@ -103,7 +103,7 @@ export default function DashlyRoom() {
           <p className="relative z-[1] mt-8 mb-0 font-[family-name:var(--font-syne)] text-[clamp(22px,3vw,36px)] leading-[1.15] font-semibold">
             Every project. One honest <span className="text-[#A56ABD]">score.</span>
           </p>
-          <div className="relative z-[1] mt-3 font-mono text-[10px] tracking-[0.16em] text-faint">DASHLY&apos;S TAGLINE</div>
+          <div className="relative z-[1] mt-3 font-mono text-[10px] max-[639px]:text-[11px] tracking-[0.16em] text-faint">DASHLY&apos;S TAGLINE</div>
           <Note
             className="top-[150px] left-[clamp(560px,48vw,720px)] max-w-[340px]"
             lines={["This room uses Dashly's own purple,", "#6E3482, and its display font, Syne,", "lifted straight from the app's globals.css."]}
@@ -127,7 +127,7 @@ export default function DashlyRoom() {
           <dl className="m-0 mt-[clamp(70px,12vh,130px)] grid grid-cols-2 border-t border-line min-[760px]:grid-cols-5">
             {colophon.map(([k, v]) => (
               <div key={k} className="border-b border-line py-5 pr-4 min-[760px]:border-b-0">
-                <dt className="font-mono text-[10px] tracking-[0.16em] text-faint">{k}</dt>
+                <dt className="font-mono text-[10px] max-[639px]:text-[11px] tracking-[0.16em] text-faint">{k}</dt>
                 <dd className="m-0 mt-2 text-[14.5px] leading-[1.5] text-text">{v}</dd>
               </div>
             ))}
@@ -232,7 +232,7 @@ export default function DashlyRoom() {
           >
             Talk about Dashly →
           </a>
-          <Link href="/#work" className="font-mono text-[12px] text-dim no-underline transition-colors hover:text-accent">
+          <Link href="/#work" className="font-mono text-[12px] text-dim no-underline transition-colors hover:text-accent pointer-coarse:inline-block pointer-coarse:py-3">
             More work
           </Link>
         </div>

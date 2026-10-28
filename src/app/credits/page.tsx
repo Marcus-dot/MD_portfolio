@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 type Line = { k: string; v: React.ReactNode; href?: string };
 
 const ext = (href: string, label: string) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap text-text underline decoration-line-hover underline-offset-4 hover:text-accent">
+  <a href={href} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap text-text underline decoration-line-hover underline-offset-4 hover:text-accent pointer-coarse:inline-block pointer-coarse:py-3 pointer-coarse:-my-3">
     {label}
   </a>
 );
@@ -115,7 +115,7 @@ export default function Credits() {
     <div className="min-h-dvh">
       <Grain />
       <header className="flex items-center justify-between px-page pt-8">
-        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:py-2">
+        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:min-h-11 pointer-coarse:min-w-11">
           <Mark size={30} />
           <span className="font-mono text-[11px] tracking-[0.16em] max-[400px]:hidden">MADALITSO DAKA</span>
         </Link>

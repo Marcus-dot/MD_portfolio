@@ -19,7 +19,7 @@ export default function SectionStatue({
       <Drift>
         <StatueCanvas src={statue.src} label={statue.label} targetCell={4} />
       </Drift>
-      <figcaption className="absolute right-0 -bottom-6 max-[639px]:hidden font-mono text-[9.5px] tracking-[0.16em] whitespace-nowrap text-dim">
+      <figcaption className="absolute right-0 -bottom-6 max-[639px]:hidden font-mono text-[9.5px] max-[639px]:text-[11px] tracking-[0.16em] whitespace-nowrap text-dim">
         {statue.caption}
       </figcaption>
     </figure>

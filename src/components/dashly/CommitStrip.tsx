@@ -16,7 +16,7 @@ export default function CommitStrip() {
           const tiles = Math.ceil(m.commits / PER_TILE);
           return (
             <div key={m.month} className="flex min-w-[18px] flex-1 flex-col items-center gap-2">
-              <span className="font-mono text-[10px] text-faint tabular-nums">{m.commits || ""}</span>
+              <span className="font-mono text-[10px] max-[639px]:text-[11px] text-faint tabular-nums">{m.commits || ""}</span>
               <div className="flex w-full flex-col-reverse gap-[2px]" title={`${m.commits} commits, ${label(m.month)}`}>
                 {tiles === 0 ? (
                   <span className="block h-px w-full bg-line" />
@@ -33,7 +33,7 @@ export default function CommitStrip() {
           );
         })}
       </div>
-      <figcaption className="mt-4 font-mono text-[10px] tracking-[0.12em] text-faint">
+      <figcaption className="mt-4 font-mono text-[10px] max-[639px]:text-[11px] tracking-[0.12em] text-faint">
         COMMITS PER MONTH ON MAIN · ONE TILE = {PER_TILE} COMMITS
       </figcaption>
     </figure>

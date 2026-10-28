@@ -21,7 +21,7 @@ export default function NotFound() {
           scope="window"
           className="absolute inset-x-0 top-[80px] bottom-0"
         />
-        <div className="pointer-events-none absolute right-6 bottom-5 font-mono text-[9.5px] tracking-[0.16em] text-faint">
+        <div className="pointer-events-none absolute right-6 bottom-5 font-mono text-[9.5px] max-[639px]:text-[11px] tracking-[0.16em] text-faint">
           {STATUES.torso.caption}
         </div>
       </div>

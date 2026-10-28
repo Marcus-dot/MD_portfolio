@@ -38,7 +38,7 @@ export default function CvPage() {
       <Toast />
 
       <header className="flex items-center justify-between px-page pt-8 print:hidden">
-        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:py-2">
+        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:min-h-11 pointer-coarse:min-w-11">
           <Mark size={30} />
           <span className="font-mono text-[11px] tracking-[0.16em] max-[400px]:hidden">MADALITSO DAKA</span>
         </Link>
@@ -91,7 +91,7 @@ export default function CvPage() {
                   {...(href.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="rounded-[3px] border border-line px-4 py-2 font-mono text-[11.5px] text-text no-underline transition-colors hover:border-line-hover"
+                  className="rounded-[3px] border border-line px-4 py-2 pointer-coarse:py-3 font-mono text-[11.5px] text-text no-underline transition-colors hover:border-line-hover"
                 >
                   {label}
                 </a>
@@ -194,7 +194,7 @@ export default function CvPage() {
           </a>
           <Link
             href="/#work"
-            className="font-mono text-[12px] text-dim no-underline transition-colors hover:text-accent"
+            className="font-mono text-[12px] text-dim no-underline transition-colors hover:text-accent pointer-coarse:inline-block pointer-coarse:py-3"
           >
             See the work in depth
           </Link>

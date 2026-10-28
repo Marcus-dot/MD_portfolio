@@ -109,7 +109,7 @@ export default function CvTrace({
                 {p.slug && (
                   <Link
                     href={`/work/${p.slug}`}
-                    className="mt-5 font-mono text-[11px] tracking-[0.08em] text-accent no-underline print:hidden"
+                    className="mt-5 font-mono text-[11px] tracking-[0.08em] text-accent no-underline print:hidden pointer-coarse:py-3"
                   >
                     CASE OUTLINE →
                   </Link>

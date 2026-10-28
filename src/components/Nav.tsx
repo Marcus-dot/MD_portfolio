@@ -99,7 +99,7 @@ export default function Nav() {
           aria-expanded={open}
           aria-controls="floor-plan"
           onClick={() => setOpen((o) => !o)}
-          className="group flex items-center gap-2 rounded-full border-0 bg-transparent px-2.5 py-1.5 text-text min-[861px]:hidden"
+          className="group flex items-center gap-2 rounded-full border-0 bg-transparent px-2.5 py-1.5 text-text pointer-coarse:min-h-11 min-[861px]:hidden"
         >
           <Mark size={27} />
           <span className="sr-only">Madalitso Daka, room list</span>
@@ -148,7 +148,7 @@ export default function Nav() {
           />
         </span>
 
-        <MarginaliaToggle />
+        <MarginaliaToggle compact />
         <PaletteTrigger />
         <ArrowLink
           href="#contact"

@@ -13,7 +13,7 @@ const ext = (href: string, label: string) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="whitespace-nowrap text-text underline decoration-line-hover underline-offset-4 transition-colors hover:text-accent pointer-coarse:py-2"
+    className="whitespace-nowrap text-text underline decoration-line-hover underline-offset-4 transition-colors hover:text-accent pointer-coarse:py-2 pointer-coarse:inline-block pointer-coarse:py-3 pointer-coarse:-my-3"
   >
     {label}
   </a>
@@ -58,7 +58,7 @@ const EXHIBITS: { no: string; name: string; line: string; rows: Row[] }[] = [
           {ext(CONFIG.links.dashly, "dashlyhq.com ↗")}
           <Link
             href="/dashly"
-            className="whitespace-nowrap text-accent no-underline transition-colors hover:text-text pointer-coarse:py-2"
+            className="whitespace-nowrap text-accent no-underline transition-colors hover:text-text pointer-coarse:inline-block pointer-coarse:py-3 pointer-coarse:-my-3"
           >
             The Dashly room →
           </Link>
@@ -104,7 +104,7 @@ export default function Flagship() {
               <dl className="m-0 border-t border-line">
                 {ex.rows.map(([k, v]) => (
                   <div key={k} className="grid grid-cols-[110px_1fr] gap-4 border-b border-line py-3">
-                    <dt className="pt-[3px] font-mono text-[10px] tracking-[0.16em] text-faint uppercase">{k}</dt>
+                    <dt className="pt-[3px] font-mono text-[10px] max-[639px]:text-[11px] tracking-[0.16em] text-faint uppercase">{k}</dt>
                     <dd className="m-0 text-[14.5px] leading-[1.55] text-text">{v}</dd>
                   </div>
                 ))}

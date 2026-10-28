@@ -28,7 +28,7 @@ function HoverPreview({
       className="pointer-events-none fixed z-30 w-[264px] origin-top-left -rotate-[1.5deg] rounded-[2px] bg-text px-5 pt-4 pb-3 text-bg [animation:fadeUp_.3s_var(--ease)_both]"
       style={{ left: pos.x + 26, top: pos.y - 70 }}
     >
-      <div className="flex items-baseline justify-between font-mono text-[9.5px] tracking-[0.16em]">
+      <div className="flex items-baseline justify-between font-mono text-[9.5px] max-[639px]:text-[11px] tracking-[0.16em]">
         <span>CAT. No. {item.n}</span>
         <span className="opacity-60">CASE OUTLINE</span>
       </div>

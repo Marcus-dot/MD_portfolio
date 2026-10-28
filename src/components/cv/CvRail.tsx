@@ -18,7 +18,7 @@ export function SavePdfButton({ className = "" }: { className?: string }) {
     <button
       type="button"
       onClick={() => window.print()}
-      className={`cursor-pointer rounded-[3px] bg-text px-4 py-2 font-mono text-[11.5px] text-bg ${className}`}
+      className={`cursor-pointer rounded-[3px] bg-text px-4 py-2 pointer-coarse:py-3 font-mono text-[11.5px] text-bg ${className}`}
     >
       Save as PDF
     </button>

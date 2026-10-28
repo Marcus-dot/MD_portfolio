@@ -29,7 +29,7 @@ export default function References() {
             <span className="w-7 shrink-0 font-mono text-[12px] text-[var(--pen)]">[{r.n}]</span>
             <span className="text-[14.5px] leading-[1.6] text-dim">
               {r.href ? (
-                <a href={r.href} target="_blank" rel="noopener noreferrer" className="text-text no-underline hover:text-[var(--pen)]">
+                <a href={r.href} target="_blank" rel="noopener noreferrer" className="text-text no-underline hover:text-[var(--pen)] pointer-coarse:inline-block pointer-coarse:py-3 pointer-coarse:-my-3">
                   {r.title}
                 </a>
               ) : (

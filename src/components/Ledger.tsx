@@ -67,7 +67,7 @@ export default function Ledger() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-[5px] h-px bg-line" />
       <div
         id="ledger-title"
-        className="pointer-events-none absolute top-[6px] bottom-[6px] left-0 z-[1] flex items-center bg-surface pr-6 pl-[clamp(20px,6vw,100px)] font-mono text-[10px] tracking-[0.2em] text-faint max-[639px]:hidden"
+        className="pointer-events-none absolute top-[6px] bottom-[6px] left-0 z-[1] flex items-center bg-surface pr-6 pl-[clamp(20px,6vw,100px)] font-mono text-[10px] max-[639px]:text-[11px] tracking-[0.2em] text-faint max-[639px]:hidden"
       >
         THE LEDGER
         {/* the figures fade in from under the label */}
@@ -87,7 +87,7 @@ export default function Ledger() {
                     <span className="font-serif text-[34px] leading-none text-text tabular-nums">{e.figure}</span>
                     <span className="flex flex-col gap-1">
                       <span className="text-[13.5px] leading-tight text-dim">{e.what}</span>
-                      <span className="font-mono text-[9.5px] tracking-[0.14em] text-faint uppercase transition-colors group-hover:text-accent">
+                      <span className="font-mono text-[9.5px] max-[639px]:text-[11px] tracking-[0.14em] text-faint uppercase transition-colors group-hover:text-accent">
                         {e.source} ↗
                       </span>
                     </span>

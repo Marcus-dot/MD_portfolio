@@ -26,7 +26,7 @@ export default function CastRoom() {
       <Toast />
 
       <header className="flex items-center justify-between px-page pt-8">
-        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:py-2">
+        <Link href="/" aria-label="Madalitso Daka, home" className="group flex items-center gap-3 text-text no-underline pointer-coarse:min-h-11 pointer-coarse:min-w-11">
           <Mark size={30} />
           <span className="font-mono text-[11px] tracking-[0.16em] max-[400px]:hidden">MADALITSO DAKA</span>
         </Link>
