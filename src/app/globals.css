@@ -81,8 +81,20 @@ html {
   display: block;
   animation: lineIn 1.1s var(--ease) both;
 }
+/* the hero's meta, line and buttons wipe up rather than fade, so their
+   text is at full contrast from the first frame it shows */
 .hero-fade {
-  animation: fadeUp 1s var(--ease) both;
+  animation: wipeUp 1s var(--ease) both;
+}
+@keyframes wipeUp {
+  from {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(28px);
+  }
+  to {
+    clip-path: inset(0 0 -20% 0);
+    transform: none;
+  }
 }
 
 /* Hero entrance waits for the loader: paused until <html data-loaded> */

@@ -57,7 +57,6 @@ export default function ScrollUI() {
           <a
             key={id}
             href={`#${id}`}
-            aria-label={`Go to ${id} section`}
             aria-current={on ? "true" : undefined}
             className={`absolute right-0 -translate-y-1/2 font-mono text-[10px] leading-none tracking-[0.12em] no-underline transition-colors duration-300 ${
               on ? "text-text" : "text-faint hover:text-dim"
@@ -65,6 +64,7 @@ export default function ScrollUI() {
             style={{ top: i * STEP }}
           >
             0{i}
+            <span className="sr-only"> {id}</span>
           </a>
         );
       })}

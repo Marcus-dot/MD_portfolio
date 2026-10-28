@@ -65,8 +65,8 @@ export default function VisitorWhere() {
 
   return (
     <div
-      className="relative flex flex-col border-l border-line pl-8 transition-opacity duration-700 ease-(--ease) max-[640px]:basis-full max-[640px]:border-l-0 max-[640px]:border-t max-[640px]:pt-4 max-[640px]:pl-0"
-      style={{ opacity: where ? 1 : 0 }}
+      className="relative flex flex-col border-l border-line pl-8 transition-[clip-path] duration-700 ease-(--ease) max-[640px]:basis-full max-[640px]:border-l-0 max-[640px]:border-t max-[640px]:pt-4 max-[640px]:pl-0"
+      style={{ clipPath: where ? "inset(-40px -400px -40px -1px)" : "inset(0 0 100% 0)" }}
       aria-hidden={!where}
     >
       <Note
