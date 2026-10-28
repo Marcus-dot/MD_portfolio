@@ -9,6 +9,17 @@ export default function References() {
           References
         </span>
       </div>
+      <div className="mg-note mb-6 max-w-[560px]" style={{ fontSize: 21, transform: "rotate(-1deg)" }}>
+        <span className="mg-line" style={{ "--d": "0.9s", "--t": "1.2s" } as React.CSSProperties}>
+          Coming soon: these notes are in Caveat, a stand-in font.
+        </span>
+        <span className="mg-line" style={{ "--d": "2.2s", "--t": "1.2s" } as React.CSSProperties}>
+          I&apos;m scanning my own handwriting, and every note on
+        </span>
+        <span className="mg-line" style={{ "--d": "3.5s", "--t": "0.9s" } as React.CSSProperties}>
+          this site will be redone in my hand. [4]
+        </span>
+      </div>
       <p className="mt-0 mb-10 font-mono text-[11px] tracking-[0.12em] text-[rgba(150,195,230,0.95)]">
         WHAT THIS SITE IS MADE OF, AND WHERE ITS CLAIMS COME FROM
       </p>

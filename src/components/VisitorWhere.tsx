@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Note from "./marginalia/Note";
 
 const LUSAKA = { lat: -15.3875, lon: 28.3228 };
 
@@ -64,10 +65,18 @@ export default function VisitorWhere() {
 
   return (
     <div
-      className="flex flex-col border-l border-line pl-8 transition-opacity duration-700 ease-(--ease) max-[640px]:basis-full max-[640px]:border-l-0 max-[640px]:border-t max-[640px]:pt-4 max-[640px]:pl-0"
+      className="relative flex flex-col border-l border-line pl-8 transition-opacity duration-700 ease-(--ease) max-[640px]:basis-full max-[640px]:border-l-0 max-[640px]:border-t max-[640px]:pt-4 max-[640px]:pl-0"
       style={{ opacity: where ? 1 : 0 }}
       aria-hidden={!where}
     >
+      <Note
+        className="top-[-6px] left-[calc(100%+28px)] w-[300px] max-[1279px]:!hidden"
+        rotate={1}
+        delay={3.4}
+        size={19}
+        lines={["From your IP address, by Vercel's edge.", "It comes back to you and is never stored.", "If it can't tell, it uses your time zone."]}
+        refs={[14]}
+      />
       <div className="mb-3 font-mono text-[10.5px] tracking-[0.2em] text-faint">YOU · READING FROM</div>
       <p className="m-0 mt-auto max-w-[240px] text-[15px] leading-[1.45] text-text">
         {where?.place ?? "Somewhere"}

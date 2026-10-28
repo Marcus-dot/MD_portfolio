@@ -4,6 +4,7 @@ import LEDGER from "@/content/dashly-ledger.json";
 import Reveal from "./Reveal";
 import SectionStatue from "./statue/SectionStatue";
 import { STATUES } from "@/content/statues";
+import Note from "./marginalia/Note";
 
 type Row = [string, React.ReactNode];
 
@@ -70,13 +71,19 @@ const EXHIBITS: { no: string; name: string; line: string; rows: Row[] }[] = [
 export default function Flagship() {
   return (
     <div>
-      <div className="relative mb-[clamp(40px,6vh,70px)] flex min-h-[200px] items-end justify-between gap-10 max-[639px]:pt-10">
+      <div className="relative mb-[clamp(40px,6vh,70px)] flex min-h-[200px] items-end justify-between gap-10 max-[639px]:pt-10 max-[1100px]:flex-wrap max-[1100px]:gap-y-0">
         <Reveal className="relative z-[1]">
           <div className="mb-4 font-mono text-[11px] tracking-[0.2em] text-faint">ROOM 01 · WORK</div>
           <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
             Two in production.
           </h2>
         </Reveal>
+        <Note
+          className="bottom-[10px] left-[clamp(560px,46vw,700px)] max-w-[340px] max-[1100px]:!static max-[1100px]:order-last max-[1100px]:basis-full max-[1100px]:mt-4"
+          rotate={-1}
+          size={19}
+          lines={["There used to be a phone mock-up here. Its", "screens were made up, so it's a label of", "facts now, like the Cast Room."]}
+        />
         <SectionStatue statue={STATUES.hercules} className="mb-6 h-[clamp(240px,30vw,380px)] w-[clamp(200px,25vw,320px)]" />
       </div>
       <div className="grid gap-x-[clamp(40px,6vw,96px)] gap-y-16 min-[900px]:grid-cols-2">

@@ -4,9 +4,9 @@ export type Ref = { n: number; title: string; detail: string; href?: string };
 
 export const REFS: Ref[] = [
   { n: 1, title: "Next.js 16.4.3", detail: "App Router; every route prerendered as static HTML.", href: "https://nextjs.org" },
-  { n: 2, title: "Framer Motion 12.42", detail: "useScroll drives the scroll-typing, the CV timeline and the progress line.", href: "https://motion.dev" },
+  { n: 2, title: "Framer Motion 12.42", detail: "useScroll drives the scroll-typing, the signature, the ledger, the CV timeline and the ruler on the right.", href: "https://motion.dev" },
   { n: 3, title: "Tailwind CSS 4.3 and React 19.3", detail: "Styling as utilities; design tokens as CSS variables in globals.css. React's ViewTransition cross-fades between pages.", href: "https://tailwindcss.com" },
-  { n: 4, title: "Typefaces, self-hosted with next/font, SIL Open Font License", detail: "Inter Tight (Rasmus Andersson); Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad); JetBrains Mono (JetBrains, Philipp Nurullin, Konstantin Bulenkov); Caveat (Impallari Type) for these notes, loaded only when Marginalia is on; Syne (Bonjour Monde, Lucas Descroix, George Triantafyllakos) in the Dashly room." },
+  { n: 4, title: "Typefaces, self-hosted with next/font, SIL Open Font License", detail: "Inter Tight (Rasmus Andersson); Instrument Serif (Rodrigo Fuenzalida, Jordan Egstad); JetBrains Mono (JetBrains, Philipp Nurullin, Konstantin Bulenkov); Caveat (Impallari Type) for these notes for now, loaded only when Marginalia is on, until my own handwriting replaces it; Syne (Bonjour Monde, Lucas Descroix, George Triantafyllakos) in the Dashly room." },
   { n: 5, title: "Bust of Marcus Aurelius, MAH Geneva inv. 19050", detail: "3D scan by Rama, Wikimedia Commons, CC BY-SA 3.0 FR.", href: "https://commons.wikimedia.org/wiki/File:Bust_of_Marcus_Aurelus-MAHG_19050-High_poly-001.stl" },
   { n: 6, title: "SMK Royal Cast Collection, Copenhagen", detail: "Public-domain 3D scans of plaster casts: the other fifteen statues.", href: "https://api.smk.dk" },
   { n: 7, title: "Marcus Aurelius, Meditations, tr. George Long (1862)", detail: "Public domain; every quoted line checked word for word against Project Gutenberg #15877.", href: "https://www.gutenberg.org/ebooks/15877" },
@@ -14,4 +14,7 @@ export const REFS: Ref[] = [
   { n: 9, title: "scripts/statue/bake.mjs", detail: "Rasterises each scan offline (Node.js, ImageMagick for PNG) into surface directions and depth: the cell map." },
   { n: 10, title: "scripts/dashly-ledger.mjs", detail: "Counts commits, lines, tests and migrations from Dashly's private repository; only the numbers are published." },
   { n: 11, title: "daoho.dev, by Dao Ho", detail: "Where the idea came from: one thing to play with instead of ten effects, and a typed line at the top of each page.", href: "https://www.daoho.dev" },
+  { n: 12, title: "Lenis 1.3.27", detail: "Eases mouse-wheel and trackpad scrolling, so everything tied to the scroll moves together. Off on touch screens and with reduced motion.", href: "https://lenis.darkroom.engineering" },
+  { n: 13, title: "scripts/favicon.mjs", detail: "Lights the Marcus scan and averages it into 16 tiles: the browser-tab icon and the mark in the nav. A 30-tile version is the home-screen icon." },
+  { n: 14, title: "src/app/api/where/route.ts", detail: "Reads the city, country and coordinates Vercel's edge attaches to each request, and returns them to the same visitor. Nothing is logged or stored." },
 ];

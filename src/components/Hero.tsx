@@ -48,11 +48,20 @@ export default function Hero() {
         lines={["Click him. Tiles fly out on damped springs", "and settle back. The tally lives in your", "browser and nowhere else."]}
       />
       <Note
+        className="top-[262px] right-[clamp(20px,6vw,100px)] max-w-[330px] text-right max-[899px]:!hidden"
+        rotate={-1}
+        delay={6.4}
+        size={19}
+        lines={["This is Caveat, a stand-in. Soon these", "notes will be in my own handwriting."]}
+        refs={[4]}
+      />
+      <Note
         className="top-[74px] left-[calc(50%-150px)] max-[899px]:!hidden"
         rotate={-0.5}
         delay={4.6}
         size={19}
-        lines={["The thin green line in the nav follows", "whichever room you're in."]}
+        lines={["The thin green line in the nav follows whichever", "room you're in. The ruler on the right does the same", "for the whole page."]}
+        refs={[2]}
       />
 
       {/* content layer - name overlaps the statue edge; clicks fall through to
@@ -69,6 +78,7 @@ export default function Hero() {
             "150 x 150 map and a 2D canvas relights it.",
             "Tap him and the tiles fly out and settle.",
             "Tap my first name: it means something.",
+            "(Caveat for now. My own handwriting is coming.)",
           ]}
           refs={[9]}
         />

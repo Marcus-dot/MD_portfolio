@@ -77,8 +77,8 @@ export default function CastRoom() {
                     <Note
                       className="top-[30px] left-[calc(100%+24px)] max-w-[300px]"
                       delay={1.2}
-                      lines={["The only CC BY-SA scan, so his credit", "travels with every image made from it,", "the share card included."]}
-                      refs={[5]}
+                      lines={["The only CC BY-SA scan, so his credit", "travels with every image made from it, the", "share card and the 16-tile favicon included."]}
+                      refs={[5, 13]}
                     />
                   )}
                   {ex.key === "pieta" && (

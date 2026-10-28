@@ -14,6 +14,7 @@ import {
   useVelocity,
 } from "framer-motion";
 import { LEDGER_ENTRIES } from "@/content/ledger";
+import Note from "./marginalia/Note";
 
 const wrap = (min: number, max: number, v: number) => {
   const r = max - min;
@@ -54,6 +55,13 @@ export default function Ledger() {
       onPointerEnter={(e) => e.pointerType === "mouse" && (held.current = true)}
       onPointerLeave={() => (held.current = false)}
     >
+      <Note
+        className="top-[-62px] right-[clamp(20px,6vw,100px)] text-right"
+        rotate={1}
+        size={19}
+        lines={["Every figure links to where it comes from. It runs", "with your scroll, and backwards if you scroll up."]}
+        refs={[2, 12]}
+      />
       {/* the band's inner rules, like a carved frieze */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-[5px] h-px bg-line" />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-[5px] h-px bg-line" />

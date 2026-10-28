@@ -24,7 +24,14 @@ export default function Manifesto() {
         lines={["The Pietà scan arrived lying on its back.", "One axis swap in the bake script stood it up."]}
         refs={[6, 9]}
       />
-      <div className="flex items-end gap-[clamp(32px,5vw,80px)]">
+      <div className="relative flex items-end gap-[clamp(32px,5vw,80px)]">
+        <Note
+          className="bottom-[-8px] left-[clamp(380px,36vw,560px)] max-w-[330px]"
+          rotate={-1.5}
+          delay={0.4}
+          size={19}
+          lines={["My actual signature, cut into 3px tiles.", "Low-res on purpose: fine on screen,", "useless to anyone wanting to copy it."]}
+        />
         <div className="relative z-[1] min-w-0 flex-1">
           <ScrollType text={MANIFESTO_TEXT} signed />
         </div>
