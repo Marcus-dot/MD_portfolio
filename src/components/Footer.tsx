@@ -22,7 +22,7 @@ export default function Footer() {
       <Reveal>
       <div className="relative text-center">
         <div className="mb-7 font-mono text-[12px] tracking-[0.2em] text-dim">
-          OPEN TO THE RIGHT PROJECT
+          ROOM 04 · OPEN TO THE RIGHT PROJECT
         </div>
         <h2 className="m-0 text-[clamp(44px,9vw,120px)] font-semibold leading-[0.98] tracking-[-0.045em]">
           Building something

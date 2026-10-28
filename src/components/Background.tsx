@@ -51,17 +51,16 @@ export default function Background() {
           </div>
           <div className="flex flex-col gap-4">
             {STACK.map((g) => (
-              <div key={g.label} className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
-                <span className="w-[130px] shrink-0 font-mono text-[10.5px] tracking-[0.12em] text-faint uppercase">
+              <div key={g.label} className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <span className="w-[130px] shrink-0 max-[639px]:w-full font-mono text-[10.5px] tracking-[0.12em] text-faint uppercase">
                   {g.label}
                 </span>
-                <span className="flex flex-1 flex-wrap gap-1.5">
-                  {g.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-[3px] border border-line px-3 py-1 text-[12.5px] text-dim"
-                    >
-                      {item}
+                {/* an index, not a tag cloud: plain names, interpuncts between */}
+                <span className="min-w-0 flex-1 text-[14.5px] leading-[1.75] text-dim">
+                  {g.items.map((item, i) => (
+                    <span key={item}>
+                      <span className="whitespace-nowrap">{item}</span>
+                      {i < g.items.length - 1 && <span aria-hidden className="text-faint"> · </span>}
                     </span>
                   ))}
                 </span>

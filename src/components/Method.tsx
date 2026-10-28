@@ -9,11 +9,9 @@ export default function Method() {
     <section id="method" data-anno="<section #method> · four principles" className="relative px-page py-[clamp(90px,14vh,160px)]">
       <div className="relative mb-[50px] flex min-h-[200px] items-end max-[639px]:pt-10 justify-between gap-10">
         <Reveal className="relative z-[1]">
+          <div className="mb-4 font-mono text-[11px] tracking-[0.2em] text-faint">ROOM 03 · METHOD</div>
           <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
-            How I{" "}
-            <em className="font-serif font-normal italic text-dim">
-              work.
-            </em>
+            How I work.
           </h2>
         </Reveal>
         <Note
@@ -30,23 +28,20 @@ export default function Method() {
         size={19}
         lines={["Rule 1 for real: the NexVenue capacity race", "was reproduced before anyone touched the fix."]}
       />
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-[18px]">
+      {/* an engraved list, not cards: rules between, numerals cut large */}
+      <ol className="m-0 grid list-none border-t border-line-hover p-0 min-[640px]:grid-cols-2 min-[1100px]:grid-cols-4">
         {PRINCIPLES.map((p, i) => (
           <Reveal key={p.t} delay={i * 0.08} className="h-full">
-          <div
-            className="h-full rounded-[4px] border border-line bg-surface px-7 py-[30px]"
-          >
-            <div className="mb-5 font-serif text-[40px] leading-none italic text-accent">
-              0{i + 1}
-            </div>
-            <div className="mb-2.5 text-[19px] font-semibold tracking-[-0.02em]">
-              {p.t}
-            </div>
-            <p className="m-0 text-[14px] leading-[1.65] text-dim">{p.d}</p>
-          </div>
+            <li className="h-full border-b border-line py-8 min-[640px]:px-7 min-[640px]:max-[1099px]:odd:border-r min-[1100px]:border-r min-[1100px]:last:border-r-0 min-[1100px]:first:pl-0">
+              <div className="mb-6 font-serif text-[clamp(56px,6vw,84px)] leading-[0.8] text-accent tabular-nums">
+                {["I", "II", "III", "IV"][i]}
+              </div>
+              <div className="mb-2.5 text-[19px] font-semibold tracking-[-0.02em]">{p.t}</div>
+              <p className="m-0 max-w-[300px] text-[14.5px] leading-[1.65] text-dim">{p.d}</p>
+            </li>
           </Reveal>
         ))}
-      </div>
+      </ol>
     </section>
   );
 }

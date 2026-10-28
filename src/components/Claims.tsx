@@ -14,15 +14,12 @@ export default function Claims() {
     >
       <div className="relative flex min-h-[200px] items-end max-[899px]:flex-wrap max-[639px]:pt-10 justify-between gap-10">
       <Reveal className="relative z-[1]">
+        <div className="mb-4 font-mono text-[11px] tracking-[0.2em] text-faint">ROOM 02 · SKILLS</div>
         <h2 className="m-0 text-[clamp(36px,5.5vw,68px)] font-semibold leading-[1.03] tracking-[-0.035em]">
           What I&apos;m good at.
-          <br />
-          <em className="font-serif font-normal italic text-accent">
-            Flip for the proof.
-          </em>
         </h2>
         <p className="mt-4 font-mono text-[14px] text-faint">
-          {"// front: the claim. back: where it came from"}
+          {"// flip a card for where each claim came from"}
         </p>
       </Reveal>
         <Note

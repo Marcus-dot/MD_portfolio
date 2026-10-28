@@ -47,7 +47,7 @@ Real-world values sit in typed data files under `src/content/`. No CMS.
 | Dashly figures (commits, lines, tests...) | `src/content/dashly-ledger.json`, generated, see below |
 | Dashly screenshots | `src/content/dashly-screens.ts` + `public/dashly/` |
 | Manifesto (scroll-typing text) | `MANIFESTO_TEXT` in `src/components/Manifesto.tsx` |
-| Marquee phrases | `PHRASES` in `src/components/Marquee.tsx` |
+| The ledger frieze (sourced figures) | `src/content/ledger.ts` |
 | NexVenue stats (215 / 71 / 2) | `src/components/Flagship.tsx` |
 | Footer NOW line | `src/components/Footer.tsx` |
 

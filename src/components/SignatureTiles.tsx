@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useMotionValueEvent, type MotionValue } from "framer-motion";
 
-const CELL = 4.2; // px per tile: coarse on purpose, the signature as a bitmap
+const CELL = 3; // px per tile: coarse on purpose, the signature as a bitmap
 
 /* The signature rebuilt from square tiles, like the statues, and set down
    left to right as `progress` goes 0 to 1. The write-head is accent green,
@@ -55,7 +55,7 @@ export default function SignatureTiles({
       for (let r = 0; r < rows; r++)
         for (let c = 0; c < cols; c++) {
           const a = d[(r * cols + c) * 4 + 3] / 255;
-          if (a < 0.14) continue;
+          if (a < 0.32) continue;
           // three ink levels, like a cheap printer
           const lvl = a < 0.4 ? 0.45 : a < 0.7 ? 0.72 : 1;
           tiles.push({ c, r, a: lvl, t: c / cols + (Math.random() - 0.5) * 0.04 });

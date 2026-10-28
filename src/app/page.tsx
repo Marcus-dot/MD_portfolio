@@ -7,7 +7,7 @@ import Toast from "@/components/Toast";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
-import Marquee from "@/components/Marquee";
+import Ledger from "@/components/Ledger";
 import Flagship from "@/components/Flagship";
 import WorkStack from "@/components/WorkStack";
 import AlsoBuilt from "@/components/AlsoBuilt";
@@ -32,7 +32,7 @@ export default function Home() {
         <Hero />
         <Manifesto />
         <Workbench />
-        <Marquee />
+        <Ledger />
         <section id="work" data-anno="<section #work> · Flagship, WorkStack (position: sticky), AlsoBuilt" className="relative px-page py-[clamp(90px,14vh,160px)]">
           <Flagship />
           <WorkStack />

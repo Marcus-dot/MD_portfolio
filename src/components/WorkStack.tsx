@@ -60,10 +60,7 @@ export default function WorkStack() {
       <HoverPreview item={preview} pos={pos} />
       <div className="mb-[30px] flex flex-wrap items-baseline justify-between gap-3">
         <h3 className="m-0 text-[clamp(28px,4vw,48px)] font-semibold tracking-[-0.03em]">
-          All the work,{" "}
-          <em className="font-serif font-normal italic text-dim">
-            briefly.
-          </em>
+          All the work, briefly.
         </h3>
         <span className="font-mono text-[11px] text-faint">
           {"// scroll: cards stack"}
