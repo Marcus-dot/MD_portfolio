@@ -91,6 +91,31 @@ html:not([data-loaded]) .hero-fade {
   animation-play-state: paused;
 }
 
+/* The loader drawing: every stroke has pathLength 1, so one dash of length
+   1 offset by 1 hides it; each draws in at its own --at */
+#loader {
+  --loader-dur: 1.9s; /* keep in step with Loader.tsx */
+}
+@media (max-width: 760px) {
+  #loader {
+    --loader-dur: 0.7s;
+  }
+}
+/* each stroke takes 0.3 of the sitting, so the last lands as it ends */
+.loader-drawing path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: pen calc(var(--loader-dur) * 0.3) cubic-bezier(0.45, 0.05, 0.4, 1) calc(var(--at, 0) * var(--loader-dur) * 0.68) forwards;
+}
+.loader-drawing .leaf {
+  fill: var(--bg);
+}
+@keyframes pen {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Loader skip (set pre-paint by the inline script in layout.tsx) */
 html[data-loader-skip] #loader {
   display: none;

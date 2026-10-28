@@ -62,6 +62,7 @@ about the work, state roles once.
 | `scripts/statue/bake.mjs` | Bakes 3D scans into the statue cell maps in `public/statue/` (see Statues) |
 | `scripts/dashly-ledger.mjs` | Counts figures from the private Dashly repo into `src/content/dashly-ledger.json`. Only counts leave the repo. Run `node scripts/dashly-ledger.mjs ../project-dashboard`, then commit |
 | `scripts/screenshot.mjs` | Headless-Chrome QA screenshots (scroll to a selector, any viewport) |
+| `scripts/loader/draw.mjs` | Draws the loader: Marcus as pen strokes (Canny edges of the lit scan) plus a laurel branch, into `src/components/loader-bust.json`. Run `node scripts/loader/draw.mjs` |
 | `scripts/favicon.mjs` | Draws the favicon (`src/app/icon.svg`) and home-screen icon (`src/app/apple-icon.png`): Marcus in etched tiles, lit from the statue's cell map. Run `node scripts/favicon.mjs` after re-baking `marcus.png` |
 | `scripts/og-template.html` | The share image (`public/og.png`). It draws the statue from `public/statue/marcus.png`, so serve both from one origin (e.g. a temp folder with `og.html` and `statue/marcus.png` under `python3 -m http.server`), screenshot at 1200x630, and save as an 8-bit PNG under about 300 KB |
 

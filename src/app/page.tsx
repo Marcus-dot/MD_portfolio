@@ -1,4 +1,5 @@
 import Loader from "@/components/Loader";
+import LoaderDrawing from "@/components/LoaderDrawing";
 import ScrollUI from "@/components/ScrollUI";
 import Grain from "@/components/Grain";
 import ContextCursor from "@/components/ContextCursor";
@@ -21,7 +22,9 @@ import References from "@/components/marginalia/References";
 export default function Home() {
   return (
     <>
-      <Loader />
+      <Loader>
+        <LoaderDrawing />
+      </Loader>
       <Grain />
       <ContextCursor />
       <CommandPalette />
