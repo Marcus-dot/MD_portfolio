@@ -3,22 +3,23 @@ import Link from "next/link";
 import Grain from "@/components/Grain";
 import Reveal from "@/components/Reveal";
 import { CAST_ROOM } from "@/content/statues";
+import { CONFIG } from "@/content/config";
 
 export const metadata: Metadata = {
   title: "Colophon - Madalitso Daka",
-  description: "Who and what this site is built on: inspiration, sculpture, text, typefaces and software.",
+  description: "Who and what this site is built on, what it keeps about you, and who may reuse what.",
   alternates: { canonical: "/credits" },
 };
 
 type Line = { k: string; v: React.ReactNode; href?: string };
 
 const ext = (href: string, label: string) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="text-text underline decoration-line-hover underline-offset-4 hover:text-accent">
+  <a href={href} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap text-text underline decoration-line-hover underline-offset-4 hover:text-accent">
     {label}
   </a>
 );
 
-const GROUPS: { title: string; lines: Line[] }[] = [
+const GROUPS: { title: string; id?: string; lines: Line[] }[] = [
   {
     title: "Inspiration",
     lines: [
@@ -71,6 +72,37 @@ const GROUPS: { title: string; lines: Line[] }[] = [
       { k: "Hosting", v: "Vercel." },
     ],
   },
+  {
+    title: "Privacy",
+    id: "privacy",
+    lines: [
+      { k: "Collected", v: "Nothing. No cookies, no analytics, no tracking, no forms, no accounts. Fonts, images and statues are served from this domain, so browsing makes no requests to anyone else." },
+      {
+        k: "On your device",
+        v: <>Three small values stay in your own browser and are never sent anywhere: <code className="font-mono text-[13px] text-text">md-loader-seen</code> skips the opening animation for the rest of your visit, <code className="font-mono text-[13px] text-text">md-marginalia</code> remembers whether Marginalia is on, and <code className="font-mono text-[13px] text-text">md-chips</code> counts the marble chips you have knocked off. Clearing this site&apos;s data removes them.</>,
+      },
+      {
+        k: "Hosting",
+        v: <>Vercel serves the site and, like any host, keeps standard request logs (IP address, page, time) to run and secure it, under its own policy. {ext("https://vercel.com/legal/privacy-policy", "Vercel privacy ↗")}</>,
+      },
+      {
+        k: "Email",
+        v: <>If you write to {CONFIG.email}, your address and message are used to reply to you and for nothing else. They are never shared or added to a list.</>,
+      },
+    ],
+  },
+  {
+    title: "Licence",
+    id: "licence",
+    lines: [
+      {
+        k: "Code",
+        v: <>The source is public under the MIT licence: read it, take it apart, reuse it, and keep the notice. {ext("https://github.com/Marcus-dot/MD_portfolio/blob/main/LICENSE", "LICENSE ↗")}</>,
+      },
+      { k: "Words and work", v: "The writing, the CV, the case studies and the visual design are © Madalitso Daka, all rights reserved. Dashly screenshots are © Dashly Software." },
+      { k: "Statue images", v: "Images made from the Marcus Aurelius scan, the share image included, are shared under CC BY-SA 3.0 FR, as its licence requires. The SMK casts are public domain, as is the Long translation." },
+    ],
+  },
 ];
 
 export default function Credits() {
@@ -91,14 +123,14 @@ export default function Credits() {
           Credits<span className="text-accent">.</span>
         </h1>
         <p className="mt-8 mb-0 max-w-[560px] text-[16.5px] leading-[1.7] text-dim">
-          Who and what this site is built on. Each statue&apos;s caption repeats its source where
-          it hangs, and the Marcus Aurelius scan carries its credit everywhere it appears, as its
-          licence asks.
+          Who and what this site is built on, what it keeps about you, and who may reuse what.
+          Each statue&apos;s caption repeats its source where it hangs, and the Marcus Aurelius
+          scan carries its credit everywhere it appears, as its licence asks.
         </p>
         <div className="mt-[clamp(60px,10vh,110px)] flex flex-col gap-[clamp(50px,8vh,80px)]">
           {GROUPS.map((g) => (
             <Reveal key={g.title}>
-              <section>
+              <section id={g.id} className="scroll-mt-10">
                 <h2 className="m-0 border-b border-line pb-3 font-mono text-[11px] font-normal tracking-[0.2em] text-faint uppercase">
                   {g.title}
                 </h2>

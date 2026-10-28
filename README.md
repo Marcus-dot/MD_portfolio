@@ -25,7 +25,7 @@ Deploys automatically via Vercel on push to `main`.
 | `/work/[slug]` | Case outlines for every other piece of work |
 | `/cv` | The CV as a page: skills trace through the projects; Save as PDF prints it |
 | `/cast-room` | Every statue on the site, hung with a museum label |
-| `/credits` | Colophon: inspiration, sculpture and text sources, typefaces and their designers, software |
+| `/credits` | Colophon: inspiration, sculpture and text sources, typefaces and their designers, software, then privacy (`#privacy`) and licence (`#licence`) |
 | any unknown URL | 404, kept by the Belvedere Torso |
 
 ## Editing content: where everything lives
@@ -113,3 +113,13 @@ wherever it, or an image made from it, appears):
 | --- | --- | --- |
 | Marcus Aurelius (hero, share image) | MAH Geneva inv. 19050, 3D scan by Rama, Wikimedia Commons | CC BY-SA 3.0 FR |
 | Farnese Hercules head (KAS701), Hope Athena head (KAS275), Apollo Belvedere (KAS353), Belvedere Torso (KAS402), Homer (KAS210), Discobolus (KAS1549), Alexander as Helios (KAS283), Zeus Ammon (KAS1110), St. Peter's Pietà (KAS115), Laocoön (KAS385), Moses (KAS243), Borghese Gladiator (KAS499), Head of David (KAS2232), Barberini Faun (KAS208), Young Prisoner (KAS2360) | SMK Royal Cast Collection, `api.smk.dk` | Public domain |
+
+## Licence
+
+The code is MIT (see `LICENSE`). The writing, CV, case studies and design
+are all rights reserved; Dashly screenshots belong to Dashly Software; images
+made from the Marcus Aurelius scan stay CC BY-SA 3.0 FR. `LICENSE` lists
+exactly what is and is not covered.
+
+If you add browser storage, cookies, analytics or a form, update the Privacy
+section on `/credits` in the same change: it lists everything the site keeps.

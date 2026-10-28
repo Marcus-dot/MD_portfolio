@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
       </Reveal>
-      <div className="relative mt-[60px] flex justify-center gap-6 font-mono text-[12px]">
+      <div className="relative mt-[60px] flex flex-wrap justify-center gap-x-6 gap-y-1 font-mono text-[12px]">
         <a
           href={CONFIG.links.github}
           target="_blank"
@@ -80,6 +80,12 @@ export default function Footer() {
           className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
         >
           Credits →
+        </Link>
+        <Link
+          href="/credits#privacy"
+          className="text-dim no-underline transition-colors hover:text-accent pointer-coarse:py-3"
+        >
+          Privacy →
         </Link>
       </div>
       <div className="relative mt-[60px] flex flex-wrap items-center justify-between gap-3 text-[12.5px] text-dim">
