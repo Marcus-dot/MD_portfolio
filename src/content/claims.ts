@@ -23,7 +23,7 @@ export const CLAIMS: Claim[] = [
         label: "Google Play ↗",
         url: "https://play.google.com/store/apps/details?id=co.gralix.nexvenue",
       },
-      { label: "nexvenue.app ↗", url: "https://www.nexvenue.app/" },
+      { label: "App Store ↗", url: "https://apps.apple.com/zm/app/nexvenue/id6767531768" },
     ],
   },
   {

@@ -6,8 +6,7 @@ export const CONFIG = {
     github: "https://github.com/Marcus-dot",
     linkedin: "https://www.linkedin.com/in/madalitso-daka-52912b248",
     dashly: "https://www.dashlyhq.com",
-    // TODO: replace with the direct App Store listing URL once known
-    appStore: "https://www.nexvenue.app/",
+    appStore: "https://apps.apple.com/zm/app/nexvenue/id6767531768",
     googlePlay:
       "https://play.google.com/store/apps/details?id=co.gralix.nexvenue",
     web: "https://tech.gralix.co/products/nexvenue",
